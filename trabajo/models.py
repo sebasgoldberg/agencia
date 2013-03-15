@@ -163,6 +163,9 @@ class Trabajo(models.Model):
       verbose_name = ugettext_lazy(u'Trabalho')
       verbose_name_plural = ugettext_lazy(u"Trabalhos") 
       ordering = ['-fecha_ingreso']
+      permissions = (
+        ("mail_productora", ugettext_lazy(u'Envio de trabalho por e-mail a produtora')),
+      )
 
     def thumbnail_img(self):
       url = ''

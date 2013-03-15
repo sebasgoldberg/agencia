@@ -80,13 +80,13 @@ class Agencia(models.Model):
 
 class TelefonoAgencia(BaseTelefono):
   agencia = models.ForeignKey(Agencia,null=False, blank=False, verbose_name=ugettext_lazy(u'Agencia'))
-  class Meta:
+  class Meta(BaseTelefono.Meta):
     verbose_name = ugettext_lazy(u"Telefone da Agencia")
     verbose_name_plural = ugettext_lazy(u"Telefones da Agencia")
 
 class DireccionAgencia(Direccion):
   agencia = models.ForeignKey(Agencia,null=False, blank=False, verbose_name=ugettext_lazy(u'Agencia'))
-  class Meta:
+  class Meta(Direccion.Meta):
     verbose_name = ugettext_lazy(u"Endereço da Agencia")
     verbose_name_plural = ugettext_lazy(u"Endereços da Agencia")
 
@@ -245,9 +245,14 @@ class Agenciado(models.Model):
 
     class Meta:
       ordering = ['nombre', 'apellido']
+      verbose_name = ugettext_lazy(u"Agenciado")
+      verbose_name_plural = ugettext_lazy(u"Agenciados")
 
 class DireccionAgenciado(Direccion):
   agenciado = models.ForeignKey(Agenciado, verbose_name=ugettext_lazy(u'Agenciado'))
+  class Meta(Direccion.Meta):
+    verbose_name = ugettext_lazy(u"Endereço agenciado")
+    verbose_name_plural = ugettext_lazy(u"Endereços agenciados")
 
 class FotoAgenciado(models.Model):
     agenciado = models.ForeignKey(Agenciado)
@@ -257,15 +262,22 @@ class FotoAgenciado(models.Model):
     def __unicode__(self):
       return self.foto.url
     class Meta:
-      verbose_name = ugettext_lazy(u"Foto")
-      verbose_name_plural = ugettext_lazy(u"Fotos")
+      verbose_name = ugettext_lazy(u"Foto agenciado")
+      verbose_name_plural = ugettext_lazy(u"Fotos agenciado")
 
 class VideoAgenciado(Video):
   agenciado = models.ForeignKey(Agenciado)
+  class Meta(Video.Meta):
+    verbose_name = ugettext_lazy(u"Video agenciado")
+    verbose_name_plural = ugettext_lazy(u"Videos agenciado")
 
 @receiver(pre_save, sender=VideoAgenciado)
 def callback_pre_save_videoagenciado(sender, instance, raw, using, **kwargs):
   instance.url_to_codigo_video()
 
 class Telefono(BaseTelefono):
-    agenciado = models.ForeignKey(Agenciado)
+  agenciado = models.ForeignKey(Agenciado)
+
+  class Meta(BaseTelefono.Meta):
+    verbose_name = ugettext_lazy(u"Telefone agenciado")
+    verbose_name_plural = ugettext_lazy(u"Telefones agenciado")

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-15 10:38-0700\n"
+"POT-Creation-Date: 2013-03-15 12:33-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -77,7 +77,7 @@ msgstr ""
 
 #: models.py:46
 msgid "Logo a ser visualizado no site da agencia"
-msgstr ""
+msgstr "Logo a ser visualizado en el sitio de la agencia"
 
 #: models.py:47
 msgid "Favicon"
@@ -85,25 +85,26 @@ msgstr ""
 
 #: models.py:47
 msgid "Imagem com extenção ico de 48x48 pixels"
-msgstr ""
+msgstr "Imagen con extensión ico de 48x48 pixels"
 
 #: models.py:48
 msgid "Titulo pagina inicial"
-msgstr ""
+msgstr "Título pagina inicial"
 
 #: models.py:49
 msgid "Presentação pagina inicial"
-msgstr ""
+msgstr "Presentación página inicial"
 
 #: models.py:50
 msgid "Mapa pagina contato"
-msgstr ""
+msgstr "Mapa pagina de contacto"
 
 #: models.py:50
 msgid ""
 "Aqui tem que colar o HTML gerado no google maps a partir de seu endereço"
 msgstr ""
-"Aqui tiene que pegar el código HTML generado en google maps a partir de su dirección"
+"Aqui tiene que pegar el código HTML generado en google maps a partir de su "
+"dirección"
 
 #: models.py:53 models.py:82 models.py:88
 msgid "Agencia"
@@ -118,12 +119,12 @@ msgid ""
 "Não tem registrada uma agencia ativa. Tem que ser creada una agencia ativa "
 "na administracão do site."
 msgstr ""
-"No tiene registrada una agencia activa. Tiene que ser creada una agencia activa "
-"en la administración del sitio."
+"No tiene registrada una agencia activa. Tiene que ser creada una agencia "
+"activa en la administración del sitio."
 
 #: models.py:84
 msgid "Telefone da Agencia"
-msgstr "El equipo de la agencia"
+msgstr "Telefono de la agencia"
 
 #: models.py:85
 msgid "Telefones da Agencia"
@@ -298,17 +299,45 @@ msgstr ""
 msgid "Descripção"
 msgstr "Descripción"
 
-#: models.py:250
+#: models.py:248 models.py:252
 msgid "Agenciado"
 msgstr "Agenciados"
 
-#: models.py:260
-msgid "Foto"
-msgstr "Foto"
+#: models.py:249
+msgid "Agenciados"
+msgstr "Agenciados"
 
-#: models.py:261
-msgid "Fotos"
-msgstr "Fotos"
+#: models.py:254
+msgid "Endereço agenciado"
+msgstr "Dirección agenciado"
+
+#: models.py:255
+msgid "Endereços agenciados"
+msgstr "Direcciones agenciado"
+
+#: models.py:265
+msgid "Foto agenciado"
+msgstr "Foto agenciado"
+
+#: models.py:266
+msgid "Fotos agenciado"
+msgstr "Fotos agenciado"
+
+#: models.py:271
+msgid "Video agenciado"
+msgstr "Video agenciado"
+
+#: models.py:272
+msgid "Videos agenciado"
+msgstr "Videos agenciado"
+
+#: models.py:282
+msgid "Telefone agenciado"
+msgstr "Telefono agenciado"
+
+#: models.py:283
+msgid "Telefones agenciado"
+msgstr "Telefonos agenciados"
 
 #: video.py:25
 msgid "Videos"
@@ -380,4 +409,3 @@ msgstr "Trabajos Activos Recientes"
 #: templates/agencia/index.html:48
 msgid "Itens do Portifolio Recentes"
 msgstr "Items del Portfolio Recientes"
-

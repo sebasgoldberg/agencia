@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-15 11:30-0700\n"
+"POT-Creation-Date: 2013-03-15 12:33-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -293,16 +293,44 @@ msgstr ""
 msgid "Descripção"
 msgstr ""
 
-#: models.py:250
+#: models.py:248 models.py:252
 msgid "Agenciado"
 msgstr ""
 
-#: models.py:260
-msgid "Foto"
+#: models.py:249
+msgid "Agenciados"
 msgstr ""
 
-#: models.py:261
-msgid "Fotos"
+#: models.py:254
+msgid "Endereço agenciado"
+msgstr ""
+
+#: models.py:255
+msgid "Endereços agenciados"
+msgstr ""
+
+#: models.py:265
+msgid "Foto agenciado"
+msgstr ""
+
+#: models.py:266
+msgid "Fotos agenciado"
+msgstr ""
+
+#: models.py:271
+msgid "Video agenciado"
+msgstr ""
+
+#: models.py:272
+msgid "Videos agenciado"
+msgstr ""
+
+#: models.py:282
+msgid "Telefone agenciado"
+msgstr ""
+
+#: models.py:283
+msgid "Telefones agenciado"
 msgstr ""
 
 #: video.py:25
