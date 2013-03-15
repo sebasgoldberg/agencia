@@ -1,0 +1,375 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-15 11:30-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+#: admin.py:83
+msgid "Dados Pessoales"
+msgstr ""
+
+#: admin.py:84
+msgid "Dados Administrativos"
+msgstr ""
+
+#: admin.py:87
+msgid "Carateristicas fisicas"
+msgstr ""
+
+#: admin.py:88
+msgid "Habilidades"
+msgstr ""
+
+#: admin.py:89
+msgid "Otros dados"
+msgstr ""
+
+#: mail.py:10
+#, python-format
+msgid "%(nombre)s - %(asunto)s"
+msgstr ""
+
+#: models.py:34
+msgid "Tem que informar o endereço"
+msgstr ""
+
+#: models.py:37
+msgid "Tem que informar um telefone"
+msgstr ""
+
+#: models.py:40
+msgid "Tem que subir uma foto"
+msgstr ""
+
+#: models.py:43 models.py:110
+msgid "Nome"
+msgstr ""
+
+#: models.py:44 models.py:107
+msgid "e-mail"
+msgstr ""
+
+#: models.py:45
+msgid "Ativa"
+msgstr ""
+
+#: models.py:45
+msgid "Só debería ter uma unica agencia ativa"
+msgstr ""
+
+#: models.py:46
+msgid "Logo"
+msgstr ""
+
+#: models.py:46
+msgid "Logo a ser visualizado no site da agencia"
+msgstr ""
+
+#: models.py:47
+msgid "Favicon"
+msgstr ""
+
+#: models.py:47
+msgid "Imagem com extenção ico de 48x48 pixels"
+msgstr ""
+
+#: models.py:48
+msgid "Titulo pagina inicial"
+msgstr ""
+
+#: models.py:49
+msgid "Presentação pagina inicial"
+msgstr ""
+
+#: models.py:50
+msgid "Mapa pagina contato"
+msgstr ""
+
+#: models.py:50
+msgid ""
+"Aqui tem que colar o HTML gerado no google maps a partir de seu endereço"
+msgstr ""
+
+#: models.py:53 models.py:82 models.py:88
+msgid "Agencia"
+msgstr ""
+
+#: models.py:54
+msgid "Agencias"
+msgstr ""
+
+#: models.py:75
+msgid ""
+"Não tem registrada uma agencia ativa. Tem que ser creada una agencia ativa "
+"na administracão do site."
+msgstr ""
+
+#: models.py:84
+msgid "Telefone da Agencia"
+msgstr ""
+
+#: models.py:85
+msgid "Telefones da Agencia"
+msgstr ""
+
+#: models.py:90
+msgid "Endereço da Agencia"
+msgstr ""
+
+#: models.py:91
+msgid "Endereços da Agencia"
+msgstr ""
+
+#: models.py:95
+msgid "A data de nascimento nao pode ser maior que a data do dia"
+msgstr ""
+
+#: models.py:99
+msgid "A atura debe ser informada em centimetros"
+msgstr ""
+
+#: models.py:111
+msgid "Sobrenome"
+msgstr ""
+
+#: models.py:112
+msgid "Data nascimento"
+msgstr ""
+
+#: models.py:116
+msgid "RG"
+msgstr ""
+
+#: models.py:118
+msgid "CPF"
+msgstr ""
+
+#: models.py:119
+msgid "Responsabel"
+msgstr ""
+
+#: models.py:120
+msgid "Conta bancaria"
+msgstr ""
+
+#: models.py:133
+msgid "Masculino"
+msgstr ""
+
+#: models.py:134
+msgid "Femenino"
+msgstr ""
+
+#: models.py:137
+msgid "Sexo"
+msgstr ""
+
+#: models.py:138
+msgid "Olhos"
+msgstr ""
+
+#: models.py:139
+msgid "Cabelo"
+msgstr ""
+
+#: models.py:140
+msgid "Pele"
+msgstr ""
+
+#: models.py:141
+msgid "Atura"
+msgstr ""
+
+#: models.py:142
+msgid "Peso"
+msgstr ""
+
+#: models.py:143
+msgid "Manequem"
+msgstr ""
+
+#: models.py:144
+msgid "Camisa"
+msgstr ""
+
+#: models.py:145
+msgid "Calça"
+msgstr ""
+
+#: models.py:146
+msgid "Calçado"
+msgstr ""
+
+#: models.py:147
+msgid "Estado Dentes"
+msgstr ""
+
+#: models.py:150
+msgid "Esportes"
+msgstr ""
+
+#: models.py:151
+msgid "Danças"
+msgstr ""
+
+#: models.py:152
+msgid "Instrumentos"
+msgstr ""
+
+#: models.py:153
+msgid "Idiomas"
+msgstr ""
+
+#: models.py:154
+msgid "Dirige"
+msgstr ""
+
+#: models.py:155
+msgid "Habilitação"
+msgstr ""
+
+#: models.py:158
+msgid "Figuração"
+msgstr ""
+
+#: models.py:159
+msgid "Como nos conheceu"
+msgstr ""
+
+#: models.py:160
+msgid "Observaçoes"
+msgstr ""
+
+#: models.py:163
+msgid "Ativo"
+msgstr ""
+
+#: models.py:164
+msgid "Data de agenciamento"
+msgstr ""
+
+#: models.py:176
+msgid "Imagem"
+msgstr ""
+
+#: models.py:193 models.py:204
+msgid "Imagems"
+msgstr ""
+
+#: models.py:209 models.py:235
+msgid "Link ao agenciado"
+msgstr ""
+
+#: models.py:217 video.py:24
+msgid "Video"
+msgstr ""
+
+#: models.py:228
+msgid "Telefones"
+msgstr ""
+
+#: models.py:238
+#, python-format
+msgid ""
+"Edad %(edad)s, sexo %(sexo)s, olhos %(ojos)s, cabelo %(pelo)s, pele "
+"%(piel)s, atura %(altura)s, peso %(peso)s, estado dentes %(estado_dientes)s."
+msgstr ""
+
+#: models.py:241
+msgid "Descripção"
+msgstr ""
+
+#: models.py:250
+msgid "Agenciado"
+msgstr ""
+
+#: models.py:260
+msgid "Foto"
+msgstr ""
+
+#: models.py:261
+msgid "Fotos"
+msgstr ""
+
+#: video.py:25
+msgid "Videos"
+msgstr ""
+
+#: views.py:11
+msgid ""
+"Por favor atualice os dados de seu perfil a ser analizados por nossa agencia."
+msgstr ""
+
+#: templates/base.html:66 templates/base.html.py:87
+msgid "Meu Perfil"
+msgstr ""
+
+#: templates/base.html:67
+msgid "Pesquisas"
+msgstr ""
+
+#: templates/base.html:68
+msgid "Portfolio"
+msgstr ""
+
+#: templates/base.html:69
+msgid "Contato"
+msgstr ""
+
+#: templates/base.html:79
+msgid "Administração"
+msgstr ""
+
+#: templates/base.html:82
+msgid "Conta "
+msgstr ""
+
+#: templates/base.html:88
+msgid "Trocar Senha"
+msgstr ""
+
+#: templates/base.html:89
+msgid "Sair"
+msgstr ""
+
+#: templates/base.html:91
+msgid "Registro"
+msgstr ""
+
+#: templates/base.html:92
+msgid "Entrar"
+msgstr ""
+
+#: templates/agencia/index.html:24
+msgid "Cadastre-se"
+msgstr ""
+
+#: templates/agencia/index.html:26
+msgid "Complete seu cadastro"
+msgstr ""
+
+#: templates/agencia/index.html:28
+msgid "Veja os perfis procurados"
+msgstr ""
+
+#: templates/agencia/index.html:42
+msgid "Trabalhos Ativos Recentes"
+msgstr ""
+
+#: templates/agencia/index.html:48
+msgid "Itens do Portifolio Recentes"
+msgstr ""

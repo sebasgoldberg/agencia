@@ -1,0 +1,76 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-15 11:30-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+#: models.py:7 models.py:16 models.py:25 models.py:34 models.py:41
+#: models.py:48 models.py:57 models.py:66 models.py:75
+msgid "Descripção"
+msgstr ""
+
+#: models.py:12
+msgid "Dança"
+msgstr ""
+
+#: models.py:13
+msgid "Danças"
+msgstr ""
+
+#: models.py:21
+msgid "Esporte"
+msgstr ""
+
+#: models.py:22
+msgid "Esportes"
+msgstr ""
+
+#: models.py:30
+msgid "Estado Dentes"
+msgstr ""
+
+#: models.py:31
+msgid "Estados Dentes"
+msgstr ""
+
+#: models.py:53 models.py:54
+msgid "Olhos"
+msgstr ""
+
+#: models.py:62
+msgid "Cabelo"
+msgstr ""
+
+#: models.py:63
+msgid "Cabelos"
+msgstr ""
+
+#: models.py:71
+msgid "Pele"
+msgstr ""
+
+#: models.py:72
+msgid "Peles"
+msgstr ""
+
+#: models.py:80
+msgid "Manequem"
+msgstr ""
+
+#: models.py:81
+msgid "Manequems"
+msgstr ""

@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-15 10:42-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: views.py:116
+msgid "Dados atualizados com sucesso"
+msgstr "Datos actualizados con éxito"
+
+#: views.py:137
+msgid "O perfil do trabalho para o qual quer aplicar nao foi encontrado"
+msgstr "El perfil del trabajo para el cual quiere aplicar no fue encontrado"
+
+#: views.py:144
+#, python-format
+msgid ""
+"Para aplicar ao perfil %(rol)s do trabalho <a href=%(url)s>%(trabajo)s</a> "
+"tem que completar seus dados de Agenciado"
+msgstr ""
+"Para aplicar al perfil %(rol)s del trabajo <a href=%(url)s>%(trabajo)s</a> "
+"tiene que completar los datos de su perfil"
+
+#: views.py:154
+#, python-format
+msgid "Aplicação para o perfil \"%s\" realizada com sucesso."
+msgstr "Aplicación para el perfil \"%s\" realizada con éxito."
+
+#: views.py:155
+msgid ""
+"A aplicação vai ser analizada por nosso equipe, muito obrigado por sua "
+"postulação."
+msgstr ""
+"La aplicación va a ser analizada por nuestro equipo, muchas gracias por su "
+"postulación"
+
+#: templates/agenciado/agenciado.html:18
+msgid "Tem erros por corregir"
+msgstr "Tiene errores por corregir"
+
+#: templates/agenciado/agenciado.html:24
+msgid "Dados persoais"
+msgstr "Datos personales"
+
+#: templates/agenciado/agenciado.html:34
+msgid "Dados administrativos"
+msgstr "Datos administrativos"
+
+#: templates/agenciado/agenciado.html:44
+msgid "Dados de endereço"
+msgstr "Datos de Dirección"
+
+#: templates/agenciado/agenciado.html:63
+msgid "Telefones"
+msgstr "Telefonos"
+
+#: templates/agenciado/agenciado.html:72
+msgid "Caracteristicas fisicas"
+msgstr "Características físicas"
+
+#: templates/agenciado/agenciado.html:89
+msgid "Habilidades"
+msgstr "Habilidades"
+
+#: templates/agenciado/agenciado.html:100
+msgid "Fotos"
+msgstr "Fotos"
+
+#: templates/agenciado/agenciado.html:108
+msgid "Videos"
+msgstr "Videos"
+
+#: templates/agenciado/agenciado.html:116
+msgid "Otros dados"
+msgstr "Otros Datos"
+
+#: templates/agenciado/agenciado.html:129
+msgid "Grabar"
+msgstr "Grabar"
+
