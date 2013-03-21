@@ -1,16 +1,16 @@
 # coding=utf-8
-from iamsoft.agencia.trabajo.models import Productora, Rol, ItemPortfolio, Trabajo, Postulacion, DireccionProductora, TelefonoProductora, EventoTrabajo, EventoRol
+from iampacks.agencia.trabajo.models import Productora, Rol, ItemPortfolio, Trabajo, Postulacion, DireccionProductora, TelefonoProductora, EventoTrabajo, EventoRol
 from django.contrib import admin
 from django.forms import CheckboxSelectMultiple
 from django.db import models
 from django.forms.models import BaseInlineFormSet
 from django.http import HttpResponseRedirect
-from iamsoft.agencia.agencia.admin import AgenciadoAdmin
+from iampacks.agencia.agencia.admin import AgenciadoAdmin
 from django.forms.widgets import Textarea
 from django.utils.translation import ugettext as _
 from django.utils.translation import ugettext_lazy
-from iamsoft.cross.direccion.admin import PaisDireccionModelListFilter, EstadoDireccionModelListFilter, CiudadDireccionModelListFilter, BaseDireccionInline
-from iamsoft.cross.direccion.forms import BaseDireccionForm
+from iampacks.cross.direccion.admin import PaisDireccionModelListFilter, EstadoDireccionModelListFilter, CiudadDireccionModelListFilter, BaseDireccionInline
+from iampacks.cross.direccion.forms import BaseDireccionForm
 
 class PostulacionInline(admin.TabularInline):
   model=Postulacion

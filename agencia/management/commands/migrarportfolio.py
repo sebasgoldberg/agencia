@@ -3,7 +3,7 @@ from django.core.management.base import BaseCommand, CommandError
 import MySQLdb
 from alternativa.ambiente import ambiente
 import re
-from iamsoft.agencia.trabajo.models import ItemPortfolio
+from iampacks.agencia.trabajo.models import ItemPortfolio
 from datetime import date
 import urllib
 from django.core.files.images import ImageFile

@@ -6,11 +6,11 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import permission_required
 from django import forms
-from iamsoft.agencia.trabajo.models import Postulacion, Rol, Trabajo, ItemPortfolio
-from iamsoft.agencia.agencia.models import Agenciado, Agencia
+from iampacks.agencia.trabajo.models import Postulacion, Rol, Trabajo, ItemPortfolio
+from iampacks.agencia.agencia.models import Agenciado, Agencia
 from django.template import loader, Context
-from iamsoft.agencia.agencia.mail import MailAgencia
-from iamsoft.cross.correo.forms import MailForm
+from iampacks.agencia.agencia.mail import MailAgencia
+from iampacks.cross.correo.forms import MailForm
 from django.conf import settings
 from django.contrib import messages
 from django.template import RequestContext

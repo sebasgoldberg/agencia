@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand, CommandError
-from iamsoft.agencia.agencia.models import Estado
+from iampacks.agencia.agencia.models import Estado
 from cities_light.models import Region
 from django.conf import settings
 

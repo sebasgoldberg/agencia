@@ -7,9 +7,9 @@ Replace this with more appropriate tests for your application.
 """
 
 from django.test import TestCase
-from iamsoft.agencia.agencia.tests import AgenciaTestCase
+from iampacks.agencia.agencia.tests import AgenciaTestCase
 from django.test.client import Client
-from iamsoft.agencia.agencia.models import Agenciado
+from iampacks.agencia.agencia.models import Agenciado
 
 from django.contrib.auth.models import User
 from django.core import mail

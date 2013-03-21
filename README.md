@@ -2,7 +2,7 @@ Instalación
 -----------
 
 * Instalar el proyecto django-iamsoft-cross.
-* En carpeta iamsoft crear carpeta agencia.
+* En carpeta iampacks crear carpeta agencia.
 * Hacer el pull del proyecto.
 
 Instalación y uso de aplicaciones

@@ -1,5 +1,5 @@
 # coding=utf-8
-from iamsoft.agencia.perfil.models import Danza, Deporte, EstadoDientes, Idioma, Instrumento, Ojos, Pelo, Piel, Talle
+from iampacks.agencia.perfil.models import Danza, Deporte, EstadoDientes, Idioma, Instrumento, Ojos, Pelo, Piel, Talle
 from django.contrib import admin
 
 admin.site.register(Danza)

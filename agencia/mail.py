@@ -1,6 +1,6 @@
 # coding=utf-8
-from iamsoft.cross.correo.mail import Mail
-from iamsoft.agencia.agencia.models import Agencia
+from iampacks.cross.correo.mail import Mail
+from iampacks.agencia.agencia.models import Agencia
 from django.utils.translation import ugettext_lazy
 
 class MailAgencia(Mail):

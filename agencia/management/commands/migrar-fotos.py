@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand, CommandError
-from iamsoft.agencia.agencia.models import Agenciado, FotoAgenciado, VideoAgenciado, Compania, Telefono
-from iamsoft.agencia.perfil.models import Danza, Deporte, EstadoDientes, Idioma, Instrumento, Ojos, Pelo, Piel, Talle
+from iampacks.agencia.agencia.models import Agenciado, FotoAgenciado, VideoAgenciado, Compania, Telefono
+from iampacks.agencia.perfil.models import Danza, Deporte, EstadoDientes, Idioma, Instrumento, Ojos, Pelo, Piel, Talle
 import pymssql
 from django.core.files.images import ImageFile
 import os

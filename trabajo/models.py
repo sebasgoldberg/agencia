@@ -1,7 +1,7 @@
 # coding=utf-8
 
 from django.db import models
-from iamsoft.agencia.agencia.models import Agenciado
+from iampacks.agencia.agencia.models import Agenciado
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill, Adjust
 from datetime import date, datetime
@@ -11,8 +11,8 @@ from django.dispatch import receiver
 import re
 from django.utils.translation import ugettext as _
 from django.utils.translation import ugettext_lazy
-from iamsoft.cross.direccion.models import Direccion
-from iamsoft.cross.telefono.models import Telefono
+from iampacks.cross.direccion.models import Direccion
+from iampacks.cross.telefono.models import Telefono
 
 class Evento(Direccion):
   fecha = models.DateTimeField(default=datetime.today(),verbose_name=ugettext_lazy(u'Data do evento'), blank=True, null=True)

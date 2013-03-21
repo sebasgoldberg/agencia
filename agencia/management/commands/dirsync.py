@@ -1,7 +1,7 @@
 # coding=utf-8
 from django.core.management.base import BaseCommand, CommandError
-from iamsoft.agencia.agencia.models import DireccionAgencia, DireccionAgenciado
-from iamsoft.agencia.trabajo.models import DireccionProductora, EventoTrabajo, EventoRol
+from iampacks.agencia.agencia.models import DireccionAgencia, DireccionAgenciado
+from iampacks.agencia.trabajo.models import DireccionProductora, EventoTrabajo, EventoRol
 from cities_light.models import City, Region
 
 class Command(BaseCommand):

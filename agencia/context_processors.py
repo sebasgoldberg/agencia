@@ -1,5 +1,5 @@
 from alternativa.ambiente import ambiente
-from iamsoft.agencia.agencia.models import FotoAgenciado, Agencia
+from iampacks.agencia.agencia.models import FotoAgenciado, Agencia
 
 
 def add_ambiente(request):

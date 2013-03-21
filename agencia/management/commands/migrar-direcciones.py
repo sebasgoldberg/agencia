@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand, CommandError
-from iamsoft.agencia.agencia.models import Agenciado, DireccionAgenciado
+from iampacks.agencia.agencia.models import Agenciado, DireccionAgenciado
 from cities_light.models import City, Region, Country
 from django.conf import settings
 

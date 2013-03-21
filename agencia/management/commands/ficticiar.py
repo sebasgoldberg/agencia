@@ -1,6 +1,6 @@
 # coding=utf-8
 from django.core.management.base import BaseCommand, CommandError
-from iamsoft.agencia.agencia.models import Agenciado
+from iampacks.agencia.agencia.models import Agenciado
 from django.conf import settings
 
 minusculas='abcdefghijklmnopqrstuvwxyz'

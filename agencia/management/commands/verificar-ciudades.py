@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand, CommandError
-from iamsoft.agencia.agencia.models import Ciudad
+from iampacks.agencia.agencia.models import Ciudad
 from cities_light.models import City
 from django.conf import settings
 

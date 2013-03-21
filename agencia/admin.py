@@ -1,13 +1,13 @@
 # coding=utf-8
-from iamsoft.agencia.agencia.models import Agenciado, FotoAgenciado, VideoAgenciado, Telefono, validarTelefonoIngresado, validarFotoIngresada, DireccionAgenciado, Agencia, TelefonoAgencia, DireccionAgencia
+from iampacks.agencia.agencia.models import Agenciado, FotoAgenciado, VideoAgenciado, Telefono, validarTelefonoIngresado, validarFotoIngresada, DireccionAgenciado, Agencia, TelefonoAgencia, DireccionAgencia
 from django.contrib import admin
 from django.forms import CheckboxSelectMultiple
 from django.db import models
 from django.forms.models import BaseInlineFormSet
 from django.utils.translation import ugettext as _
 from django.utils.translation import ugettext_lazy
-from iamsoft.cross.direccion.admin import PaisDireccionModelListFilter, EstadoDireccionModelListFilter, CiudadDireccionModelListFilter, BaseDireccionInline
-from iamsoft.agencia.agencia.forms import DireccionAgenciaForm, DireccionAgenciadoForm
+from iampacks.cross.direccion.admin import PaisDireccionModelListFilter, EstadoDireccionModelListFilter, CiudadDireccionModelListFilter, BaseDireccionInline
+from iampacks.agencia.agencia.forms import DireccionAgenciaForm, DireccionAgenciadoForm
 
 class DireccionAgenciaInline(BaseDireccionInline):
   form = DireccionAgenciaForm

@@ -6,14 +6,14 @@ from django.core.exceptions import ValidationError
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill, Adjust
 from django.conf import settings
-from iamsoft.agencia.agencia.video import Video
+from iampacks.agencia.agencia.video import Video
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
 from django.utils.translation import ugettext as _
 from django.utils.translation import ugettext_lazy
-from iamsoft.cross.direccion.models import Direccion
-from iamsoft.cross.telefono.models import Telefono as BaseTelefono
-from iamsoft.agencia.perfil.models import Danza, Deporte, EstadoDientes, Idioma, Instrumento, Ojos, Pelo, Piel, Talle
+from iampacks.cross.direccion.models import Direccion
+from iampacks.cross.telefono.models import Telefono as BaseTelefono
+from iampacks.agencia.perfil.models import Danza, Deporte, EstadoDientes, Idioma, Instrumento, Ojos, Pelo, Piel, Talle
 from django.contrib import messages
 
 # @pre Esta rutina se llama desde el metodo clean de una clase que lo redefine y hereda de formset

@@ -5,8 +5,8 @@ from django.contrib.auth.forms import SetPasswordForm, PasswordResetForm
 from django import forms
 from django.utils.translation import ugettext as _
 from django.utils.translation import ugettext_lazy
-from iamsoft.cross.direccion.forms import BaseDireccionForm
-from iamsoft.agencia.agencia.models import DireccionAgencia, DireccionAgenciado
+from iampacks.cross.direccion.forms import BaseDireccionForm
+from iampacks.agencia.agencia.models import DireccionAgencia, DireccionAgenciado
 
 class DireccionAgenciaForm(BaseDireccionForm):
   class Meta:

@@ -1,6 +1,6 @@
 # coding=utf-8
-from iamsoft.agencia.agencia.models import Agenciado, FotoAgenciado, VideoAgenciado, Compania, Telefono
-from iamsoft.agencia.perfil.models import Danza, Deporte, EstadoDientes, Idioma, Instrumento, Ojos, Pelo, Piel, Talle
+from iampacks.agencia.agencia.models import Agenciado, FotoAgenciado, VideoAgenciado, Compania, Telefono
+from iampacks.agencia.perfil.models import Danza, Deporte, EstadoDientes, Idioma, Instrumento, Ojos, Pelo, Piel, Talle
 from django.test import TestCase
 from datetime import date
 from datetime import timedelta

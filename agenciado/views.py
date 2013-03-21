@@ -5,8 +5,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.forms import ModelForm
 from django.forms.extras.widgets import SelectDateWidget
-from iamsoft.agencia.agencia.models import Agenciado, DireccionAgenciado, Telefono, FotoAgenciado, VideoAgenciado
-from iamsoft.agencia.agencia.models import validarDireccionIngresada, validarTelefonoIngresado, validarFotoIngresada
+from iampacks.agencia.agencia.models import Agenciado, DireccionAgenciado, Telefono, FotoAgenciado, VideoAgenciado
+from iampacks.agencia.agencia.models import validarDireccionIngresada, validarTelefonoIngresado, validarFotoIngresada
 from datetime import date
 from django.forms.models import inlineformset_factory
 from django.contrib import messages
@@ -16,10 +16,10 @@ from django.forms.widgets import CheckboxSelectMultiple, CheckboxInput, HiddenIn
 from django.utils.encoding import force_unicode
 from django.utils.html import conditional_escape
 from django.utils.safestring import mark_safe
-from iamsoft.agencia.trabajo.models import Postulacion, Rol
+from iampacks.agencia.trabajo.models import Postulacion, Rol
 from django.utils.translation import ugettext as _
 from django.utils.translation import ugettext_lazy
-from iamsoft.agencia.agencia.forms import DireccionAgenciadoForm
+from iampacks.agencia.agencia.forms import DireccionAgenciadoForm
 
 class BPCheckboxSelectMultiple(CheckboxSelectMultiple):
 
