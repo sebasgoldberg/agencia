@@ -131,7 +131,7 @@ class Agenciado(models.Model):
     # Caracteristicas fisicas
     SEXO=(
       ('M', _(u'Masculino')),
-      ('F', _(u'Femenino')),
+      ('F', _(u'Feminino')),
     )
     DICT_SEXO=dict(SEXO)
     sexo = models.CharField(max_length=1,choices=SEXO, verbose_name=ugettext_lazy(u'Sexo'))
@@ -140,7 +140,7 @@ class Agenciado(models.Model):
     piel = models.ForeignKey(Piel,on_delete=models.PROTECT, verbose_name=ugettext_lazy(u'Pele'),null=True, blank=False)
     altura = models.FloatField(verbose_name=ugettext_lazy(u'Atura'),validators=[validate_altura])
     peso = models.FloatField(verbose_name=ugettext_lazy(u'Peso'))
-    talle = models.ForeignKey(Talle,on_delete=models.PROTECT, verbose_name=ugettext_lazy(u'Manequem'),null=True, blank=False)
+    talle = models.ForeignKey(Talle,on_delete=models.PROTECT, verbose_name=ugettext_lazy(u'Manequim'),null=True, blank=False)
     talle_camisa = models.IntegerField(verbose_name=ugettext_lazy(u'Camisa'))
     talle_pantalon = models.IntegerField(verbose_name=ugettext_lazy(u'Calça'))
     calzado = models.IntegerField(verbose_name=ugettext_lazy(u'Calçado'))

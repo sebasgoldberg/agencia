@@ -68,9 +68,9 @@ msgid "Peles"
 msgstr ""
 
 #: models.py:80
-msgid "Manequem"
+msgid "Manequim"
 msgstr ""
 
 #: models.py:81
-msgid "Manequems"
+msgid "Manequims"
 msgstr ""

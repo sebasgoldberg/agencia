@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-15 12:33-0700\n"
+"POT-Creation-Date: 2013-03-31 05:31-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -175,7 +175,7 @@ msgid "Masculino"
 msgstr "Masculino"
 
 #: models.py:134
-msgid "Femenino"
+msgid "Feminino"
 msgstr "Femenino"
 
 #: models.py:137
@@ -203,7 +203,7 @@ msgid "Peso"
 msgstr "Peso"
 
 #: models.py:143
-msgid "Manequem"
+msgid "Manequim"
 msgstr "Tamaño"
 
 #: models.py:144
@@ -345,10 +345,14 @@ msgstr "Videos"
 
 #: views.py:11
 msgid ""
-"Por favor atualice os dados de seu perfil a ser analizados por nossa agencia."
+"Por favor atualize os dados do seu perfil a ser analizado por nossa agencia."
 msgstr ""
 "Por favor actualice los datos de su perfil a ser analizados por nuestra "
 "agencia."
+
+#: management/commands/crear_super_usuario.py:10
+msgid "Crea un super usuario para el proyecto en cuestión"
+msgstr ""
 
 #: templates/base.html:66 templates/base.html.py:87
 msgid "Meu Perfil"

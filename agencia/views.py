@@ -8,7 +8,7 @@ from django.utils.translation import ugettext_lazy
 from iampacks.cross.usuario.signals import usuario_after_register_before_redirect 
 
 def notify_register(sender,request,**kwargs):
-  messages.info(request,_(u'Por favor atualice os dados de seu perfil a ser analizados por nossa agencia.'))
+  messages.info(request,_(u'Por favor atualize os dados do seu perfil a ser analizado por nossa agencia.'))
 
 usuario_after_register_before_redirect.connect(notify_register)
 

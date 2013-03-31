@@ -77,6 +77,6 @@ class Talle(models.Model):
       return self.descripcion
     class Meta:
       ordering = ['descripcion']
-      verbose_name = ugettext_lazy(u"Manequem")
-      verbose_name_plural = ugettext_lazy(u"Manequems")
+      verbose_name = ugettext_lazy(u"Manequim")
+      verbose_name_plural = ugettext_lazy(u"Manequims")
 

@@ -85,5 +85,5 @@ msgid "Otros dados"
 msgstr ""
 
 #: templates/agenciado/agenciado.html:129
-msgid "Grabar"
+msgid "Gravar"
 msgstr ""
