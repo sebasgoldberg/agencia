@@ -196,8 +196,8 @@ class Agenciado(models.Model):
       html=''
       fotos=self.fotoagenciado_set.order_by('id')
       for foto in fotos:
-        url = "http://%s%s" % (settings.AMBIENTE.dominio, foto.foto.url)
-        url_thumbnail = "http://%s%s" % (settings.AMBIENTE.dominio, foto.thumbnail.url)
+        url = "%s%s" % (settings.AMBIENTE.get_base_url(), foto.foto.url)
+        url_thumbnail = "%s%s" % (settings.AMBIENTE.get_base_url(), foto.thumbnail.url)
         html = html + "<a href='%s'><img src='%s' height=100 /></a>" % (url,url_thumbnail)
       return html
     thumbnails_absolute_uri.allow_tags = True
