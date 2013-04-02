@@ -8,6 +8,8 @@ from django.utils.translation import ugettext as _
 from django.utils.translation import ugettext_lazy
 from iampacks.cross.direccion.admin import PaisDireccionModelListFilter, EstadoDireccionModelListFilter, CiudadDireccionModelListFilter, BaseDireccionInline
 from iampacks.agencia.agencia.forms import DireccionAgenciaForm, DireccionAgenciadoForm
+from django.contrib.sites.models import Site
+from cities_light.models import Country, Region, City
 
 class DireccionAgenciaInline(BaseDireccionInline):
   form = DireccionAgenciaForm
@@ -101,3 +103,7 @@ class AgenciadoAdmin(admin.ModelAdmin):
 
 admin.site.register(Agenciado,AgenciadoAdmin)
 admin.site.register(Agencia,AgenciaAdmin)
+admin.site.unregister(Site)
+admin.site.unregister(Country)
+admin.site.unregister(Region)
+admin.site.unregister(City)
