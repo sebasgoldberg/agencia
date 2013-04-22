@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-31 05:31-0700\n"
+"POT-Creation-Date: 2013-04-20 15:29-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,23 +18,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
-#: admin.py:83
+#: admin.py:85
 msgid "Dados Pessoales"
 msgstr "Datos Personales"
 
-#: admin.py:84
+#: admin.py:86
 msgid "Dados Administrativos"
 msgstr "Datos Administrativos"
 
-#: admin.py:87
+#: admin.py:89
 msgid "Carateristicas fisicas"
 msgstr "Características Físicas"
 
-#: admin.py:88
+#: admin.py:90
 msgid "Habilidades"
 msgstr "Habilidades"
 
-#: admin.py:89
+#: admin.py:91
 msgid "Otros dados"
 msgstr "Otros Datos"
 
@@ -204,7 +204,7 @@ msgstr "Peso"
 
 #: models.py:143
 msgid "Manequim"
-msgstr "Tamaño"
+msgstr "Contextura"
 
 #: models.py:144
 msgid "Camisa"
@@ -247,8 +247,8 @@ msgid "Habilitação"
 msgstr "Registro de conducir"
 
 #: models.py:158
-msgid "Figuração"
-msgstr "Extra"
+msgid "Faz figuração"
+msgstr "Trabaja como extra"
 
 #: models.py:159
 msgid "Como nos conheceu"
@@ -354,43 +354,43 @@ msgstr ""
 msgid "Crea un super usuario para el proyecto en cuestión"
 msgstr ""
 
-#: templates/base.html:66 templates/base.html.py:87
+#: templates/base.html:64 templates/base.html.py:85
 msgid "Meu Perfil"
 msgstr "Mi Perfil"
 
-#: templates/base.html:67
+#: templates/base.html:65
 msgid "Pesquisas"
 msgstr "Búsquedas"
 
-#: templates/base.html:68
+#: templates/base.html:66
 msgid "Portfolio"
 msgstr "Portfolio"
 
-#: templates/base.html:69
+#: templates/base.html:67
 msgid "Contato"
 msgstr "Contacto"
 
-#: templates/base.html:79
+#: templates/base.html:77
 msgid "Administração"
 msgstr "Administración"
 
-#: templates/base.html:82
+#: templates/base.html:80
 msgid "Conta "
 msgstr "Cuenta"
 
-#: templates/base.html:88
+#: templates/base.html:86
 msgid "Trocar Senha"
 msgstr "Modificar Clave"
 
-#: templates/base.html:89
+#: templates/base.html:87
 msgid "Sair"
 msgstr "Salir"
 
-#: templates/base.html:91
+#: templates/base.html:89
 msgid "Registro"
 msgstr "Registro"
 
-#: templates/base.html:92
+#: templates/base.html:90
 msgid "Entrar"
 msgstr "Ingresar"
 
@@ -413,3 +413,6 @@ msgstr "Trabajos Activos Recientes"
 #: templates/agencia/index.html:48
 msgid "Itens do Portifolio Recentes"
 msgstr "Items del Portfolio Recientes"
+
+#~ msgid "Figuração"
+#~ msgstr "Extra"

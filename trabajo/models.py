@@ -313,7 +313,7 @@ class Postulacion(models.Model):
     class Meta:
       ordering = ['-rol__trabajo__fecha_ingreso', 'rol__descripcion', 'agenciado__nombre', 'agenciado__apellido']
       verbose_name = ugettext_lazy(u'Postulação')
-      verbose_name_plural = ugettext_lazy(u"Postulaçoes") 
+      verbose_name_plural = ugettext_lazy(u"Postulaçoes a trabalhos") 
       unique_together = (("agenciado", "rol"),)
 
     def trabajo_rol(self):

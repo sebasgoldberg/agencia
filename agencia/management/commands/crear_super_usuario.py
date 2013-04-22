@@ -34,10 +34,9 @@ class Command(BaseCommand):
       email=email,
       is_staff=True,
       is_active=True,
-      is_superuser=True
+      is_superuser=True,
+      password=password
     )
-
-    user.set_password(password)
 
     user.save()
 

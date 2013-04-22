@@ -155,7 +155,7 @@ class Agenciado(models.Model):
     indicador_tiene_registro = models.BooleanField(verbose_name=ugettext_lazy(u'Habilitação'))
 
     # Otros datos
-    trabaja_como_extra = models.BooleanField(verbose_name=ugettext_lazy(u'Figuração'))
+    trabaja_como_extra = models.BooleanField(verbose_name=ugettext_lazy(u'Faz figuração'))
     como_nos_conocio = models.TextField(blank=True, verbose_name=ugettext_lazy(u'Como nos conheceu'))
     observaciones = models.TextField(blank=True, verbose_name=ugettext_lazy(u'Observaçoes'))
 

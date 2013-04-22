@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-15 11:30-0700\n"
+"POT-Creation-Date: 2013-04-20 15:31-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -101,7 +101,7 @@ msgstr ""
 msgid "Video ou imagem"
 msgstr ""
 
-#: models.py:138 models.py:237
+#: models.py:138 models.py:240
 msgid "Descripção"
 msgstr ""
 
@@ -147,131 +147,135 @@ msgstr ""
 msgid "Trabalhos"
 msgstr ""
 
-#: models.py:173 models.py:181
+#: models.py:167
+msgid "Envio de trabalho por e-mail a produtora"
+msgstr ""
+
+#: models.py:176 models.py:184
 msgid "Imagem"
 msgstr ""
 
-#: models.py:191 models.py:245
+#: models.py:194 models.py:248
 msgid "Perfis"
 msgstr ""
 
-#: models.py:198
+#: models.py:201
 msgid "Link a produtora"
 msgstr ""
 
-#: models.py:205 models.py:274
+#: models.py:208 models.py:277
 msgid "Link ao trabalho"
 msgstr ""
 
-#: models.py:208
+#: models.py:211
 msgid "Casting"
 msgstr ""
 
-#: models.py:209
+#: models.py:212
 msgid "Callback"
 msgstr ""
 
-#: models.py:210
+#: models.py:213
 msgid "Proba de roupa"
 msgstr ""
 
-#: models.py:211
+#: models.py:214
 msgid "Realização do trabalho"
 msgstr ""
 
-#: models.py:212
+#: models.py:215
 msgid "Outro"
 msgstr ""
 
-#: models.py:220
+#: models.py:223
 msgid "Evento do trabalho"
 msgstr ""
 
-#: models.py:221 templates/trabajo/trabajo/detalles.html:6
+#: models.py:224 templates/trabajo/trabajo/detalles.html:6
 msgid "Eventos do trabalho"
 msgstr ""
 
-#: models.py:225
+#: models.py:228
 #, python-format
 msgid ""
 "%(tipo)s | %(descripcion)s | %(fecha)s | %(direccion)s, %(barrio)s, "
 "%(ciudad)s, %(estado)s, %(codigo_postal)s"
 msgstr ""
 
-#: models.py:239 templates/trabajo/rol/detalles.html:5
+#: models.py:242 templates/trabajo/rol/detalles.html:5
 msgid "Caraterísticas"
 msgstr ""
 
-#: models.py:244 models.py:278 models.py:297
+#: models.py:247 models.py:281 models.py:300
 #: templates/trabajo/rol/detalles.html:2
 msgid "Perfil"
 msgstr ""
 
-#: models.py:250
+#: models.py:253
 msgid "Postulados casting"
 msgstr ""
 
-#: models.py:253
+#: models.py:256
 msgid "Selecionados casting"
 msgstr ""
 
-#: models.py:256
+#: models.py:259
 msgid "Selecionados trabalho"
 msgstr ""
 
-#: models.py:259
+#: models.py:262
 msgid "Trabalhos realizados"
 msgstr ""
 
-#: models.py:262
+#: models.py:265
 msgid "Trabalhos pagados"
 msgstr ""
 
-#: models.py:269 models.py:340
+#: models.py:272 models.py:343
 msgid "Link ao perfil"
 msgstr ""
 
-#: models.py:280
+#: models.py:283
 msgid "Evento do perfil"
 msgstr ""
 
-#: models.py:281 templates/trabajo/rol/detalles.html:6
+#: models.py:284 templates/trabajo/rol/detalles.html:6
 msgid "Eventos do perfil"
 msgstr ""
 
-#: models.py:299
+#: models.py:302
 msgid "Postulação feita pelo agenciado"
 msgstr ""
 
-#: models.py:300
+#: models.py:303
 msgid "Postulado para casting"
 msgstr ""
 
-#: models.py:301
+#: models.py:304
 msgid "Selecionado para casting"
 msgstr ""
 
-#: models.py:302
+#: models.py:305
 msgid "Selecionado para trabalho"
 msgstr ""
 
-#: models.py:303
+#: models.py:306
 msgid "Trabalho realisado"
 msgstr ""
 
-#: models.py:304
+#: models.py:307
 msgid "Trabalho pagado"
 msgstr ""
 
-#: models.py:312
+#: models.py:315
 msgid "Postulação"
 msgstr ""
 
-#: models.py:313
-msgid "Postulaçoes"
+#: models.py:316
+msgid "Postulaçoes a trabalhos"
 msgstr ""
 
-#: models.py:322 models.py:335
+#: models.py:325 models.py:338
 msgid "Link ao agenciado"
 msgstr ""
 
