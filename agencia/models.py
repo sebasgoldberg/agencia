@@ -115,7 +115,7 @@ class Agenciado(models.Model):
     # @todo Ver si se puede quitar null luego de migrar, agregar validacion de que si ya existe que tenga asignado responsable
     documento_rg = models.CharField(max_length=60, verbose_name=ugettext_lazy(u'RG'))
     # @todo Ver si se puede quitar null luego de migrar, agregar validacion de que si ya existe que tenga asignado responsable
-    documento_cpf = models.CharField(max_length=60, verbose_name=ugettext_lazy(u'CPF'),null=True)
+    documento_cpf = models.CharField(max_length=60, verbose_name=ugettext_lazy(u'CPF'),null=True,blank=True)
     responsable = models.CharField(max_length=60, blank=True, verbose_name=ugettext_lazy(u'Responsabel'))
     cuenta_bancaria = models.CharField(max_length=100, blank=True, verbose_name=ugettext_lazy(u'Conta bancaria'))
 
@@ -138,8 +138,8 @@ class Agenciado(models.Model):
     ojos = models.ForeignKey(Ojos,on_delete=models.PROTECT, verbose_name=ugettext_lazy(u'Olhos'),null=True, blank=False)
     pelo = models.ForeignKey(Pelo,on_delete=models.PROTECT, verbose_name=ugettext_lazy(u'Cabelo'),null=True, blank=False)
     piel = models.ForeignKey(Piel,on_delete=models.PROTECT, verbose_name=ugettext_lazy(u'Pele'),null=True, blank=False)
-    altura = models.FloatField(verbose_name=ugettext_lazy(u'Atura'),validators=[validate_altura])
-    peso = models.FloatField(verbose_name=ugettext_lazy(u'Peso'))
+    altura = models.FloatField(verbose_name=ugettext_lazy(u'Atura (cm)'),validators=[validate_altura])
+    peso = models.FloatField(verbose_name=ugettext_lazy(u'Peso (kg)'))
     talle = models.ForeignKey(Talle,on_delete=models.PROTECT, verbose_name=ugettext_lazy(u'Manequim'),null=True, blank=False)
     talle_camisa = models.IntegerField(verbose_name=ugettext_lazy(u'Camisa'))
     talle_pantalon = models.IntegerField(verbose_name=ugettext_lazy(u'Calça'))
