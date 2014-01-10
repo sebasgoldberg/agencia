@@ -116,37 +116,8 @@ class Command(BaseCommand):
       apache2_conf_file_name
       ])
 
-  def crear_servicio(self):
-    
-    os.makedirs('%s/uploads/agenciados/fotos'%settings.AMBIENTE.project_directory)
-    os.makedirs('%s/uploads/cache/agenciados/fotos'%settings.AMBIENTE.project_directory)
-    os.makedirs('%s/uploads/agencias/logos'%settings.AMBIENTE.project_directory)
 
-    self.__callScript([
-      'chmod', '777', '-R', 'uploads'
-      ])
-
-    os.makedirs('collectedstatic')
-
-    # @todo Borrar en caso que el siguiente bloque funcione correctamente
-    """
-    #self.__callScript('echo -e "no\n" | %s syncdb'%self.get_manage_script(),shell=True)
-    self.__callScript([self.get_manage_script(), 'syncdb', '--noinput'])
-    self.__callScript([self.get_manage_script(), 'migrate'])
-    #self.__callScript('echo -e "yes\\n" | %s collectstatic'%self.get_manage_script(),shell=True)
-    self.__callScript([self.get_manage_script(), 'collectstatic','--noinput'])
-    self.__callScript([self.get_manage_script(), 'compilemessages'])
-    self.__callScript([self.get_manage_script(), 'loadperfil', '--idioma=%s'%self.idioma ])
-    self.__callScript([self.get_manage_script(), 'loadgroups'])
-    """
-
-    from django.core.management import call_command
-    call_command('syncdb')
-    call_command('migrate')
-    call_command('collectstatic')
-    call_command('compilemessages')
-    call_command('loadperfil','--idioma=%s'%settings.LANGUAGE_CODE)
-    call_command('loadgroups')
+  def copiar_informacion_ciudades(self):
 
     db_name_ciudades = settings.AMBIENTE.ciudades.db.name
 
@@ -163,21 +134,80 @@ class Command(BaseCommand):
 
     cursor = mysql_connection.cursor()
     
-    cursor.execute("insert into %s.cities_light_country select * from %s.cities_light_country"%(settings.AMBIENTE.db.name,db_name_ciudades))
-    cursor.execute("insert into %s.cities_light_region select * from %s.cities_light_region"%(settings.AMBIENTE.db.name,db_name_ciudades))
-    cursor.execute("insert into %s.cities_light_city select * from %s.cities_light_city"%(settings.AMBIENTE.db.name,db_name_ciudades))
+    try:
+      cursor.execute("insert into %s.cities_light_country select * from %s.cities_light_country"%(settings.AMBIENTE.db.name,db_name_ciudades))
+      cursor.execute("insert into %s.cities_light_region select * from %s.cities_light_region"%(settings.AMBIENTE.db.name,db_name_ciudades))
+      cursor.execute("insert into %s.cities_light_city select * from %s.cities_light_city"%(settings.AMBIENTE.db.name,db_name_ciudades))
+      mysql_connection.commit()
+    except:
+      mysql_connection.rollback()
 
     mysql_connection.close()
 
-    self.create_certificate()
+  def crear_servicio(self):
+    
+    try:
+      os.makedirs('%s/uploads/agenciados/fotos'%settings.AMBIENTE.project_directory)
+    except Exception:
+      self.stdout.write('%s\n'%traceback.format_exc())
 
-    self.create_apache2_conf()
+    try:
+      os.makedirs('%s/uploads/cache/agenciados/fotos'%settings.AMBIENTE.project_directory)
+    except Exception:
+      self.stdout.write('%s\n'%traceback.format_exc())
 
-    self.enable_apache2_site()
+    try:
+      os.makedirs('%s/uploads/agencias/logos'%settings.AMBIENTE.project_directory)
+    except Exception:
+      self.stdout.write('%s\n'%traceback.format_exc())
+
+    try:
+      self.__callScript([
+        'chmod', '777', '-R', 'uploads'
+        ])
+    except Exception:
+      self.stdout.write('%s\n'%traceback.format_exc())
+
+    try:
+      os.makedirs('collectedstatic')
+    except Exception:
+      self.stdout.write('%s\n'%traceback.format_exc())
+
+    from django.core.management import call_command
+
+    try:
+      call_command('syncdb')
+      call_command('migrate')
+      call_command('collectstatic')
+      call_command('compilemessages')
+      call_command('loadperfil','--idioma=%s'%settings.LANGUAGE_CODE)
+      call_command('loadgroups')
+    except Exception:
+      self.stdout.write('%s\n'%traceback.format_exc())
+
+    try:
+      self.copiar_informacion_ciudades()
+    except Exception:
+      self.stdout.write('%s\n'%traceback.format_exc())
+
+    try:
+      self.create_certificate()
+    except Exception:
+      self.stdout.write('%s\n'%traceback.format_exc())
+
+    try:
+      self.create_apache2_conf()
+    except Exception:
+      self.stdout.write('%s\n'%traceback.format_exc())
+
+    try:
+      self.enable_apache2_site()
+    except Exception:
+      self.stdout.write('%s\n'%traceback.format_exc())
 
   def handle(self,*args,**options):
 
     self.crear_servicio()
 
-    self.stdout.write('Instalacion de agencia exitosa.\n')
+    self.stdout.write('Instalacion finalizada.\n')
 
