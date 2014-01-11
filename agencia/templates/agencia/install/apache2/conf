@@ -16,7 +16,7 @@
     </Directory>
 
 
-    Alias /static/admin/ /usr/local/lib/python2.7/dist-packages/django/contrib/admin/static/admin/
+    Alias /static/admin/ /usr/local/lib/python2.7/dist-packages/grappelli/static/admin/
 
     <Directory /usr/local/lib/python2.7/dist-packages/django/contrib/admin/static/admin >
     Order deny,allow
