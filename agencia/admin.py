@@ -38,7 +38,6 @@ class TelefonoFormSet(BaseInlineFormSet):
 class FotoAgenciadoFormSet(BaseInlineFormSet):
   def clean(self):
     super(FotoAgenciadoFormSet,self).clean()
-    validarFotoIngresada(self)
 
 class DireccionAgenciadoInline(BaseDireccionInline):
   form = DireccionAgenciadoForm
