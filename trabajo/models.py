@@ -135,7 +135,7 @@ def callback_save_item_portfolio(sender, instance, raw, using, **kwargs):
 class Trabajo(models.Model):
     titulo = models.CharField(max_length=100, unique_for_date='fecha_ingreso')
     productora= models.ForeignKey(Productora,on_delete=models.PROTECT, verbose_name=ugettext_lazy(u'Produtora'))
-    descripcion = models.TextField(verbose_name=ugettext_lazy(u'Descripção'))
+    descripcion = models.TextField(verbose_name=ugettext_lazy(u'Descripção'), null=True, blank=True)
     imagen = models.ImageField(upload_to='trabajo/trabajo/',blank=True)
     thumbnail = ImageSpecField([Adjust(contrast=1.2, sharpness=1.1), ResizeToFill(100,100)], image_field='imagen', format='JPEG', options={'quality': 90})
     ESTADO_TRABAJO=(
@@ -238,7 +238,7 @@ class Rol(models.Model):
     trabajo = models.ForeignKey(Trabajo,on_delete=models.PROTECT)
     descripcion = models.CharField(max_length=60, verbose_name=ugettext_lazy(u'Descripção'))
     cache = models.DecimalField(max_digits=15, decimal_places=4, null=True, blank=True)
-    caracteristicas = models.TextField(verbose_name=ugettext_lazy(u'Caraterísticas'))
+    caracteristicas = models.TextField(verbose_name=ugettext_lazy(u'Caraterísticas'), null=True, blank=True)
     def __unicode__(self):
       return u'%s (%s)' % (self.descripcion, self.trabajo.titulo)
     class Meta:
