@@ -345,3 +345,9 @@ class Postulacion(models.Model):
     def descripcion_estado(self):
       return Postulacion.DICT_ESTADO_POSTULACION[self.estado]
 
+    def agenciado_telefonos(self):
+      if self.agenciado:
+        return self.agenciado.telefonos()
+      return None
+    agenciado_telefonos.allow_tags = True
+    agenciado_telefonos.short_description = ugettext_lazy(u'Telefonos')

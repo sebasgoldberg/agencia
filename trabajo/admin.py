@@ -15,8 +15,8 @@ from iampacks.cross.direccion.forms import BaseDireccionForm
 class PostulacionInline(admin.TabularInline):
   model=Postulacion
   extra=1
-  readonly_fields=['thumbnail_agenciado_link', 'agenciado_admin_link']
-  fields=['thumbnail_agenciado_link', 'agenciado_admin_link', 'agenciado', 'estado']
+  readonly_fields=['thumbnail_agenciado_link', 'agenciado_admin_link', 'agenciado_telefonos']
+  fields=['thumbnail_agenciado_link', 'agenciado_admin_link', 'agenciado', 'estado', 'agenciado_telefonos']
 
 class AgenciadoPostulacionInline(admin.TabularInline):
   model=Postulacion
