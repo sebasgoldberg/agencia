@@ -17,6 +17,10 @@ class PostulacionInline(admin.TabularInline):
   extra=1
   readonly_fields=['thumbnail_agenciado_link', 'agenciado_admin_link', 'agenciado_telefonos']
   fields=['thumbnail_agenciado_link', 'agenciado_admin_link', 'agenciado', 'estado', 'agenciado_telefonos']
+  raw_id_fields = ('agenciado',)
+  autocomplete_lookup_fields = {
+    'fk': ['agenciado'],
+    }
 
 class AgenciadoPostulacionInline(admin.TabularInline):
   model=Postulacion
@@ -44,7 +48,8 @@ class EventoInline(admin.StackedInline):
       {'fields':[
         ('tipo', 'descripcion', 'fecha'),
         ('pais', 'estado', 'ciudad', ), 
-        ('barrio', 'direccion', 'codigo_postal')]}),
+        ('barrio', 'direccion',), 
+        ('codigo_postal',)]}),
   ]
   
 class EventoTrabajoForm(BaseDireccionForm):
@@ -67,7 +72,7 @@ class TrabajoInline(admin.TabularInline):
   model = Trabajo
   extra = 1
   readonly_fields = [ 'admin_link' ]
-  fields = ['admin_link', 'titulo', 'estado', 'fecha_ingreso', 'descripcion', 'imagen']
+  fields = ['admin_link', 'titulo', 'estado', 'fecha_ingreso', 'descripcion',]
   formfield_overrides = {
     models.TextField: {'widget': Textarea(attrs={'rows':4})},
   }
@@ -85,7 +90,7 @@ class CiudadDireccionProductoraListFilter(CiudadDireccionModelListFilter):
   fk_field_model = 'productora'
 
 class ProductoraAdmin(admin.ModelAdmin):
-  inlines = [DireccionProductoraInline, TelefonoProductoraInline, TrabajoInline]
+  inlines = [TelefonoProductoraInline, DireccionProductoraInline, TrabajoInline]
   list_display=[
     'id', 'nombre', 'mail', 'telefonos', 'trabajos_iniciados', 'trabajos_activos'
   ]
@@ -107,8 +112,9 @@ class RolAdmin(admin.ModelAdmin):
     (_(u'Dados das postulaçoes'), 
       { 'fields':[ 
         ('cantidad_postulados_casting', 'cantidad_seleccionados_casting', 
-        'cantidad_seleccionados_trabajo', 'cantidad_trabajos_realizados', 
-        'cantidad_trabajos_pagados')]}),
+        'cantidad_seleccionados_trabajo',), 
+        ('cantidad_trabajos_realizados', 'cantidad_trabajos_pagados'),
+        ]}),
   ]
   list_display=[
     'id', 'descripcion', 'trabajo', 'cache', 'cantidad_postulados_casting', 

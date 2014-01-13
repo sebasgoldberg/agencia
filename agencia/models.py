@@ -243,6 +243,10 @@ class Agenciado(models.Model):
     def ids_roles_postulaciones(self):
       return [ postulacion.rol.id for postulacion in self.postulacion_set.all() ]
 
+    @staticmethod
+    def autocomplete_search_fields():
+      return ("id__iexact", "apellido__icontains",)
+
     class Meta:
       ordering = ['nombre', 'apellido']
       verbose_name = ugettext_lazy(u"Agenciado")

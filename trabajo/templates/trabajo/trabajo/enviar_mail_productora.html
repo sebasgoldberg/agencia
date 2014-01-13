@@ -4,13 +4,13 @@
 {% block title %}{%blocktrans with productora=trabajo.productora%}Envio de trabalho "{{trabajo}}" a produtora {{productora}}{%endblocktrans%}} | {{ agencia.nombre }}{% endblock %}
 
 {% block breadcrumbs %}
-<div class="breadcrumbs">
-  <a href="/admin/">{% trans "Início" %}</a>
-  &rsaquo; <a href="/admin/trabajo/">{% trans "Trabalho" %}</a>
-  &rsaquo; <a href="/admin/trabajo/trabajo/">{% trans "Trabalhos" %}</a>
-  &rsaquo; <a href="/admin/trabajo/trabajo/{{trabajo.id}}/">{{trabajo}}</a>
-  &rsaquo; {%blocktrans with productora=trabajo.productora%}Envio de trabalho "{{ trabajo }}" a produtora {{ productora }}{%endblocktrans%}
-</div>
+        <ul>
+            <li><a href="{% url 'admin:index' %}">{% trans "Home" %}</a></li>
+  <li><a href="/admin/trabajo/">{% trans "Trabalho" %}</a></li>
+  <li><a href="/admin/trabajo/trabajo/">{% trans "Trabalhos" %}</a></li>
+  <li><a href="/admin/trabajo/trabajo/{{trabajo.id}}/">{{trabajo}}</a></li>
+  <li>{%blocktrans with productora=trabajo.productora%}Envio de trabalho "{{ trabajo }}" a produtora {{ productora }}{%endblocktrans%}</li>
+        </ul>
 {% endblock %}
 
 {% block content %}

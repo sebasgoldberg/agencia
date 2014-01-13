@@ -83,11 +83,26 @@ class AgenciadoAdmin(admin.ModelAdmin):
     (None, {'fields':['thumbnails','id','mail']}),
     (_(u'Dados Pessoales'), {'fields':[('nombre', 'apellido', 'fecha_nacimiento')]}),
     (_(u'Dados Administrativos'), { 'fields':[ ('documento_rg', 'documento_cpf'), 'responsable', 'cuenta_bancaria']}),
+    (None, {"classes": ("placeholder telefono_set-group",), "fields" : ()}),
+    (None, {"classes": ("placeholder direccionagenciado_set-group",), "fields" : ()}),
+    (None, {"classes": ("placeholder fotoagenciado_set-group",), "fields" : ()}),
+    (None, {"classes": ("placeholder videoagenciado_set-group",), "fields" : ()}),
     # @todo comentar
     #(_(u'Dados de endereço'), { 'fields':[ ('estado', 'ciudad', 'barrio'), ('direccion', 'codigo_postal')]}),
-    (_(u'Carateristicas fisicas'), { 'fields':[ 'sexo', ('ojos', 'pelo', 'piel', 'estado_dientes'), ('altura', 'peso', 'talle', 'talle_camisa', 'talle_pantalon', 'calzado')]}),
-    (_(u'Habilidades'), { 'fields':[ ('deportes', 'danzas'), ('instrumentos', 'idiomas'), ('indicador_maneja', 'indicador_tiene_registro')]}),
-    (_(u'Otros dados'), { 'fields':[ 'trabaja_como_extra', 'como_nos_conocio', 'observaciones', 'activo', 'fecha_ingreso']}),
+    (_(u'Carateristicas fisicas'), { 'fields':[ 
+      'sexo', 
+      ('ojos', 'pelo', 'piel', ), 
+      ('altura', 'peso', 'talle',), 
+      ( 'talle_camisa', 'talle_pantalon', 'calzado'),
+      'estado_dientes',]}),
+    (_(u'Habilidades'),{
+      'classes': ('grp-collapse grp-closed',),
+      'fields':[ 'deportes', 'danzas', 'instrumentos', 'idiomas', ('indicador_maneja', 'indicador_tiene_registro')]
+      }),
+    (_(u'Otros dados'), { 
+      'classes': ('grp-collapse grp-closed',),
+      'fields':[ 'trabaja_como_extra', 'como_nos_conocio', 'observaciones', 'activo', 'fecha_ingreso']
+      }),
   ]
   # @todo Descomentar
   inlines=[DireccionAgenciadoInline, TelefonoInline, FotoAgenciadoInline, VideoAgenciadoInline]
@@ -100,9 +115,24 @@ class AgenciadoAdmin(admin.ModelAdmin):
   list_per_page = 40
   actions_on_bottom = True
 
-admin.site.register(Agenciado,AgenciadoAdmin)
-admin.site.register(Agencia,AgenciaAdmin)
-admin.site.unregister(Site)
-admin.site.unregister(Country)
-admin.site.unregister(Region)
-admin.site.unregister(City)
+from django.contrib.admin.sites import AlreadyRegistered, NotRegistered
+
+def register_even_registered(model,model_admin):
+  try:
+    admin.site.register(model,model_admin)
+  except AlreadyRegistered:
+    pass
+
+def unregister_even_not_registered(model):
+  try:
+    admin.site.unregister(model)
+  except NotRegistered:
+    pass
+  
+
+register_even_registered(Agenciado,AgenciadoAdmin)
+register_even_registered(Agencia,AgenciaAdmin)
+unregister_even_not_registered(Site)
+unregister_even_not_registered(Country)
+unregister_even_not_registered(Region)
+unregister_even_not_registered(City)

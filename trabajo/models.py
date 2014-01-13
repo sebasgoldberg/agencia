@@ -70,7 +70,7 @@ class Productora(models.Model):
 class DireccionProductora(Direccion):
   productora = models.ForeignKey(Productora, verbose_name=ugettext_lazy(u'Produtora'))
   def __unicode__(self):
-    return _(u'%(direccion)s, %(barrio)s, %(ciudad)s, %(estado)s, %(codigo_postal)s (%(descripcion)s)') % {'direccion':self.direccion, 'barrio':self.barrio, 'ciudad':self.ciudad, 'estado':self.estado, 'codigo_postal':self.codigo_postal, 'descripcion':self.descripcion}
+    return "%s, %s, %s, %s" % (self.direccion, self.barrio, self.ciudad, self.codigo_postal)
 
 class TelefonoProductora(Telefono):
   productora = models.ForeignKey(Productora, verbose_name=ugettext_lazy(u'Produtora'))
