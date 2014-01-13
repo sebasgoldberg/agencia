@@ -225,14 +225,13 @@ class EventoTrabajo(Evento):
   def descripcion_tipo(self):
     return DICT_TIPO_EVENTO_TRABAJO[self.tipo]
   def __unicode__(self):
-    return _('%(tipo)s | %(descripcion)s | %(fecha)s | %(direccion)s, %(barrio)s, %(ciudad)s, %(estado)s, %(codigo_postal)s') % {
+    return _('%(tipo)s | %(descripcion)s | %(fecha)s | %(direccion)s, %(barrio)s, %(ciudad)s, %(codigo_postal)s') % {
       'tipo':self.descripcion_tipo(), 
       'descripcion':self.descripcion,
       'fecha':self.fecha,
       'direccion':self.direccion,
       'barrio':self.barrio,
       'ciudad':self.ciudad,
-      'estado':self.estado,
       'codigo_postal':self.codigo_postal}
 
 class Rol(models.Model):
@@ -285,14 +284,13 @@ class EventoRol(Evento):
   def descripcion_tipo(self):
     return DICT_TIPO_EVENTO_TRABAJO[self.tipo]
   def __unicode__(self):
-    return u'%(tipo)s | %(descripcion)s | %(fecha)s | %(direccion)s, %(barrio)s, %(ciudad)s, %(estado)s, %(codigo_postal)s' % {
+    return u'%(tipo)s | %(descripcion)s | %(fecha)s | %(direccion)s, %(barrio)s, %(ciudad)s, %(codigo_postal)s' % {
       'tipo':self.descripcion_tipo(), 
       'descripcion':self.descripcion, 
       'fecha':self.fecha, 
       'direccion':self.direccion, 
       'barrio':self.barrio, 
       'ciudad':self.ciudad,
-      'estado':self.estado, 
       'codigo_postal':self.codigo_postal}
 
 class Postulacion(models.Model):
