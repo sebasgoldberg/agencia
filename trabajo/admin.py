@@ -17,6 +17,10 @@ class PostulacionInline(admin.TabularInline):
   extra=1
   readonly_fields=['thumbnail_agenciado_link', 'agenciado_admin_link']
   fields=['thumbnail_agenciado_link', 'agenciado_admin_link', 'agenciado', 'estado']
+  raw_id_fields = ('agenciado',)
+  autocomplete_lookup_fields = {
+    'fk': ['agenciado'],
+    }
 
 class AgenciadoPostulacionInline(admin.TabularInline):
   model=Postulacion

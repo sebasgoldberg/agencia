@@ -96,8 +96,14 @@ class AgenciadoAdmin(admin.ModelAdmin):
       ('altura', 'peso', 'talle',), 
       ( 'talle_camisa', 'talle_pantalon', 'calzado'),
       'estado_dientes',]}),
-    (_(u'Habilidades'), { 'fields':[ 'deportes', 'danzas', 'instrumentos', 'idiomas', ('indicador_maneja', 'indicador_tiene_registro')]}),
-    (_(u'Otros dados'), { 'fields':[ 'trabaja_como_extra', 'como_nos_conocio', 'observaciones', 'activo', 'fecha_ingreso']}),
+    (_(u'Habilidades'),{
+      'classes': ('grp-collapse grp-closed',),
+      'fields':[ 'deportes', 'danzas', 'instrumentos', 'idiomas', ('indicador_maneja', 'indicador_tiene_registro')]
+      }),
+    (_(u'Otros dados'), { 
+      'classes': ('grp-collapse grp-closed',),
+      'fields':[ 'trabaja_como_extra', 'como_nos_conocio', 'observaciones', 'activo', 'fecha_ingreso']
+      }),
   ]
   # @todo Descomentar
   inlines=[DireccionAgenciadoInline, TelefonoInline, FotoAgenciadoInline, VideoAgenciadoInline]
