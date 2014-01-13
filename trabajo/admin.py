@@ -47,10 +47,14 @@ class EventoInline(admin.StackedInline):
     (None, 
       {'fields':[
         ('tipo', 'descripcion', 'fecha'),
-        ('pais', 'estado', 'ciudad', ), 
+        ('ciudad', ), 
         ('barrio', 'direccion',), 
         ('codigo_postal',)]}),
   ]
+  raw_id_fields = ('ciudad',)
+  autocomplete_lookup_fields = {
+    'fk': ['ciudad'],
+    }
   
 class EventoTrabajoForm(BaseDireccionForm):
   class Meta:
