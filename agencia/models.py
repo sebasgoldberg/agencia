@@ -260,7 +260,7 @@ class DireccionAgenciado(Direccion):
 
 class FotoAgenciado(models.Model):
     agenciado = models.ForeignKey(Agenciado)
-    foto = models.ImageField(upload_to='agenciados/fotos/')
+    foto = models.ImageField(upload_to='agenciados/fotos/', blank=True )
     thumbnail = ImageSpecField([Adjust(contrast=1.2, sharpness=1.1), ResizeToFill(100,100)], image_field='foto', format='JPEG', options={'quality': 90})
     mini_thumbnail = ImageSpecField([Adjust(contrast=1.2, sharpness=1.1), ResizeToFill(60,60)], image_field='foto', format='JPEG', options={'quality': 90})
     def __unicode__(self):

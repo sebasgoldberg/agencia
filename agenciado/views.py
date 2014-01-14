@@ -85,7 +85,6 @@ class TelefonoFormSet(BaseTelefonoFormSet):
 class FotoAgenciadoFormSet(BaseFotoAgenciadoFormSet):
   def clean(self):
     super(FotoAgenciadoFormSet,self).clean()
-    validarFotoIngresada(self)
 
 @login_required
 def index(request):
