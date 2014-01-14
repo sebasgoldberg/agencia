@@ -18,10 +18,20 @@ TITULO=4
 class Command(BaseCommand):
 
   help=u'Migrar el portfolio desde locaweb'
+  
+
+  def delete_portfolio(self):
+    
+    portfolio=ItemPortfolio.objects.all()
+
+    for item in portfolio:
+      item.delete()
 
   def handle(self,*args,**options):
     
     locaweb = ambiente.locaweb.db
+
+    self.delete_portfolio()
 
     db = MySQLdb.connect(
       host=ambiente.locaweb.db.host,
@@ -53,7 +63,7 @@ class Command(BaseCommand):
         item.url_to_codigo_video()
         if len(ItemPortfolio.objects.filter(codigo_video=item.codigo_video))==0:
           item.save()
-          self.stdout.write('Item "%s", con fecha %s migrado con éxito\n' % (item.titulo,item.fecha))
+          self.stdout.write(u'Item "%s", con fecha %s migrado con exito\n'.decode('utf-8') % (item.titulo.decode('utf-8'),item.fecha))
       if row[TIPO] == 'F':
         item = ItemPortfolio(
           titulo = row[TITULO],
@@ -70,7 +80,7 @@ class Command(BaseCommand):
 
         item.imagen.save(filename,imageFile,save=True)
 
-        self.stdout.write('Item "%s", con fecha %s migrado con éxito\n' % (item.titulo,item.fecha))
+        self.stdout.write(u'Item "%s", con fecha %s migrado con exito\n'.decode('utf-8') % (item.titulo.decode('utf-8'),item.fecha))
 
         f.close()
 
