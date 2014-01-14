@@ -65,6 +65,36 @@ class VideoAgenciadoInline(admin.TabularInline):
   max_num=6
 
 
+class AlturaMayorAListFilter(admin.SimpleListFilter):
+
+  title = _('Altura Mayor A')
+
+  # Parameter for the filter that will be used in the URL query.
+  parameter_name = 'altura_mayor_a'
+
+  def lookups(self, request, model_admin):
+    return tuple([(x,'%s cm'%x) for x in range(0,251,5)])
+
+  def queryset(self, request, queryset):
+    if self.value():
+      return queryset.filter(altura__gte=self.value())
+    return queryset
+
+class AlturaMenorAListFilter(admin.SimpleListFilter):
+
+  title = _('Altura Menor A')
+
+  # Parameter for the filter that will be used in the URL query.
+  parameter_name = 'altura_menor_a'
+
+  def lookups(self, request, model_admin):
+    return tuple([(x,'%s cm'%x) for x in range(0,251,5)])
+
+  def queryset(self, request, queryset):
+    if self.value():
+      return queryset.filter(altura__lte=self.value())
+    return queryset
+
 class PaisDireccionAgenciadoListFilter(PaisDireccionModelListFilter):
   direccion_model = DireccionAgenciado
   fk_field_model = 'agenciado'
@@ -108,7 +138,7 @@ class AgenciadoAdmin(admin.ModelAdmin):
   inlines=[DireccionAgenciadoInline, TelefonoInline, FotoAgenciadoInline, VideoAgenciadoInline]
   list_display=['thumbnail','id','apellido','nombre','fecha_nacimiento','descripcion','telefonos','mail', 'responsable']
   list_display_links = ('thumbnail', 'id')
-  list_filter=['activo','sexo','ojos','pelo','piel','deportes','danzas','instrumentos','idiomas','fecha_ingreso',PaisDireccionAgenciadoListFilter, EstadoDireccionAgenciadoListFilter, CiudadDireccionAgenciadoListFilter]
+  list_filter=['activo','sexo','ojos','pelo','piel','talle',AlturaMayorAListFilter,AlturaMenorAListFilter,'deportes','danzas','instrumentos','idiomas','fecha_ingreso',PaisDireccionAgenciadoListFilter, EstadoDireccionAgenciadoListFilter, CiudadDireccionAgenciadoListFilter]
   search_fields=['nombre','apellido','responsable','mail','id']
   date_hierarchy='fecha_nacimiento'
   filter_horizontal=['deportes','danzas','instrumentos','idiomas']
