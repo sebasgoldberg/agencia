@@ -19,7 +19,7 @@ from django.utils.safestring import mark_safe
 from iampacks.agencia.trabajo.models import Postulacion, Rol
 from django.utils.translation import ugettext as _
 from django.utils.translation import ugettext_lazy
-from iampacks.agencia.agencia.forms import DireccionAgenciadoForm
+from iampacks.agencia.agencia.forms import DireccionAgenciadoFormRelated
 
 class BPCheckboxSelectMultiple(CheckboxSelectMultiple):
 
