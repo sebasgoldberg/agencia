@@ -90,7 +90,7 @@ class ItemPortfolio(models.Model):
       verbose_name = ugettext_lazy(u"Item Portfolio")
       verbose_name_plural = ugettext_lazy(u"Portfolio")
     def get_youtube_iframe_url(self):
-      return (u'http://www.youtube.com/embed/%s' % self.codigo_video)
+      return (u'https://www.youtube.com/embed/%s' % self.codigo_video)
     get_youtube_iframe_url.allow_tags = True
     def html_youtube_iframe(self):
       return '<iframe width="358" height="202" src="%s" frameborder="0" allowfullscreen></iframe>' % self.get_youtube_iframe_url()
