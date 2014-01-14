@@ -15,3 +15,7 @@ class DireccionAgenciaForm(BaseDireccionForm):
 class DireccionAgenciadoForm(BaseDireccionForm):
   class Meta:
     model = DireccionAgenciado
+
+class DireccionAgenciadoFormRelated(BaseDireccionFormRelated):
+  class Meta:
+    model = DireccionAgenciado

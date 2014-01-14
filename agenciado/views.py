@@ -66,7 +66,7 @@ class AgenciadoForm(ModelForm):
       'idiomas': BPCheckboxSelectMultiple,
       }
 
-BaseDireccionFormSet = inlineformset_factory(Agenciado, DireccionAgenciado, extra=1, max_num=1, can_delete=False, form = DireccionAgenciadoForm)
+BaseDireccionFormSet = inlineformset_factory(Agenciado, DireccionAgenciado, extra=1, max_num=1, can_delete=False, form = DireccionAgenciadoFormRelated)
 BaseTelefonoFormSet = inlineformset_factory(Agenciado, Telefono, extra=6, max_num=6)
 BaseFotoAgenciadoFormSet = inlineformset_factory(Agenciado, FotoAgenciado, extra=6, max_num=6)
 VideoAgenciadoFormSet = inlineformset_factory(Agenciado, VideoAgenciado, extra=6, max_num=6, exclude=['codigo_video'])
