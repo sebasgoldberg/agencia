@@ -225,6 +225,8 @@ class EventoTrabajo(Evento):
   class Meta(Evento.Meta):
     verbose_name = ugettext_lazy(u'Evento do trabalho')
     verbose_name_plural = ugettext_lazy(u'Eventos do trabalho')
+  def get_object(self):
+    return self.trabajo
   def descripcion_tipo(self):
     return DICT_TIPO_EVENTO_TRABAJO[self.tipo]
   def __unicode__(self):
@@ -266,10 +268,13 @@ class Rol(models.Model):
       return self.postulacion_set.filter(estado='TP').count()
     cantidad_trabajos_pagados.short_description = ugettext_lazy(u'Trabalhos pagados')
 
+    def admin_url(self):
+      return '/admin/trabajo/rol/%s/'%self.id
+
     def admin_link(self):
       if self.id is None:
         return None
-      return "<a href='/admin/trabajo/rol/%s/'>%s</a>" % (self.id, str(self))
+      return "<a href='%s'>%s</a>" % (self.admin_url(), str(self))
     admin_link.allow_tags = True
     admin_link.short_description = ugettext_lazy(u'Link ao perfil')
 
@@ -284,6 +289,8 @@ class EventoRol(Evento):
   class Meta(Evento.Meta):
     verbose_name = ugettext_lazy(u'Evento do perfil')
     verbose_name_plural = ugettext_lazy(u'Eventos do perfil')
+  def get_object(self):
+    return self.rol
   def descripcion_tipo(self):
     return DICT_TIPO_EVENTO_TRABAJO[self.tipo]
   def __unicode__(self):
