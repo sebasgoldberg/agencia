@@ -10,6 +10,7 @@ from iampacks.cross.direccion.admin import PaisDireccionModelListFilter, EstadoD
 from iampacks.agencia.agencia.forms import DireccionAgenciaForm, DireccionAgenciadoForm
 from django.contrib.sites.models import Site
 from cities_light.models import Country, Region, City
+from datetime import datetime, date, timedelta
 
 class DireccionAgenciaInline(BaseDireccionInline):
   form = DireccionAgenciaForm
@@ -64,16 +65,57 @@ class VideoAgenciadoInline(admin.TabularInline):
   extra=1
   max_num=6
 
+EDADES_POSIBLES_FILTRO=list(
+    [(x*30,_(u'%s meses')%x) for x in range(0,11,1)]+
+    [(x*365,_(u'%s años')%x) for x in range(1,19,1)]+
+    [(x*365,_(u'%s años')%x) for x in range(20,51,5)]+
+    [(x*365,_(u'%s años')%x) for x in range(60,101,10)]
+    )
+
+class EdadMayorAListFilter(admin.SimpleListFilter):
+
+  title = _('Edad Mayor A')
+
+  parameter_name = 'edad_mayor_a'
+
+  def lookups(self, request, model_admin):
+    return tuple(EDADES_POSIBLES_FILTRO)
+
+  def queryset(self, request, queryset):
+
+    if self.value():
+      dias_edad = int(self.value())
+      fecha_hasta=date.today() - timedelta(days=dias_edad)
+      return queryset.filter(fecha_nacimiento__lte=fecha_hasta)
+    return queryset
+
+class EdadMenorAListFilter(admin.SimpleListFilter):
+
+  title = _('Edad Menor A')
+
+  parameter_name = 'edad_menor_a'
+
+  def lookups(self, request, model_admin):
+    return tuple(EDADES_POSIBLES_FILTRO)
+
+  def queryset(self, request, queryset):
+
+    if self.value():
+      dias_edad = int(self.value())
+      fecha_desde=date.today() - timedelta(days=dias_edad)
+      return queryset.filter(fecha_nacimiento__gte=fecha_desde)
+    return queryset
+
+ALTURAS_POSIBLES_FILTRO=[(x,'%s cm'%x) for x in range(0,231,5)]
 
 class AlturaMayorAListFilter(admin.SimpleListFilter):
 
   title = _('Altura Mayor A')
 
-  # Parameter for the filter that will be used in the URL query.
   parameter_name = 'altura_mayor_a'
 
   def lookups(self, request, model_admin):
-    return tuple([(x,'%s cm'%x) for x in range(0,251,5)])
+    return tuple(ALTURAS_POSIBLES_FILTRO)
 
   def queryset(self, request, queryset):
     if self.value():
@@ -88,7 +130,7 @@ class AlturaMenorAListFilter(admin.SimpleListFilter):
   parameter_name = 'altura_menor_a'
 
   def lookups(self, request, model_admin):
-    return tuple([(x,'%s cm'%x) for x in range(0,251,5)])
+    return tuple(ALTURAS_POSIBLES_FILTRO)
 
   def queryset(self, request, queryset):
     if self.value():
@@ -138,7 +180,7 @@ class AgenciadoAdmin(admin.ModelAdmin):
   inlines=[DireccionAgenciadoInline, TelefonoInline, FotoAgenciadoInline, VideoAgenciadoInline]
   list_display=['thumbnail','id','apellido','nombre','fecha_nacimiento','descripcion','telefonos','mail', 'responsable']
   list_display_links = ('thumbnail', 'id')
-  list_filter=['activo','sexo','ojos','pelo','piel','talle',AlturaMayorAListFilter,AlturaMenorAListFilter,'deportes','danzas','instrumentos','idiomas','fecha_ingreso',PaisDireccionAgenciadoListFilter, EstadoDireccionAgenciadoListFilter, CiudadDireccionAgenciadoListFilter]
+  list_filter=['activo','sexo',EdadMayorAListFilter,EdadMenorAListFilter,'ojos','pelo','piel','talle',AlturaMayorAListFilter,AlturaMenorAListFilter,'deportes','danzas','instrumentos','idiomas','fecha_ingreso',PaisDireccionAgenciadoListFilter, EstadoDireccionAgenciadoListFilter, CiudadDireccionAgenciadoListFilter]
   search_fields=['nombre','apellido','responsable','mail','id']
   date_hierarchy='fecha_nacimiento'
   filter_horizontal=['deportes','danzas','instrumentos','idiomas']

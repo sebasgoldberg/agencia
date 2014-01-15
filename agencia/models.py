@@ -236,9 +236,13 @@ class Agenciado(models.Model):
 
     def descripcion(self):
       return _(u'Edad %(edad)s, sexo %(sexo)s, olhos %(ojos)s, cabelo %(pelo)s, pele %(piel)s, atura %(altura)s, peso %(peso)s, estado dentes %(estado_dientes)s.')%{'edad':str(self.edad()), 'sexo':Agenciado.DICT_SEXO[self.sexo], 'ojos':self.ojos, 'pelo':self.pelo, 'piel':self.piel, 'altura':self.altura, 'peso':self.peso, 'estado_dientes':self.estado_dientes}
-    def edad(self):
-      return (date.today()-self.fecha_nacimiento).days/365
     descripcion.short_description = ugettext_lazy(u'Descripção')
+
+    def edad(self):
+      dias_desde_nacimiento=(date.today()-self.fecha_nacimiento).days
+      if dias_desde_nacimiento<365:
+        return _(u'%s meses')%(dias_desde_nacimiento/30)
+      return _(u'%s anos')%(dias_desde_nacimiento/365)
 
     def ids_roles_postulaciones(self):
       return [ postulacion.rol.id for postulacion in self.postulacion_set.all() ]
