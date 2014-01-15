@@ -200,10 +200,13 @@ class Trabajo(models.Model):
     productora_admin_link.allow_tags=True
     productora_admin_link.short_description = ugettext_lazy(u'Link a produtora')
 
+    def admin_url(self):
+      return '/admin/trabajo/trabajo/%s/'%self.id
+
     def admin_link(self):
       if self.id is None:
         return None
-      return u"<a href='/admin/trabajo/trabajo/%s/'>%s</a>" % (self.id, str(self))
+      return u"<a href='%s'>%s</a>" % (self.admin_url(), str(self))
     admin_link.allow_tags=True
     admin_link.short_description = ugettext_lazy(u'Link ao trabalho')
 
