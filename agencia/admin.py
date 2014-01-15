@@ -66,8 +66,8 @@ class VideoAgenciadoInline(admin.TabularInline):
   max_num=6
 
 EDADES_POSIBLES_FILTRO=list(
-    [(x*30,_(u'%s meses')%x) for x in range(0,11,1)]+
-    [(x*365,_(u'%s años')%x) for x in range(1,19,1)]+
+    [(x*30,_(u'%s meses')%x) for x in range(0,12,1)]+
+    [(x*365,_(u'%s años')%x) for x in range(1,20,1)]+
     [(x*365,_(u'%s años')%x) for x in range(20,51,5)]+
     [(x*365,_(u'%s años')%x) for x in range(60,101,10)]
     )
@@ -85,6 +85,10 @@ class EdadMayorAListFilter(admin.SimpleListFilter):
 
     if self.value():
       dias_edad = int(self.value())
+      if dias_edad < 365:
+        dias_edad+=30
+      else:
+        dias_edad+=365
       fecha_hasta=date.today() - timedelta(days=dias_edad)
       return queryset.filter(fecha_nacimiento__lte=fecha_hasta)
     return queryset
