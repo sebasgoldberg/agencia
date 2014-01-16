@@ -98,6 +98,15 @@ def validate_altura(value):
   if value < 15:
     raise ValidationError(_(u'A atura debe ser informada em centimetros'))
 
+class Agenciador(models.Model):
+
+  user= models.OneToOneField(User, null=False, blank=False)
+
+  def __unicode__(self):
+    if self.user.name or self.user.lastname:
+      return u'%s %s' % (self.user.first_name, self.user.last_name)
+    return self.user.username
+
 class Agenciado(models.Model):
 
     user= models.OneToOneField(User, null=True, blank=True, editable=False)
@@ -164,6 +173,9 @@ class Agenciado(models.Model):
     fecha_ingreso = models.DateField(default=date.today(), verbose_name=ugettext_lazy(u'Data de agenciamento'))
     recurso_id = models.IntegerField(null=True, editable=False) #Clave en aplicacion DELPHI
 
+    # Agenciador 
+    referente=models.OneToOneField(Agenciador, null=True, blank=True)
+    
     def __unicode__(self):
       return u'%s %s (%s)' % (self.nombre, self.apellido, self.fecha_nacimiento)
 
