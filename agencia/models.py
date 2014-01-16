@@ -175,9 +175,14 @@ class Agenciado(models.Model):
 
     # Agenciador 
     referente=models.OneToOneField(Agenciador, null=True, blank=True)
+    nombre_completo = models.CharField(max_length=121, null=False, editable=False)
     
     def __unicode__(self):
       return u'%s %s (%s)' % (self.nombre, self.apellido, self.fecha_nacimiento)
+
+    def save(self, *args, **kwargs):
+      self.nombre_completo = '%s %s'%(self.nombre,self.apellido)
+      super(Agenciado, self).save(*args, **kwargs)
 
     def thumbnail(self):
       url = ''
@@ -261,7 +266,7 @@ class Agenciado(models.Model):
 
     @staticmethod
     def autocomplete_search_fields():
-      return ("id__iexact", "apellido__icontains",)
+      return ("id__iexact", "nombre_completo__icontains",)
 
     class Meta:
       ordering = ['nombre', 'apellido']
