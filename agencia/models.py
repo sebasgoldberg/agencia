@@ -253,8 +253,8 @@ class Agenciado(models.Model):
     def edad(self):
       dias_desde_nacimiento=(date.today()-self.fecha_nacimiento).days
       if dias_desde_nacimiento<365:
-        return _(u'%s meses')%(dias_desde_nacimiento/30)
-      return _(u'%s anos')%(dias_desde_nacimiento/365)
+        return _(u'%s meses')%int(dias_desde_nacimiento/30.4375)
+      return _(u'%s anos')%int(dias_desde_nacimiento/365.25)
 
     def ids_roles_postulaciones(self):
       return [ postulacion.rol.id for postulacion in self.postulacion_set.all() ]
