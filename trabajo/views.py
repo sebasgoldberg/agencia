@@ -10,7 +10,7 @@ from iampacks.agencia.trabajo.models import Postulacion, Rol, Trabajo, ItemPortf
 from iampacks.agencia.agencia.models import Agenciado, Agencia
 from django.template import loader, Context
 from iampacks.agencia.agencia.mail import MailAgencia
-from iampacks.cross.correo.forms import MailForm
+from iampacks.agencia.trabajo.forms import MailProductoraForm
 from django.conf import settings
 from django.contrib import messages
 from django.template import RequestContext
@@ -108,7 +108,7 @@ def trabajo_enviar_mail_productora(request,trabajo_id):
   trabajo=Trabajo.objects.get(pk=trabajo_id)
 
   if request.method == 'POST':
-    form = MailForm(request.POST)
+    form = MailProductoraForm(request.POST)
     if form.is_valid():
       template = loader.get_template('trabajo/trabajo/cuerpo_mail_productora.html')
       context = RequestContext(request, {'trabajo':trabajo, })
@@ -126,7 +126,7 @@ def trabajo_enviar_mail_productora(request,trabajo_id):
       return redirect('/admin/trabajo/trabajo/%s/'%trabajo_id)
   else:
     asunto = _(u'Detalhe de trabalho "%s"') % (trabajo.titulo,)
-    form = MailForm(initial={'destinatarios':trabajo.productora.mail, 'asunto': asunto })
+    form = MailProductoraForm(initial={'destinatarios':trabajo.productora.mail, 'asunto': asunto })
 
   return render(request,'trabajo/trabajo/enviar_mail_productora.html',{'form': form, 'trabajo': trabajo, })
 

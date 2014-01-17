@@ -13,7 +13,7 @@
     </ul>
   </li>
   <li><h4>{% trans "Postulações" %}</h4>
-    <ul>
+    <ul style='list-style:none;'>
       {% for postulacion in rol.postulacion_set.all %}
         <li>
           {% autoescape off %}{{postulacion.agenciado.thumbnails_absolute_uri}}{%endautoescape%} {{postulacion.agenciado}}
