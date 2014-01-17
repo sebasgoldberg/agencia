@@ -11,7 +11,7 @@ posicionesmin=dict([ (x[1],x[0]) for x in enumerate(minusculas) ])
 posicionesmay=dict([ (x[1],x[0]) for x in enumerate(mayusculas) ])
 posicionesnum=dict([ (x[1],x[0]) for x in enumerate(numeros) ])
 
-def ficticiar(valor):
+def ofuscar(valor):
   if not valor:
     return valor
   nuevo_valor=''
@@ -57,21 +57,22 @@ class Command(BaseCommand):
       return
 
     for agenciado in Agenciado.objects.all():
-      agenciado.nombre = ficticiar(agenciado.nombre)
-      agenciado.apellido = ficticiar(agenciado.apellido)
-      agenciado.mail = ficticiar(agenciado.mail)
-      agenciado.responsable = ficticiar(agenciado.responsable)
-      agenciado.documento_rg = ficticiar(agenciado.documento_rg)
-      agenciado.documento_cpf = ficticiar(agenciado.documento_cpf)
+      agenciado_anterior = str(agenciado)
+      agenciado.nombre = ofuscar(agenciado.nombre)
+      agenciado.apellido = ofuscar(agenciado.apellido)
+      agenciado.mail = ofuscar(agenciado.mail)
+      agenciado.responsable = ofuscar(agenciado.responsable)
+      agenciado.documento_rg = ofuscar(agenciado.documento_rg)
+      agenciado.documento_cpf = ofuscar(agenciado.documento_cpf)
       agenciado.save()
       for telefono in agenciado.telefono_set.all():
-        telefono.telefono=ficticiar(telefono.telefono)
+        telefono.telefono=ofuscar(telefono.telefono)
         telefono.save()
       for direccion in agenciado.direccionagenciado_set.all():
-        direccion.barrio = ficticiar(direccion.barrio)
-        direccion.direccion = ficticiar(direccion.direccion)
-        direccion.codigo_postal = ficticiar(direccion.codigo_postal)
+        direccion.barrio = ofuscar(direccion.barrio)
+        direccion.direccion = ofuscar(direccion.direccion)
+        direccion.codigo_postal = ofuscar(direccion.codigo_postal)
         direccion.save()
 
-      self.stdout.write('Agenciado %s ficticiado con éxito.\n'%agenciado)
+      self.stdout.write('Agenciado %s ofuscado con exito como %s.\n'%(agenciado_anterior,agenciado))
 
