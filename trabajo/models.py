@@ -315,7 +315,7 @@ class Postulacion(models.Model):
       ('TP', _(u'Trabalho pagado')),
     )
     DICT_ESTADO_POSTULACION=dict(ESTADO_POSTULACION)
-    estado = models.CharField(max_length=2,choices=ESTADO_POSTULACION)
+    estado = models.CharField(max_length=2,choices=ESTADO_POSTULACION,default='PC')
     def __unicode__(self):
       return u'%s | %s | %s' % (self.agenciado,Postulacion.DICT_ESTADO_POSTULACION[self.estado],self.rol)
     class Meta:
