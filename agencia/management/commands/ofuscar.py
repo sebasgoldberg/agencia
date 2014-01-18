@@ -74,5 +74,5 @@ class Command(BaseCommand):
         direccion.codigo_postal = ofuscar(direccion.codigo_postal)
         direccion.save()
 
-      self.stdout.write('Agenciado %s ofuscado con exito como %s.\n'%(agenciado_anterior,agenciado))
+      self.stdout.write(('Agenciado %s ofuscado con exito como %s.\n'%(agenciado_anterior,agenciado)).decode('utf-8'))
 
