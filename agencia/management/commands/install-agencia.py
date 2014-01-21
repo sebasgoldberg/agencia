@@ -178,6 +178,7 @@ class Command(BaseCommand):
     try:
       call_command('syncdb')
       call_command('migrate')
+      call_command('syncdb','--all') # Necesario para que se carguen los permisos
       call_command('collectstatic')
       call_command('compilemessages')
       call_command('loadperfil','--idioma=%s'%settings.LANGUAGE_CODE)
