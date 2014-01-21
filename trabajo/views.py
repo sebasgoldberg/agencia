@@ -10,7 +10,7 @@ from iampacks.agencia.trabajo.models import Postulacion, Rol, Trabajo, ItemPortf
 from iampacks.agencia.agencia.models import Agenciado, Agencia
 from django.template import loader, Context
 from iampacks.agencia.agencia.mail import MailAgencia
-from iampacks.agencia.trabajo.forms import MailProductoraForm
+from iampacks.agencia.trabajo.forms import MailProductoraForm, MailAgenciadosForm
 from django.conf import settings
 from django.contrib import messages
 from django.template import RequestContext
@@ -129,6 +129,40 @@ def trabajo_enviar_mail_productora(request,trabajo_id):
     form = MailProductoraForm(initial={'destinatarios':trabajo.productora.mail, 'asunto': asunto })
 
   return render(request,'trabajo/trabajo/enviar_mail_productora.html',{'form': form, 'trabajo': trabajo, })
+
+# @todo Descomentar. Se comento porque ./manage.py syncdb no está cargando la adición del permiso (puede ser por el uso de south)
+#@permission_required('trabajo.mail_agenciados',raise_exception=True)
+def trabajo_enviar_mail_agenciados(request,trabajo_id):
+  
+  trabajo=Trabajo.objects.get(pk=trabajo_id)
+
+  if request.method == 'POST':
+    form = MailAgenciadosForm(request.POST)
+    if form.is_valid():
+      template = loader.get_template('trabajo/rol/admin/cuerpo_mail_agenciado.html')
+      for rol in trabajo.rol_set.all():
+        asunto = form.cleaned_data['asunto']
+        agencia=Agencia.get_activa(request)
+        ccs = [request.user.email,agencia.email]
+
+        text_content = _(u'Este mensagem deve ser visualizado em formato HTML.')
+        for postulacion in rol.get_postulaciones_confirmables():
+          if postulacion.agenciado.mail:
+            context = RequestContext(request, {'postulacion':postulacion, })
+            html_content = template.render(context)
+            destinatario = postulacion.agenciado.mail
+            msg = MailAgencia(asunto, text_content, [destinatario],ccs=ccs)
+            msg.set_html_body(html_content)
+            msg.send()
+          else:
+            messages.error(request, _(u'Agenciado %s não tem um email definido.'))
+      messages.success(request, _(u'Trabalho enviado com sucesso a os agenciados postulados.'))
+      return redirect('/admin/trabajo/trabajo/%s/'%trabajo_id)
+  else:
+    asunto = _(u'Detalhe da Postulação para Trabalho "%s"') % (trabajo.titulo,)
+    form = MailAgenciadosForm(initial={'asunto': asunto})
+
+  return render(request,'trabajo/trabajo/admin/enviar_mail_agenciados.html',{'form': form, 'trabajo': trabajo, })
 
 def busquedas(request):
   trabajos=Trabajo.objects.filter(publicado=True).order_by('-fecha_ingreso')

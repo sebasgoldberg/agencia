@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-15 12:03-0800\n"
+"POT-Creation-Date: 2014-01-20 20:02-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
 
-#: admin.py:69 models.py:244
+#: admin.py:69 models.py:261
 #, python-format
 msgid "%s meses"
 msgstr "%s meses"
@@ -36,403 +36,409 @@ msgstr "Idade Maior A"
 msgid "Edad Menor A"
 msgstr "Idade Menor A"
 
-#: admin.py:113
+#: admin.py:117
 msgid "Altura Mayor A"
 msgstr "Altura Maior A"
 
-#: admin.py:127
+#: admin.py:131
 msgid "Altura Menor A"
 msgstr "Altura Menor A"
 
-#: admin.py:156
+#: admin.py:160
 msgid "Dados Pessoales"
 msgstr "Dados Pessoales"
 
-#: admin.py:157
+#: admin.py:161
 msgid "Dados Administrativos"
 msgstr "Dados Administrativos"
 
-#: admin.py:164
+#: admin.py:168
 msgid "Carateristicas fisicas"
-msgstr ""
-
-#: admin.py:170
-msgid "Habilidades"
-msgstr ""
+msgstr "Carateristicas fisicas"
 
 #: admin.py:174
+msgid "Habilidades"
+msgstr "Habilidades"
+
+#: admin.py:178
 msgid "Otros dados"
-msgstr ""
+msgstr "Otros dados"
 
 #: mail.py:10
 #, python-format
 msgid "%(nombre)s - %(asunto)s"
-msgstr ""
+msgstr "%(nombre)s - %(asunto)s"
 
 #: models.py:34
 msgid "Tem que informar o endereço"
-msgstr ""
+msgstr "Tem que informar o endereço"
 
 #: models.py:37
 msgid "Tem que informar um telefone"
-msgstr ""
+msgstr "Tem que informar um telefone"
 
 #: models.py:40
 msgid "Tem que subir uma foto"
-msgstr ""
+msgstr "Tem que subir uma foto"
 
-#: models.py:43 models.py:110
+#: models.py:43 models.py:119
 msgid "Nome"
-msgstr ""
+msgstr "Nome"
 
-#: models.py:44 models.py:107
+#: models.py:44 models.py:116
 msgid "e-mail"
-msgstr ""
+msgstr "e-mail"
 
 #: models.py:45
 msgid "Ativa"
-msgstr ""
+msgstr "Ativa"
 
 #: models.py:45
 msgid "Só debería ter uma unica agencia ativa"
-msgstr ""
+msgstr "Só debería ter uma unica agencia ativa"
 
 #: models.py:46
 msgid "Logo"
-msgstr ""
+msgstr "Logo"
 
 #: models.py:46
 msgid "Logo a ser visualizado no site da agencia"
-msgstr ""
+msgstr "Logo a ser visualizado no site da agencia"
 
 #: models.py:47
 msgid "Favicon"
-msgstr ""
+msgstr "Favicon"
 
 #: models.py:47
 msgid "Imagem com extenção ico de 48x48 pixels"
-msgstr ""
+msgstr "Imagem com extenção ico de 48x48 pixels"
 
 #: models.py:48
 msgid "Titulo pagina inicial"
-msgstr ""
+msgstr "Titulo pagina inicial"
 
 #: models.py:49
 msgid "Presentação pagina inicial"
-msgstr ""
+msgstr "Presentação pagina inicial"
 
 #: models.py:50
 msgid "Mapa pagina contato"
-msgstr ""
+msgstr "Mapa pagina contato"
 
 #: models.py:50
 msgid ""
 "Aqui tem que colar o HTML gerado no google maps a partir de seu endereço"
 msgstr ""
+"Aqui tem que colar o HTML gerado no google maps a partir de seu endereço"
 
 #: models.py:53 models.py:82 models.py:88
 msgid "Agencia"
-msgstr ""
+msgstr "Agencia"
 
 #: models.py:54
 msgid "Agencias"
-msgstr ""
+msgstr "Agencias"
 
 #: models.py:75
 msgid ""
 "Não tem registrada uma agencia ativa. Tem que ser creada una agencia ativa "
 "na administracão do site."
 msgstr ""
+"Não tem registrada uma agencia ativa. Tem que ser creada una agencia ativa "
+"na administracão do site."
 
 #: models.py:84
 msgid "Telefone da Agencia"
-msgstr ""
+msgstr "Telefone da Agencia"
 
 #: models.py:85
 msgid "Telefones da Agencia"
-msgstr ""
+msgstr "Telefones da Agencia"
 
 #: models.py:90
 msgid "Endereço da Agencia"
-msgstr ""
+msgstr "Endereço da Agencia"
 
 #: models.py:91
 msgid "Endereços da Agencia"
-msgstr ""
+msgstr "Endereços da Agencia"
 
 #: models.py:95
 msgid "A data de nascimento nao pode ser maior que a data do dia"
-msgstr ""
+msgstr "A data de nascimento nao pode ser maior que a data do dia"
 
 #: models.py:99
 msgid "A atura debe ser informada em centimetros"
-msgstr ""
-
-#: models.py:111
-msgid "Sobrenome"
-msgstr ""
-
-#: models.py:112
-msgid "Data nascimento"
-msgstr ""
-
-#: models.py:116
-msgid "RG"
-msgstr ""
-
-#: models.py:118
-msgid "CPF"
-msgstr ""
-
-#: models.py:119
-msgid "Responsabel"
-msgstr ""
+msgstr "A atura debe ser informada em centimetros"
 
 #: models.py:120
+msgid "Sobrenome"
+msgstr "Sobrenome"
+
+#: models.py:121
+msgid "Data nascimento"
+msgstr "Data nascimento"
+
+#: models.py:125
+msgid "RG"
+msgstr "RG"
+
+#: models.py:127
+msgid "CPF"
+msgstr "CPF"
+
+#: models.py:128
+msgid "Responsabel"
+msgstr "Responsabel"
+
+#: models.py:129
 msgid "Conta bancaria"
-msgstr ""
-
-#: models.py:133
-msgid "Masculino"
-msgstr ""
-
-#: models.py:134
-msgid "Feminino"
-msgstr ""
-
-#: models.py:137
-msgid "Sexo"
-msgstr ""
-
-#: models.py:138
-msgid "Olhos"
-msgstr ""
-
-#: models.py:139
-msgid "Cabelo"
-msgstr ""
-
-#: models.py:140
-msgid "Pele"
-msgstr ""
-
-#: models.py:141
-msgid "Atura (cm)"
-msgstr ""
+msgstr "Conta bancaria"
 
 #: models.py:142
-msgid "Peso (kg)"
-msgstr ""
+msgid "Masculino"
+msgstr "Masculino"
 
 #: models.py:143
-msgid "Manequim"
-msgstr ""
-
-#: models.py:144
-msgid "Camisa"
-msgstr ""
-
-#: models.py:145
-msgid "Calça"
-msgstr ""
+msgid "Feminino"
+msgstr "Feminino"
 
 #: models.py:146
-msgid "Calçado"
-msgstr ""
+msgid "Sexo"
+msgstr "Sexo"
 
 #: models.py:147
-msgid "Estado Dentes"
-msgstr ""
+msgid "Olhos"
+msgstr "Olhos"
+
+#: models.py:148
+msgid "Cabelo"
+msgstr "Cabelo"
+
+#: models.py:149
+msgid "Pele"
+msgstr "Pele"
 
 #: models.py:150
-msgid "Esportes"
-msgstr ""
+msgid "Atura (cm)"
+msgstr "Atura (cm)"
 
 #: models.py:151
-msgid "Danças"
-msgstr ""
+msgid "Peso (kg)"
+msgstr "Peso (kg)"
 
 #: models.py:152
-msgid "Instrumentos"
-msgstr ""
+msgid "Manequim"
+msgstr "Manequim"
 
 #: models.py:153
-msgid "Idiomas"
-msgstr ""
+msgid "Camisa"
+msgstr "Camisa"
 
 #: models.py:154
-msgid "Dirige"
-msgstr ""
+msgid "Calça"
+msgstr "Calça"
 
 #: models.py:155
-msgid "Habilitação"
-msgstr ""
+msgid "Calçado"
+msgstr "Calçado"
 
-#: models.py:158
-msgid "Faz figuração"
-msgstr ""
+#: models.py:156
+msgid "Estado Dentes"
+msgstr "Estado Dentes"
 
 #: models.py:159
-msgid "Como nos conheceu"
-msgstr ""
+msgid "Esportes"
+msgstr "Esportes"
 
 #: models.py:160
-msgid "Observaçoes"
-msgstr ""
+msgid "Danças"
+msgstr "Danças"
+
+#: models.py:161
+msgid "Instrumentos"
+msgstr "Instrumentos"
+
+#: models.py:162
+msgid "Idiomas"
+msgstr "Idiomas"
 
 #: models.py:163
-msgid "Ativo"
-msgstr ""
+msgid "Dirige"
+msgstr "Dirige"
 
 #: models.py:164
+msgid "Habilitação"
+msgstr "Habilitação"
+
+#: models.py:167
+msgid "Faz figuração"
+msgstr "Faz figuração"
+
+#: models.py:168
+msgid "Como nos conheceu"
+msgstr "Como nos conheceu"
+
+#: models.py:169
+msgid "Observaçoes"
+msgstr "Observaçoes"
+
+#: models.py:172
+msgid "Ativo"
+msgstr "Ativo"
+
+#: models.py:173
 msgid "Data de agenciamento"
-msgstr ""
+msgstr "Data de agenciamento"
 
-#: models.py:176
+#: models.py:193
 msgid "Imagem"
-msgstr ""
+msgstr "Imagem"
 
-#: models.py:193 models.py:204
+#: models.py:210 models.py:221
 msgid "Imagems"
-msgstr ""
+msgstr "Imagems"
 
-#: models.py:209 models.py:235
+#: models.py:226 models.py:252
 msgid "Link ao agenciado"
-msgstr ""
+msgstr "Link ao agenciado"
 
-#: models.py:217 video.py:24
+#: models.py:234 video.py:24
 msgid "Video"
-msgstr ""
+msgstr "Video"
 
-#: models.py:228
+#: models.py:245
 msgid "Telefones"
-msgstr ""
+msgstr "Telefones"
 
-#: models.py:238
+#: models.py:255
 #, python-format
 msgid ""
 "Edad %(edad)s, sexo %(sexo)s, olhos %(ojos)s, cabelo %(pelo)s, pele "
 "%(piel)s, atura %(altura)s, peso %(peso)s, estado dentes %(estado_dientes)s."
 msgstr ""
+"Edad %(edad)s, sexo %(sexo)s, olhos %(ojos)s, cabelo %(pelo)s, pele "
+"%(piel)s, atura %(altura)s, peso %(peso)s, estado dentes %(estado_dientes)s."
 
-#: models.py:239
+#: models.py:256
 msgid "Descripção"
-msgstr ""
-
-#: models.py:245
-#, python-format
-msgid "%s anos"
-msgstr ""
-
-#: models.py:256 models.py:260
-msgid "Agenciado"
-msgstr ""
-
-#: models.py:257
-msgid "Agenciados"
-msgstr ""
+msgstr "Descripção"
 
 #: models.py:262
-msgid "Endereço agenciado"
-msgstr ""
+#, python-format
+msgid "%s anos"
+msgstr "%s anos"
 
-#: models.py:263
-msgid "Endereços agenciados"
-msgstr ""
-
-#: models.py:273
-msgid "Foto agenciado"
-msgstr ""
+#: models.py:273 models.py:277
+msgid "Agenciado"
+msgstr "Agenciado"
 
 #: models.py:274
-msgid "Fotos agenciado"
-msgstr ""
+msgid "Agenciados"
+msgstr "Agenciados"
 
 #: models.py:279
-msgid "Video agenciado"
-msgstr ""
+msgid "Endereço agenciado"
+msgstr "Endereço agenciado"
 
 #: models.py:280
-msgid "Videos agenciado"
-msgstr ""
+msgid "Endereços agenciados"
+msgstr "Endereços agenciados"
 
 #: models.py:290
-msgid "Telefone agenciado"
-msgstr ""
+msgid "Foto agenciado"
+msgstr "Foto agenciado"
 
 #: models.py:291
+msgid "Fotos agenciado"
+msgstr "Fotos agenciado"
+
+#: models.py:296
+msgid "Video agenciado"
+msgstr "Video agenciado"
+
+#: models.py:297
+msgid "Videos agenciado"
+msgstr "Videos agenciado"
+
+#: models.py:307
+msgid "Telefone agenciado"
+msgstr "Telefone agenciado"
+
+#: models.py:308
 msgid "Telefones agenciado"
-msgstr ""
+msgstr "Telefones agenciado"
 
 #: video.py:25
 msgid "Videos"
-msgstr ""
+msgstr "Videos"
 
 #: views.py:11
 msgid ""
 "Por favor atualize os dados do seu perfil a ser analizado por nossa agencia."
 msgstr ""
+"Por favor atualize os dados do seu perfil a ser analizado por nossa agencia."
 
 #: management/commands/crear_super_usuario.py:10
 msgid "Crea un super usuario para el proyecto en cuestión"
-msgstr ""
+msgstr "Cria um super usuario para o projeto"
 
 #: templates/base.html:64 templates/base.html.py:87
 msgid "Meu Perfil"
-msgstr ""
+msgstr "Meu Perfil"
 
 #: templates/base.html:65
 msgid "Pesquisas"
-msgstr ""
+msgstr "Pesquisas"
 
 #: templates/base.html:66
 msgid "Portfolio"
-msgstr ""
+msgstr "Portfolio"
 
 #: templates/base.html:67
 msgid "Contato"
-msgstr ""
+msgstr "Contato"
 
 #: templates/base.html:78
 msgid "Administração"
-msgstr ""
+msgstr "Administração"
 
 #: templates/base.html:82
 msgid "Conta "
-msgstr ""
+msgstr "Conta "
 
 #: templates/base.html:88
 msgid "Trocar Senha"
-msgstr ""
+msgstr "Trocar Senha"
 
 #: templates/base.html:89
 msgid "Sair"
-msgstr ""
+msgstr "Sair"
 
 #: templates/base.html:91
 msgid "Registro"
-msgstr ""
+msgstr "Registro"
 
 #: templates/base.html:92
 msgid "Entrar"
-msgstr ""
+msgstr "Entrar"
 
 #: templates/agencia/index.html:24
 msgid "Cadastre-se"
-msgstr ""
+msgstr "Cadastre-se"
 
 #: templates/agencia/index.html:26
 msgid "Complete seu cadastro"
-msgstr ""
+msgstr "Complete seu cadastro"
 
 #: templates/agencia/index.html:28
 msgid "Veja os perfis procurados"
-msgstr ""
+msgstr "Veja os perfis procurados"
 
 #: templates/agencia/index.html:42
 msgid "Trabalhos Ativos Recentes"
-msgstr ""
+msgstr "Trabalhos Ativos Recentes"
 
 #: templates/agencia/index.html:48
 msgid "Itens do Portifolio Recentes"
-msgstr ""
+msgstr "Itens do Portifolio Recentes"

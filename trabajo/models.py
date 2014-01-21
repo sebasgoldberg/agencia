@@ -165,6 +165,7 @@ class Trabajo(models.Model):
       ordering = ['-fecha_ingreso']
       permissions = (
         ("mail_productora", ugettext_lazy(u'Envio de trabalho por e-mail a produtora')),
+        ("mail_agenciados", ugettext_lazy(u'Envio de trabalho por e-mail a agenciados')),
       )
 
     def thumbnail_img(self):
@@ -239,6 +240,20 @@ class EventoTrabajo(Evento):
       'ciudad':self.ciudad,
       'codigo_postal':self.codigo_postal}
 
+
+POSTULACION_POR_AGENCIADO='PA'
+POSTULADO_PARA_CASTING='PC'
+RECHAZO_POSTULACION_CASTING='RP'
+SELECCIONADO_PARA_CASTING='SC'
+RECHAZO_SELECCION_CASTING='RC'
+SELECCIONADO_PARA_CALLBACK='SK'
+RECHAZO_SELECCION_CALLBACK='RK'
+SELECCIONADO_PARA_TRABAJO='ST'
+RECHAZO_SELECCION_TRABAJO='RT'
+TRABAJO_REALIZADO='TR'
+TRABAJO_NO_REALIZADO='TN'
+TRABAJO_PAGADO='TP'
+
 class Rol(models.Model):
     trabajo = models.ForeignKey(Trabajo,on_delete=models.PROTECT)
     descripcion = models.CharField(max_length=60, verbose_name=ugettext_lazy(u'Descripção'))
@@ -283,6 +298,9 @@ class Rol(models.Model):
     trabajo_admin_link.allow_tags=True
     trabajo_admin_link.short_description = ugettext_lazy(u'Link ao trabalho')
 
+    def get_postulaciones_confirmables(self):
+      return self.postulacion_set.filter(estado__in=[POSTULADO_PARA_CASTING,SELECCIONADO_PARA_CASTING,SELECCIONADO_PARA_TRABAJO])
+
 class EventoRol(Evento):
   tipo = models.CharField(max_length=1,choices=TIPO_EVENTO_TRABAJO)
   rol = models.ForeignKey(Rol,on_delete=models.PROTECT,verbose_name = ugettext_lazy(u'Perfil'))
@@ -307,12 +325,18 @@ class Postulacion(models.Model):
     agenciado = models.ForeignKey(Agenciado,on_delete=models.PROTECT)
     rol = models.ForeignKey(Rol,on_delete=models.PROTECT, verbose_name = ugettext_lazy(u'Perfil'))
     ESTADO_POSTULACION=(
-      ('PA', _(u'Postulação feita pelo agenciado')),
-      ('PC', _(u'Postulado para casting')),
-      ('SC', _(u'Selecionado para casting')),
-      ('ST', _(u'Selecionado para trabalho')),
-      ('TR', _(u'Trabalho realisado')),
-      ('TP', _(u'Trabalho pagado')),
+      (POSTULACION_POR_AGENCIADO, _(u'Postulação feita pelo agenciado')),
+      (POSTULADO_PARA_CASTING, _(u'Postulado para casting')),
+      (RECHAZO_POSTULACION_CASTING,_(u'Postulacion a casting rechazada')),
+      (SELECCIONADO_PARA_CASTING, _(u'Selecionado para casting')),
+      (RECHAZO_SELECCION_CASTING,_(u'Seleccion a casting rechazada')),
+      (SELECCIONADO_PARA_CALLBACK,_(u'Seleccionado para callback')),
+      (RECHAZO_SELECCION_CALLBACK,_(u'Seleccion a callback rechazada')),
+      (SELECCIONADO_PARA_TRABAJO, _(u'Selecionado para trabalho')),
+      (RECHAZO_SELECCION_TRABAJO,_(u'Seleccion a trabajo rechazada')),
+      (TRABAJO_REALIZADO, _(u'Trabalho realisado')),
+      (TRABAJO_NO_REALIZADO,_(u'Trabajo no realizado')),
+      (TRABAJO_PAGADO, _(u'Trabalho pagado')),
     )
     DICT_ESTADO_POSTULACION=dict(ESTADO_POSTULACION)
     estado = models.CharField(max_length=2,choices=ESTADO_POSTULACION,default='PC')

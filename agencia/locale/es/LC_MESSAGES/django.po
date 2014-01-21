@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-15 12:03-0800\n"
+"POT-Creation-Date: 2014-01-20 20:02-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
-#: admin.py:69 models.py:244
+#: admin.py:69 models.py:261
 #, python-format
 msgid "%s meses"
 msgstr "%s meses"
@@ -36,31 +36,31 @@ msgstr "Edad Mayor A"
 msgid "Edad Menor A"
 msgstr "Edad Menor A"
 
-#: admin.py:113
+#: admin.py:117
 msgid "Altura Mayor A"
 msgstr "Altura Mayor A"
 
-#: admin.py:127
+#: admin.py:131
 msgid "Altura Menor A"
 msgstr "Altura Menor A"
 
-#: admin.py:156
+#: admin.py:160
 msgid "Dados Pessoales"
 msgstr "Datos Personales"
 
-#: admin.py:157
+#: admin.py:161
 msgid "Dados Administrativos"
 msgstr "Datos Administrativos"
 
-#: admin.py:164
+#: admin.py:168
 msgid "Carateristicas fisicas"
 msgstr "Características Físicas"
 
-#: admin.py:170
+#: admin.py:174
 msgid "Habilidades"
 msgstr "Habilidades"
 
-#: admin.py:174
+#: admin.py:178
 msgid "Otros dados"
 msgstr "Otros Datos"
 
@@ -81,11 +81,11 @@ msgstr "Tiene que informar un teléfono"
 msgid "Tem que subir uma foto"
 msgstr "Tiene que subir una foto"
 
-#: models.py:43 models.py:110
+#: models.py:43 models.py:119
 msgid "Nome"
 msgstr "Nombre"
 
-#: models.py:44 models.py:107
+#: models.py:44 models.py:116
 msgid "e-mail"
 msgstr "e-mail"
 
@@ -172,147 +172,147 @@ msgstr "La fecha de nacimiento no puede ser mayor que la fecha del día"
 msgid "A atura debe ser informada em centimetros"
 msgstr "La altura debe ser informada en centimetros"
 
-#: models.py:111
+#: models.py:120
 msgid "Sobrenome"
 msgstr "Apellido"
 
-#: models.py:112
+#: models.py:121
 msgid "Data nascimento"
 msgstr "Fecha de Nacimiento"
 
-#: models.py:116
+#: models.py:125
 msgid "RG"
 msgstr "DNI"
 
-#: models.py:118
+#: models.py:127
 msgid "CPF"
 msgstr "CUIT/CUIL"
 
-#: models.py:119
+#: models.py:128
 msgid "Responsabel"
 msgstr "Responsable"
 
-#: models.py:120
+#: models.py:129
 msgid "Conta bancaria"
 msgstr "Cuenta Bancaria"
 
-#: models.py:133
+#: models.py:142
 msgid "Masculino"
 msgstr "Masculino"
 
-#: models.py:134
+#: models.py:143
 msgid "Feminino"
 msgstr "Femenino"
 
-#: models.py:137
+#: models.py:146
 msgid "Sexo"
 msgstr "Sexo"
 
-#: models.py:138
+#: models.py:147
 msgid "Olhos"
 msgstr "Ojos"
 
-#: models.py:139
+#: models.py:148
 msgid "Cabelo"
 msgstr "Pelo"
 
-#: models.py:140
+#: models.py:149
 msgid "Pele"
 msgstr "Piel"
 
-#: models.py:141
+#: models.py:150
 msgid "Atura (cm)"
 msgstr "Altura (cm)"
 
-#: models.py:142
+#: models.py:151
 msgid "Peso (kg)"
 msgstr "Peso (kg)"
 
-#: models.py:143
+#: models.py:152
 msgid "Manequim"
 msgstr "Contextura"
 
-#: models.py:144
+#: models.py:153
 msgid "Camisa"
 msgstr "Camisa"
 
-#: models.py:145
+#: models.py:154
 msgid "Calça"
 msgstr "Pantalón"
 
-#: models.py:146
+#: models.py:155
 msgid "Calçado"
 msgstr "Calzado"
 
-#: models.py:147
+#: models.py:156
 msgid "Estado Dentes"
 msgstr "Estado Dientes"
 
-#: models.py:150
+#: models.py:159
 msgid "Esportes"
 msgstr "Deportes"
 
-#: models.py:151
+#: models.py:160
 msgid "Danças"
 msgstr "Danzas"
 
-#: models.py:152
+#: models.py:161
 msgid "Instrumentos"
 msgstr "Instrumentos"
 
-#: models.py:153
+#: models.py:162
 msgid "Idiomas"
 msgstr "Idiomas"
 
-#: models.py:154
+#: models.py:163
 msgid "Dirige"
 msgstr "Maneja"
 
-#: models.py:155
+#: models.py:164
 msgid "Habilitação"
 msgstr "Registro de conducir"
 
-#: models.py:158
+#: models.py:167
 msgid "Faz figuração"
 msgstr "Trabaja como extra"
 
-#: models.py:159
+#: models.py:168
 msgid "Como nos conheceu"
 msgstr "Cómo nos conoció"
 
-#: models.py:160
+#: models.py:169
 msgid "Observaçoes"
 msgstr "Observaciones"
 
-#: models.py:163
+#: models.py:172
 msgid "Ativo"
 msgstr "Activo"
 
-#: models.py:164
+#: models.py:173
 msgid "Data de agenciamento"
 msgstr "Fecha de agenciamiento"
 
-#: models.py:176
+#: models.py:193
 msgid "Imagem"
 msgstr "Imagen"
 
-#: models.py:193 models.py:204
+#: models.py:210 models.py:221
 msgid "Imagems"
 msgstr "Imagenes"
 
-#: models.py:209 models.py:235
+#: models.py:226 models.py:252
 msgid "Link ao agenciado"
 msgstr "Link al agenciado"
 
-#: models.py:217 video.py:24
+#: models.py:234 video.py:24
 msgid "Video"
 msgstr "Video"
 
-#: models.py:228
+#: models.py:245
 msgid "Telefones"
 msgstr "Telefonos"
 
-#: models.py:238
+#: models.py:255
 #, python-format
 msgid ""
 "Edad %(edad)s, sexo %(sexo)s, olhos %(ojos)s, cabelo %(pelo)s, pele "
@@ -321,52 +321,52 @@ msgstr ""
 "Edad %(edad)s, sexo %(sexo)s, ojos %(ojos)s, pelo %(pelo)s, piel %(piel)s, "
 "altura %(altura)s, peso %(peso)s, estado dientes %(estado_dientes)s."
 
-#: models.py:239
+#: models.py:256
 msgid "Descripção"
 msgstr "Descripción"
 
-#: models.py:245
+#: models.py:262
 #, python-format
 msgid "%s anos"
 msgstr "%s años"
 
-#: models.py:256 models.py:260
+#: models.py:273 models.py:277
 msgid "Agenciado"
 msgstr "Agenciados"
 
-#: models.py:257
+#: models.py:274
 msgid "Agenciados"
 msgstr "Agenciados"
 
-#: models.py:262
+#: models.py:279
 msgid "Endereço agenciado"
 msgstr "Dirección agenciado"
 
-#: models.py:263
+#: models.py:280
 msgid "Endereços agenciados"
 msgstr "Direcciones agenciado"
 
-#: models.py:273
+#: models.py:290
 msgid "Foto agenciado"
 msgstr "Foto agenciado"
 
-#: models.py:274
+#: models.py:291
 msgid "Fotos agenciado"
 msgstr "Fotos agenciado"
 
-#: models.py:279
+#: models.py:296
 msgid "Video agenciado"
 msgstr "Video agenciado"
 
-#: models.py:280
+#: models.py:297
 msgid "Videos agenciado"
 msgstr "Videos agenciado"
 
-#: models.py:290
+#: models.py:307
 msgid "Telefone agenciado"
 msgstr "Telefono agenciado"
 
-#: models.py:291
+#: models.py:308
 msgid "Telefones agenciado"
 msgstr "Telefonos agenciados"
 

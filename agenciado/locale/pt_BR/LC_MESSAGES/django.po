@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-15 11:30-0700\n"
+"POT-Creation-Date: 2014-01-20 20:02-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,72 +18,76 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
 
-#: views.py:116
+#: views.py:115
 msgid "Dados atualizados com sucesso"
-msgstr ""
+msgstr "Dados atualizados com sucesso"
 
-#: views.py:137
+#: views.py:136
 msgid "O perfil do trabalho para o qual quer aplicar nao foi encontrado"
-msgstr ""
+msgstr "O perfil do trabalho para o qual quer aplicar nao foi encontrado"
 
-#: views.py:144
+#: views.py:143
 #, python-format
 msgid ""
 "Para aplicar ao perfil %(rol)s do trabalho <a href=%(url)s>%(trabajo)s</a> "
 "tem que completar seus dados de Agenciado"
 msgstr ""
+"Para aplicar ao perfil %(rol)s do trabalho <a href=%(url)s>%(trabajo)s</a> "
+"tem que completar seus dados de Agenciado"
 
-#: views.py:154
+#: views.py:153
 #, python-format
 msgid "Aplicação para o perfil \"%s\" realizada com sucesso."
-msgstr ""
+msgstr "Aplicação para o perfil \"%s\" realizada com sucesso."
 
-#: views.py:155
+#: views.py:154
 msgid ""
 "A aplicação vai ser analizada por nosso equipe, muito obrigado por sua "
 "postulação."
 msgstr ""
+"A aplicação vai ser analizada por nosso equipe, muito obrigado por sua "
+"postulação."
 
 #: templates/agenciado/agenciado.html:18
 msgid "Tem erros por corregir"
-msgstr ""
+msgstr "Tem erros por corregir"
 
 #: templates/agenciado/agenciado.html:24
 msgid "Dados persoais"
-msgstr ""
+msgstr "Dados persoais"
 
 #: templates/agenciado/agenciado.html:34
 msgid "Dados administrativos"
-msgstr ""
+msgstr "Dados administrativos"
 
 #: templates/agenciado/agenciado.html:44
 msgid "Dados de endereço"
-msgstr ""
+msgstr "Dados de endereço"
 
 #: templates/agenciado/agenciado.html:63
 msgid "Telefones"
-msgstr ""
+msgstr "Telefones"
 
 #: templates/agenciado/agenciado.html:72
 msgid "Caracteristicas fisicas"
-msgstr ""
+msgstr "Carateristicas fisicas"
 
 #: templates/agenciado/agenciado.html:89
 msgid "Habilidades"
-msgstr ""
+msgstr "Habilidades"
 
 #: templates/agenciado/agenciado.html:100
 msgid "Fotos"
-msgstr ""
+msgstr "Fotos"
 
 #: templates/agenciado/agenciado.html:108
 msgid "Videos"
-msgstr ""
+msgstr "Videos"
 
 #: templates/agenciado/agenciado.html:116
 msgid "Otros dados"
-msgstr ""
+msgstr "Otros dados"
 
 #: templates/agenciado/agenciado.html:129
 msgid "Gravar"
-msgstr ""
+msgstr "Gravar"

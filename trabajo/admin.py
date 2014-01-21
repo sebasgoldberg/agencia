@@ -111,9 +111,9 @@ class RolAdmin(admin.ModelAdmin):
   inlines=[EventoRolInline, PostulacionInline]
   fieldsets=[
     (None, {'fields':['id']}),
-    (_(u'Dados do rol procurado'), 
+    (ugettext_lazy(u'Dados do rol procurado'), 
       {'fields':[('descripcion', 'trabajo', 'trabajo_admin_link' ), 'cache', ('caracteristicas',)]}),
-    (_(u'Dados das postulaçoes'), 
+    (ugettext_lazy(u'Dados das postulaçoes'), 
       { 'fields':[ 
         ('cantidad_postulados_casting', 'cantidad_seleccionados_casting', 
         'cantidad_seleccionados_trabajo',), 
@@ -149,7 +149,7 @@ class TrabajoAdmin(admin.ModelAdmin):
   date_hierarchy='fecha_ingreso'
   fieldsets=[
     (None, {'fields':['id', 'thumbnail_img_link']}),
-    (_(u'Dados do trabalho'), 
+    (ugettext_lazy(u'Dados do trabalho'), 
       {'fields':['titulo', ('productora', 'productora_admin_link'), 'estado', 'fecha_ingreso', 'publicado', 'descripcion', 'imagen']}),
   ]
 
@@ -177,7 +177,7 @@ def add_agenciados_trabajo(modeladmin, request, queryset):
   selected = request.POST.getlist(admin.ACTION_CHECKBOX_NAME)
   return HttpResponseRedirect("/trabajo/agregar/agenciados/seleccionados/a/rol/?ids=%s" %  ",".join(selected))
 
-add_agenciados_trabajo.short_description=_(u'Adicionar agenciados selecionados a perfil procurado em trabalho')
+add_agenciados_trabajo.short_description=ugettext_lazy(u'Adicionar agenciados selecionados a perfil procurado em trabalho')
 
 # IMPORTANTE: El agregado de la accion se hace de la siguiente forma porque si solo se hiciese con '+=' y el listado estuviese vacío, entonces la acción se registraría para todos los modelos. Este imagino que debe ser un bug de django. Con append ocurre el mismo error.
 if len(AgenciadoAdmin.actions)==0:

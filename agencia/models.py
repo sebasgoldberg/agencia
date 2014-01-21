@@ -252,7 +252,7 @@ class Agenciado(models.Model):
     admin_link.short_description = ugettext_lazy(u'Link ao agenciado')
 
     def descripcion(self):
-      return _(u'Edad %(edad)s, sexo %(sexo)s, olhos %(ojos)s, cabelo %(pelo)s, pele %(piel)s, atura %(altura)s, peso %(peso)s, estado dentes %(estado_dientes)s.')%{'edad':str(self.edad()), 'sexo':Agenciado.DICT_SEXO[self.sexo], 'ojos':self.ojos, 'pelo':self.pelo, 'piel':self.piel, 'altura':self.altura, 'peso':self.peso, 'estado_dientes':self.estado_dientes}
+      return _(u'Edad %(edad)s, sexo %(sexo)s, olhos %(ojos)s, cabelo %(pelo)s, pele %(piel)s, atura %(altura)s, peso %(peso)s, estado dentes %(estado_dientes)s.')%{'edad':self.edad(), 'sexo':Agenciado.DICT_SEXO[self.sexo], 'ojos':self.ojos, 'pelo':self.pelo, 'piel':self.piel, 'altura':self.altura, 'peso':self.peso, 'estado_dientes':self.estado_dientes}
     descripcion.short_description = ugettext_lazy(u'Descripção')
 
     def edad(self):

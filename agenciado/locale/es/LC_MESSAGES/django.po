@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-15 10:42-0700\n"
+"POT-Creation-Date: 2014-01-20 20:02-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,15 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
-#: views.py:116
+#: views.py:115
 msgid "Dados atualizados com sucesso"
 msgstr "Datos actualizados con éxito"
 
-#: views.py:137
+#: views.py:136
 msgid "O perfil do trabalho para o qual quer aplicar nao foi encontrado"
 msgstr "El perfil del trabajo para el cual quiere aplicar no fue encontrado"
 
-#: views.py:144
+#: views.py:143
 #, python-format
 msgid ""
 "Para aplicar ao perfil %(rol)s do trabalho <a href=%(url)s>%(trabajo)s</a> "
@@ -35,12 +35,12 @@ msgstr ""
 "Para aplicar al perfil %(rol)s del trabajo <a href=%(url)s>%(trabajo)s</a> "
 "tiene que completar los datos de su perfil"
 
-#: views.py:154
+#: views.py:153
 #, python-format
 msgid "Aplicação para o perfil \"%s\" realizada com sucesso."
 msgstr "Aplicación para el perfil \"%s\" realizada con éxito."
 
-#: views.py:155
+#: views.py:154
 msgid ""
 "A aplicação vai ser analizada por nosso equipe, muito obrigado por sua "
 "postulação."
@@ -91,4 +91,3 @@ msgstr "Otros Datos"
 #: templates/agenciado/agenciado.html:129
 msgid "Gravar"
 msgstr "Grabar"
-
