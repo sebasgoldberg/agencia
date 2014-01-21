@@ -130,8 +130,7 @@ def trabajo_enviar_mail_productora(request,trabajo_id):
 
   return render(request,'trabajo/trabajo/enviar_mail_productora.html',{'form': form, 'trabajo': trabajo, })
 
-# @todo Descomentar. Se comento porque ./manage.py syncdb no está cargando la adición del permiso (puede ser por el uso de south)
-#@permission_required('trabajo.mail_agenciados',raise_exception=True)
+@permission_required('trabajo.mail_agenciados',raise_exception=True)
 def trabajo_enviar_mail_agenciados(request,trabajo_id):
   
   trabajo=Trabajo.objects.get(pk=trabajo_id)
