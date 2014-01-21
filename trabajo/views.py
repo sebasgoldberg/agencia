@@ -154,7 +154,7 @@ def trabajo_enviar_mail_agenciados(request,trabajo_id):
             msg.set_html_body(html_content)
             msg.send()
           else:
-            messages.error(request, _(u'Agenciado %s não tem um email definido.'))
+            messages.error(request, _(u'Agenciado %s não tem um email definido.'%postulacion.agenciado))
       messages.success(request, _(u'Trabalho enviado com sucesso a os agenciados postulados.'))
       return redirect('/admin/trabajo/trabajo/%s/'%trabajo_id)
   else:
