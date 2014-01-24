@@ -264,6 +264,14 @@ class Agenciado(models.Model):
     def ids_roles_postulaciones(self):
       return [ postulacion.rol.id for postulacion in self.postulacion_set.all() ]
 
+    def mails(self):
+      listadoMails=[self.mail]
+      for mail in self.mailagenciado_set.all():
+        listadoMails.append(u'%s'%mail)
+      return '<br />'.join(listadoMails)
+    mails.allow_tags = True
+    mails.short_description = ugettext_lazy(u'Mails')
+
     @staticmethod
     def autocomplete_search_fields():
       return ("id__iexact", "nombre_completo__icontains",)
@@ -272,6 +280,18 @@ class Agenciado(models.Model):
       ordering = ['nombre', 'apellido']
       verbose_name = ugettext_lazy(u"Agenciado")
       verbose_name_plural = ugettext_lazy(u"Agenciados")
+
+class MailAgenciado(models.Model):
+  agenciado = models.ForeignKey(Agenciado)
+  email = models.EmailField(verbose_name=ugettext_lazy(u'e-mail'), null=False , blank=False)
+  descripcion = models.CharField(max_length=100, verbose_name=ugettext_lazy(u'Descripção'), null=True, blank=True)
+  def __unicode__(self):
+    if self.descripcion:
+      return u'%s (%s)' % (self.email, self.descripcion)
+    return u'%s' % self.email
+  class Meta:
+    verbose_name = ugettext_lazy(u"Mail Agenciado")
+    verbose_name_plural = ugettext_lazy(u"Mails Agenciado")
 
 class DireccionAgenciado(Direccion):
   agenciado = models.ForeignKey(Agenciado, verbose_name=ugettext_lazy(u'Agenciado'))

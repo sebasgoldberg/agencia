@@ -149,8 +149,8 @@ def trabajo_enviar_mail_agenciados(request,trabajo_id):
           if postulacion.agenciado.mail:
             context = RequestContext(request, {'postulacion':postulacion, })
             html_content = template.render(context)
-            destinatario = postulacion.agenciado.mail
-            msg = MailAgencia(asunto, text_content, [destinatario],ccs=ccs)
+            destinatarios = [postulacion.agenciado.mail] + [x.email for x in postulacion.agenciado.mailagenciado_set.all()]
+            msg = MailAgencia(asunto, text_content, destinatarios,ccs=ccs)
             msg.set_html_body(html_content)
             msg.send()
           else:

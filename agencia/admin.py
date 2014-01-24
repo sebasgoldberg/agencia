@@ -1,5 +1,5 @@
 # coding=utf-8
-from iampacks.agencia.agencia.models import Agenciado, FotoAgenciado, VideoAgenciado, Telefono, validarTelefonoIngresado, validarFotoIngresada, DireccionAgenciado, Agencia, TelefonoAgencia, DireccionAgencia
+from iampacks.agencia.agencia.models import Agenciado, MailAgenciado, FotoAgenciado, VideoAgenciado, Telefono, validarTelefonoIngresado, validarFotoIngresada, DireccionAgenciado, Agencia, TelefonoAgencia, DireccionAgencia
 from django.contrib import admin
 from django.forms import CheckboxSelectMultiple
 from django.db import models
@@ -39,6 +39,11 @@ class TelefonoFormSet(BaseInlineFormSet):
 class FotoAgenciadoFormSet(BaseInlineFormSet):
   def clean(self):
     super(FotoAgenciadoFormSet,self).clean()
+
+class MailAgenciadoInline(admin.TabularInline):
+  model=MailAgenciado
+  extra = 1
+  max_num=6
 
 class DireccionAgenciadoInline(BaseDireccionInline):
   form = DireccionAgenciadoForm
@@ -160,11 +165,10 @@ class AgenciadoAdmin(admin.ModelAdmin):
     (_(u'Dados Pessoales'), {'fields':[('nombre', 'apellido', 'fecha_nacimiento')]}),
     (_(u'Dados Administrativos'), { 'fields':[ ('documento_rg', 'documento_cpf'), 'responsable', 'cuenta_bancaria']}),
     (None, {"classes": ("placeholder telefono_set-group",), "fields" : ()}),
+    (None, {"classes": ("placeholder mailagenciado_set-group",), "fields" : ()}),
     (None, {"classes": ("placeholder direccionagenciado_set-group",), "fields" : ()}),
     (None, {"classes": ("placeholder fotoagenciado_set-group",), "fields" : ()}),
     (None, {"classes": ("placeholder videoagenciado_set-group",), "fields" : ()}),
-    # @todo comentar
-    #(_(u'Dados de endereço'), { 'fields':[ ('estado', 'ciudad', 'barrio'), ('direccion', 'codigo_postal')]}),
     (_(u'Carateristicas fisicas'), { 'fields':[ 
       'sexo', 
       ('ojos', 'pelo', 'piel', ), 
@@ -180,9 +184,8 @@ class AgenciadoAdmin(admin.ModelAdmin):
       'fields':[ 'trabaja_como_extra', 'como_nos_conocio', 'observaciones', 'activo', 'fecha_ingreso']
       }),
   ]
-  # @todo Descomentar
-  inlines=[DireccionAgenciadoInline, TelefonoInline, FotoAgenciadoInline, VideoAgenciadoInline]
-  list_display=['thumbnail','id','apellido','nombre','fecha_nacimiento','descripcion','telefonos','mail', 'responsable']
+  inlines=[ DireccionAgenciadoInline, TelefonoInline, FotoAgenciadoInline, VideoAgenciadoInline, MailAgenciadoInline ]
+  list_display=['thumbnail','id','apellido','nombre','fecha_nacimiento','descripcion','telefonos','mails', 'responsable']
   list_display_links = ('thumbnail', 'id')
   list_filter=['activo','sexo',EdadMayorAListFilter,EdadMenorAListFilter,'ojos','pelo','piel','talle',AlturaMayorAListFilter,AlturaMenorAListFilter,'deportes','danzas','instrumentos','idiomas','fecha_ingreso',PaisDireccionAgenciadoListFilter, EstadoDireccionAgenciadoListFilter, CiudadDireccionAgenciadoListFilter]
   search_fields=['nombre','apellido','responsable','mail','id']
@@ -205,6 +208,8 @@ def unregister_even_not_registered(model):
   except NotRegistered:
     pass
   
+class MailAgenciadoAdmin(admin.ModelAdmin):
+  pass
 
 register_even_registered(Agenciado,AgenciadoAdmin)
 register_even_registered(Agencia,AgenciaAdmin)

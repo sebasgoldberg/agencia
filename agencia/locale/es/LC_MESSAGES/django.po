@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-20 20:02-0800\n"
+"POT-Creation-Date: 2014-01-24 14:58-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,49 +18,49 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
-#: admin.py:69 models.py:261
+#: admin.py:74 models.py:261
 #, python-format
 msgid "%s meses"
 msgstr "%s meses"
 
-#: admin.py:70 admin.py:71 admin.py:72
+#: admin.py:75 admin.py:76 admin.py:77
 #, python-format
 msgid "%s años"
 msgstr "%s años"
 
-#: admin.py:77
+#: admin.py:82
 msgid "Edad Mayor A"
 msgstr "Edad Mayor A"
 
-#: admin.py:94
+#: admin.py:99
 msgid "Edad Menor A"
 msgstr "Edad Menor A"
 
-#: admin.py:117
+#: admin.py:122
 msgid "Altura Mayor A"
 msgstr "Altura Mayor A"
 
-#: admin.py:131
+#: admin.py:136
 msgid "Altura Menor A"
 msgstr "Altura Menor A"
 
-#: admin.py:160
+#: admin.py:165
 msgid "Dados Pessoales"
 msgstr "Datos Personales"
 
-#: admin.py:161
+#: admin.py:166
 msgid "Dados Administrativos"
 msgstr "Datos Administrativos"
 
-#: admin.py:168
+#: admin.py:172
 msgid "Carateristicas fisicas"
 msgstr "Características Físicas"
 
-#: admin.py:174
+#: admin.py:178
 msgid "Habilidades"
 msgstr "Habilidades"
 
-#: admin.py:178
+#: admin.py:182
 msgid "Otros dados"
 msgstr "Otros Datos"
 
@@ -85,7 +85,7 @@ msgstr "Tiene que subir una foto"
 msgid "Nome"
 msgstr "Nombre"
 
-#: models.py:44 models.py:116
+#: models.py:44 models.py:116 models.py:286
 msgid "e-mail"
 msgstr "e-mail"
 
@@ -321,7 +321,7 @@ msgstr ""
 "Edad %(edad)s, sexo %(sexo)s, ojos %(ojos)s, pelo %(pelo)s, piel %(piel)s, "
 "altura %(altura)s, peso %(peso)s, estado dientes %(estado_dientes)s."
 
-#: models.py:256
+#: models.py:256 models.py:287
 msgid "Descripção"
 msgstr "Descripción"
 
@@ -330,43 +330,55 @@ msgstr "Descripción"
 msgid "%s anos"
 msgstr "%s años"
 
-#: models.py:273 models.py:277
+#: models.py:273
+msgid "Mails"
+msgstr "Mails"
+
+#: models.py:281 models.py:297
 msgid "Agenciado"
 msgstr "Agenciados"
 
-#: models.py:274
+#: models.py:282
 msgid "Agenciados"
 msgstr "Agenciados"
 
-#: models.py:279
+#: models.py:293
+msgid "Mail Agenciado"
+msgstr "Mail Agenciado"
+
+#: models.py:294
+msgid "Mails Agenciado"
+msgstr "Mails Agenciado"
+
+#: models.py:299
 msgid "Endereço agenciado"
 msgstr "Dirección agenciado"
 
-#: models.py:280
+#: models.py:300
 msgid "Endereços agenciados"
 msgstr "Direcciones agenciado"
 
-#: models.py:290
+#: models.py:310
 msgid "Foto agenciado"
 msgstr "Foto agenciado"
 
-#: models.py:291
+#: models.py:311
 msgid "Fotos agenciado"
 msgstr "Fotos agenciado"
 
-#: models.py:296
+#: models.py:316
 msgid "Video agenciado"
 msgstr "Video agenciado"
 
-#: models.py:297
+#: models.py:317
 msgid "Videos agenciado"
 msgstr "Videos agenciado"
 
-#: models.py:307
+#: models.py:327
 msgid "Telefone agenciado"
 msgstr "Telefono agenciado"
 
-#: models.py:308
+#: models.py:328
 msgid "Telefones agenciado"
 msgstr "Telefonos agenciados"
 

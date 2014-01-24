@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-20 20:03-0800\n"
+"POT-Creation-Date: 2014-01-24 14:59-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -133,6 +133,7 @@ msgid "%(titulo)s (%(fecha_ingreso)s)"
 msgstr "%(titulo)s (%(fecha_ingreso)s)"
 
 #: models.py:163 templates/trabajo/trabajo/contenido.html:3
+#: templates/trabajo/trabajo/detalles.html:3
 #: templates/trabajo/trabajo/enviar_mail_productora.html:30
 #: templates/trabajo/trabajo/admin/enviar_mail_agenciados.html:30
 msgid "Trabalho"
@@ -309,7 +310,7 @@ msgstr "Link al agenciado"
 msgid "Telefonos"
 msgstr "Teléfonos"
 
-#: views.py:120 views.py:148
+#: views.py:120 views.py:147
 msgid "Este mensagem deve ser visualizado em formato HTML."
 msgstr "Este mensaje debe ser visualizado en formato HTML."
 
@@ -327,16 +328,16 @@ msgstr ""
 msgid "Detalhe de trabalho \"%s\""
 msgstr "Detalle del trabajo \"%s\""
 
-#: views.py:158
+#: views.py:157
 #, python-format
 msgid "Agenciado %s não tem um email definido."
 msgstr "Agenciado %s no tiene um email definido."
 
-#: views.py:159
+#: views.py:158
 msgid "Trabalho enviado com sucesso a os agenciados postulados."
 msgstr "Trabajo enviado com éxito a los agenciados postulados."
 
-#: views.py:162
+#: views.py:161
 #, python-format
 msgid "Detalhe da Postulação para Trabalho \"%s\""
 msgstr "Detalle de la Postulación para Trabajo \"%s\""
