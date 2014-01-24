@@ -265,7 +265,10 @@ class Agenciado(models.Model):
       return [ postulacion.rol.id for postulacion in self.postulacion_set.all() ]
 
     def mails(self):
-      listadoMails=[self.mail]
+      if self.mail:
+        listadoMails=[self.mail]
+      else:
+        listadoMails=[]
       for mail in self.mailagenciado_set.all():
         listadoMails.append(u'%s'%mail)
       return '<br />'.join(listadoMails)
