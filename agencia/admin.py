@@ -162,24 +162,24 @@ class AgenciadoAdmin(admin.ModelAdmin):
   readonly_fields=['id','thumbnails']
   fieldsets=[
     (None, {'fields':['thumbnails','id','mail']}),
-    (_(u'Dados Pessoales'), {'fields':[('nombre', 'apellido', 'fecha_nacimiento')]}),
-    (_(u'Dados Administrativos'), { 'fields':[ ('documento_rg', 'documento_cpf'), 'responsable', 'cuenta_bancaria']}),
+    (ugettext_lazy(u'Dados Pessoales'), {'fields':[('nombre', 'apellido', 'fecha_nacimiento')]}),
+    (ugettext_lazy(u'Dados Administrativos'), { 'fields':[ ('documento_rg', 'documento_cpf'), 'responsable', 'cuenta_bancaria']}),
     (None, {"classes": ("placeholder telefono_set-group",), "fields" : ()}),
     (None, {"classes": ("placeholder mailagenciado_set-group",), "fields" : ()}),
     (None, {"classes": ("placeholder direccionagenciado_set-group",), "fields" : ()}),
     (None, {"classes": ("placeholder fotoagenciado_set-group",), "fields" : ()}),
     (None, {"classes": ("placeholder videoagenciado_set-group",), "fields" : ()}),
-    (_(u'Carateristicas fisicas'), { 'fields':[ 
+    (ugettext_lazy(u'Carateristicas fisicas'), { 'fields':[ 
       'sexo', 
       ('ojos', 'pelo', 'piel', ), 
       ('altura', 'peso', 'talle',), 
       ( 'talle_camisa', 'talle_pantalon', 'calzado'),
       'estado_dientes',]}),
-    (_(u'Habilidades'),{
+    (ugettext_lazy(u'Habilidades'),{
       'classes': ('grp-collapse grp-closed',),
       'fields':[ 'deportes', 'danzas', 'instrumentos', 'idiomas', ('indicador_maneja', 'indicador_tiene_registro')]
       }),
-    (_(u'Otros dados'), { 
+    (ugettext_lazy(u'Otros dados'), { 
       'classes': ('grp-collapse grp-closed',),
       'fields':[ 'trabaja_como_extra', 'como_nos_conocio', 'observaciones', 'activo', 'fecha_ingreso']
       }),
