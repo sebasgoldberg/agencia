@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-24 14:59-0800\n"
+"POT-Creation-Date: 2014-02-03 08:30-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,6 +34,15 @@ msgstr "Datos del trabajo"
 #: admin.py:180
 msgid "Adicionar agenciados selecionados a perfil procurado em trabalho"
 msgstr "Agregar agenciados seleccionados a un perfil buscado en un trabajo"
+
+#: forms.py:13
+msgid "Indique el asunto de los emails a ser enviados."
+msgstr "Indique el asunto de los emails a ser enviados."
+
+#: forms.py:24
+#, python-format
+msgid "Indique los destinatarios del mail para el perfil \"%s\""
+msgstr "Indique los destinatarios del mail para el perfil \"%s\""
 
 #: models.py:18
 msgid "Data do evento"
@@ -310,7 +319,7 @@ msgstr "Link al agenciado"
 msgid "Telefonos"
 msgstr "Teléfonos"
 
-#: views.py:120 views.py:147
+#: views.py:120 views.py:148
 msgid "Este mensagem deve ser visualizado em formato HTML."
 msgstr "Este mensaje debe ser visualizado en formato HTML."
 
@@ -328,16 +337,16 @@ msgstr ""
 msgid "Detalhe de trabalho \"%s\""
 msgstr "Detalle del trabajo \"%s\""
 
-#: views.py:157
+#: views.py:158
 #, python-format
 msgid "Agenciado %s não tem um email definido."
 msgstr "Agenciado %s no tiene um email definido."
 
-#: views.py:158
-msgid "Trabalho enviado com sucesso a os agenciados postulados."
-msgstr "Trabajo enviado com éxito a los agenciados postulados."
+#: views.py:159
+msgid "Trabalho enviado com sucesso a os agenciados selecionados."
+msgstr "Trabajo enviado com éxito a los agenciados seleccionados."
 
-#: views.py:161
+#: views.py:162
 #, python-format
 msgid "Detalhe da Postulação para Trabalho \"%s\""
 msgstr "Detalle de la Postulación para Trabajo \"%s\""
@@ -537,7 +546,6 @@ msgid "Enviar"
 msgstr "Enviar"
 
 #: templates/trabajo/trabajo/enviar_mail_productora.html:59
-#: templates/trabajo/trabajo/admin/enviar_mail_agenciados.html:57
 msgid "Conteudo do e-mail"
 msgstr "Contenido del e-mail"
 
@@ -559,6 +567,10 @@ msgstr "Envio de trabajo \"%(trabajo)s\" a agenciados postulados"
 msgid "Verifique que o conteudo a enviar é correto (exemplo para um agenciado)"
 msgstr ""
 "Verifique que el contenido a enviar es correcto (ejemplo para un agenciado)"
+
+#: templates/trabajo/trabajo/admin/enviar_mail_agenciados.html:57
+msgid "Exemplo de conteudo do e-mail"
+msgstr "Ejemplo de contenido del e-mail"
 
 #~ msgid ""
 #~ "%(direccion)s, %(barrio)s, %(ciudad)s, %(estado)s, %(codigo_postal)s "

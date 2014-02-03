@@ -136,16 +136,17 @@ def trabajo_enviar_mail_agenciados(request,trabajo_id):
   trabajo=Trabajo.objects.get(pk=trabajo_id)
 
   if request.method == 'POST':
-    form = MailAgenciadosForm(request.POST)
+    form = MailAgenciadosForm(trabajo.rol_set.all(),request.POST)
     if form.is_valid():
       template = loader.get_template('trabajo/rol/admin/cuerpo_mail_agenciado.html')
       for rol in trabajo.rol_set.all():
         asunto = form.cleaned_data['asunto']
         agencia=Agencia.get_activa(request)
         ccs = [request.user.email,agencia.email]
+        postulaciones = form.cleaned_data[MailAgenciadosForm.get_rol_fieldname(rol)]
 
         text_content = _(u'Este mensagem deve ser visualizado em formato HTML.')
-        for postulacion in rol.get_postulaciones_confirmables():
+        for postulacion in postulaciones:
           if postulacion.agenciado.mail:
             context = RequestContext(request, {'postulacion':postulacion, })
             html_content = template.render(context)
@@ -155,11 +156,11 @@ def trabajo_enviar_mail_agenciados(request,trabajo_id):
             msg.send()
           else:
             messages.error(request, _(u'Agenciado %s não tem um email definido.'%postulacion.agenciado))
-      messages.success(request, _(u'Trabalho enviado com sucesso a os agenciados postulados.'))
+      messages.success(request, _(u'Trabalho enviado com sucesso a os agenciados selecionados.'))
       return redirect('/admin/trabajo/trabajo/%s/'%trabajo_id)
   else:
     asunto = _(u'Detalhe da Postulação para Trabalho "%s"') % (trabajo.titulo,)
-    form = MailAgenciadosForm(initial={'asunto': asunto})
+    form = MailAgenciadosForm(trabajo.rol_set.all(),initial={'asunto': asunto})
 
   return render(request,'trabajo/trabajo/admin/enviar_mail_agenciados.html',{'form': form, 'trabajo': trabajo, })
 

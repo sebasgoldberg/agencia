@@ -16,8 +16,12 @@ function make_module_messages
   make_language_and_translate "pt_BR"
 }
 
-make_module_messages agencia
-make_module_messages agenciado
-make_module_messages perfil
-make_module_messages trabajo
-
+if [ $# -eq 1 ]
+then
+  make_module_messages "$1"
+else
+  make_module_messages agencia
+  make_module_messages agenciado
+  make_module_messages perfil
+  make_module_messages trabajo
+fi

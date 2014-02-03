@@ -1,5 +1,5 @@
 # coding=utf-8
-from iampacks.agencia.agencia.models import Agenciado, FotoAgenciado, VideoAgenciado, Compania, Telefono
+from iampacks.agencia.agencia.models import Agenciado, FotoAgenciado, VideoAgenciado, Telefono
 from iampacks.agencia.perfil.models import Danza, Deporte, EstadoDientes, Idioma, Instrumento, Ojos, Pelo, Piel, Talle
 from django.test import TestCase
 from datetime import date
