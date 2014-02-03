@@ -257,7 +257,7 @@ TRABAJO_PAGADO='TP'
 class Rol(models.Model):
     trabajo = models.ForeignKey(Trabajo,on_delete=models.PROTECT)
     descripcion = models.CharField(max_length=60, verbose_name=ugettext_lazy(u'Descripção'))
-    cache = models.DecimalField(max_digits=15, decimal_places=4, null=True, blank=True)
+    cache = models.DecimalField(max_digits=15, decimal_places=2, null=True, blank=True)
     caracteristicas = models.TextField(verbose_name=ugettext_lazy(u'Caraterísticas'), null=True, blank=True)
     def __unicode__(self):
       return u'%s (%s)' % (self.descripcion, self.trabajo.titulo)
