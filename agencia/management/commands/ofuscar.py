@@ -15,6 +15,7 @@ def ofuscar(valor):
   if not valor:
     return valor
   nuevo_valor=''
+  multiplicador=len(valor)*2+1
   for caracter in valor:
     posicion=None
     try:
@@ -22,7 +23,7 @@ def ofuscar(valor):
     except KeyError:
       pass
     if posicion:
-      nueva_posicion=((posicion*3)+7)%len(minusculas)
+      nueva_posicion=((posicion*multiplicador)+7)%len(minusculas)
       nuevo_valor+=minusculas[nueva_posicion]
       continue
     try:
@@ -30,7 +31,7 @@ def ofuscar(valor):
     except KeyError:
       pass
     if posicion:
-      nueva_posicion=((posicion*3)+7)%len(mayusculas)
+      nueva_posicion=((posicion*multiplicador)+7)%len(mayusculas)
       nuevo_valor+=mayusculas[nueva_posicion]
       continue
     try:
@@ -38,7 +39,7 @@ def ofuscar(valor):
     except KeyError:
       pass
     if posicion:
-      nueva_posicion=((posicion*3)+7)%len(numeros)
+      nueva_posicion=((posicion*multiplicador)+7)%len(numeros)
       nuevo_valor+=numeros[nueva_posicion]
       continue
     nuevo_valor+=caracter
