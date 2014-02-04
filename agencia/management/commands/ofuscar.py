@@ -77,3 +77,47 @@ class Command(BaseCommand):
 
       self.stdout.write(('Agenciado %s ofuscado con exito como %s.\n'%(agenciado_anterior,agenciado)).decode('utf-8'))
 
+    from iampacks.agencia.trabajo.models import Trabajo, Rol, Productora
+
+    for trabajo in Trabajo.objects.all():
+      trabajo_anterior = str(trabajo)
+      trabajo.titulo = ofuscar(trabajo.titulo)
+      trabajo.descripcion = ofuscar(trabajo.descripcion)
+      trabajo.save()
+      for evento in trabajo.eventotrabajo_set.all():
+        evento.barrio = ofuscar(evento.barrio)
+        evento.direccion = ofuscar(evento.direccion)
+        evento.codigo_postal = ofuscar(evento.codigo_postal)
+        evento.save()
+      self.stdout.write(('Trabajo %s ofuscado con exito como %s.\n'%(trabajo_anterior,trabajo)).decode('utf-8'))
+      
+    for rol in Rol.objects.all():
+      rol_anterior = str(rol)
+      rol.descripcion = ofuscar(rol.descripcion)
+      rol.caracteristicas = ofuscar(rol.caracteristicas)
+      rol.cache = 100
+      rol.save()
+      for evento in rol.eventorol_set.all():
+        evento.barrio = ofuscar(evento.barrio)
+        evento.direccion = ofuscar(evento.direccion)
+        evento.codigo_postal = ofuscar(evento.codigo_postal)
+        evento.save()
+      self.stdout.write(('Rol %s ofuscado con exito como %s.\n'%(rol_anterior,rol)).decode('utf-8'))
+      
+    for productora in Productora.objects.all():
+      productora_anterior = str(productora)
+      productora.nombre = ofuscar(productora.nombre)
+      productora.mail = ofuscar(productora.mail)
+      productora.save()
+      for telefono in productora.telefonoproductora_set.all():
+        telefono.telefono=ofuscar(telefono.telefono)
+        telefono.save()
+      for direccion in productora.direccionproductora_set.all():
+        direccion.barrio = ofuscar(direccion.barrio)
+        direccion.direccion = ofuscar(direccion.direccion)
+        direccion.codigo_postal = ofuscar(direccion.codigo_postal)
+        direccion.save()
+
+      self.stdout.write(('Productora %s ofuscado con exito como %s.\n'%(productora_anterior,productora)).decode('utf-8'))
+
+
