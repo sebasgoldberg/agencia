@@ -20,6 +20,7 @@ from iampacks.agencia.trabajo.models import Postulacion, Rol
 from django.utils.translation import ugettext as _
 from django.utils.translation import ugettext_lazy
 from iampacks.agencia.agencia.forms import DireccionAgenciadoFormRelated
+from django import forms
 
 class BPCheckboxSelectMultiple(CheckboxSelectMultiple):
 
@@ -64,8 +65,13 @@ class AgenciadoForm(ModelForm):
       'danzas': BPCheckboxSelectMultiple,
       'instrumentos': BPCheckboxSelectMultiple,
       'idiomas': BPCheckboxSelectMultiple,
+      'fecha_nacimiento': forms.TextInput(attrs={'data-provide':'datepicker'})
       }
 
+  class Media:
+    js = ('bootstrap/js/bootstrap-datepicker.js',)
+    css = { 'screen': ('bootstrap/css/datepicker.css',),}
+  
 BaseDireccionFormSet = inlineformset_factory(Agenciado, DireccionAgenciado, extra=1, max_num=1, can_delete=False, form = DireccionAgenciadoFormRelated)
 BaseTelefonoFormSet = inlineformset_factory(Agenciado, Telefono, extra=6, max_num=6)
 BaseFotoAgenciadoFormSet = inlineformset_factory(Agenciado, FotoAgenciado, extra=6, max_num=6)

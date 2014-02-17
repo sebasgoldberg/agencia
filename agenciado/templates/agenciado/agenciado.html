@@ -4,6 +4,7 @@
 
 {%block extraassets%}
   {{direccionFormSet.media}}
+  {{form.media}}
 {%endblock%}
 
 {%block agenciado_active%}active{%endblock%}
@@ -27,6 +28,9 @@
       <div class='{{clase_espacio_celda}}'>{{form.nombre|as_crispy_field}}</div>
       <div class='{{clase_espacio_celda}}'>{{form.apellido|as_crispy_field}}</div>
       <div class='{{clase_espacio_celda}}'>{{form.fecha_nacimiento|as_crispy_field}}</div>
+      <script>
+        $('#id_fecha_nacimiento').datepicker({format: 'yyyy-mm-dd'})
+      </script>
     </div>
   </fieldset>
 
@@ -86,13 +90,13 @@
 
   <fieldset>
     <legend>{% trans "Habilidades" %}</legend>
-    {{form.deportes|as_crispy_field}}
+    {{form.deportes}}
     <hr/>
-    {{form.danzas|as_crispy_field}}
+    {{form.danzas}}
     <hr/>
-    {{form.instrumentos|as_crispy_field}}
+    {{form.instrumentos}}
     <hr/>
-    {{form.idiomas|as_crispy_field}}
+    {{form.idiomas}}
   </fieldset>
 
   <fieldset>
