@@ -31,7 +31,7 @@ class Productora(models.Model):
   imagen = models.ImageField(upload_to='trabajo/productora/', null=True, blank=True)
   thumbnail = ImageSpecField(
     [Adjust(contrast=1.2, sharpness=1.1), ResizeToFill(100,100)],
-    image_field='imagen', format='JPEG', options={'quality': 90}
+    source='imagen', format='JPEG', options={'quality': 90}
     )
   def __unicode__(self):
     return self.nombre
@@ -81,7 +81,7 @@ class ItemPortfolio(models.Model):
     codigo_video = models.CharField(max_length=30, unique=True, null=True, blank=True)
     # agregar rutas a configuracion del apache, al archivo settings y crear carpetas correspondientes
     imagen = models.ImageField(upload_to='trabajo/portfolio/', null=True, blank=True)
-    thumbnail = ImageSpecField([Adjust(contrast=1.2, sharpness=1.1), ResizeToFill(358,202)], image_field='imagen', format='JPEG', options={'quality': 90})
+    thumbnail = ImageSpecField([Adjust(contrast=1.2, sharpness=1.1), ResizeToFill(358,202)], source='imagen', format='JPEG', options={'quality': 90})
     fecha = models.DateField(default=date.today(),verbose_name=ugettext_lazy(u'Data'))
     def __unicode__(self):
       return self.titulo
@@ -137,7 +137,7 @@ class Trabajo(models.Model):
     productora= models.ForeignKey(Productora,on_delete=models.PROTECT, verbose_name=ugettext_lazy(u'Produtora'))
     descripcion = models.TextField(verbose_name=ugettext_lazy(u'Descripção'), null=True, blank=True)
     imagen = models.ImageField(upload_to='trabajo/trabajo/',blank=True)
-    thumbnail = ImageSpecField([Adjust(contrast=1.2, sharpness=1.1), ResizeToFill(100,100)], image_field='imagen', format='JPEG', options={'quality': 90})
+    thumbnail = ImageSpecField([Adjust(contrast=1.2, sharpness=1.1), ResizeToFill(100,100)], source='imagen', format='JPEG', options={'quality': 90})
     ESTADO_TRABAJO=(
       ('IN',_(u'Inicial')),
       ('AT',_(u'Ativo')),

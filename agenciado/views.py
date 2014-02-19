@@ -3,97 +3,16 @@
 
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from django.forms import ModelForm
-from django.forms.extras.widgets import SelectDateWidget
 from iampacks.agencia.agencia.models import Agenciado, DireccionAgenciado, Telefono, FotoAgenciado, VideoAgenciado
-from iampacks.agencia.agencia.models import validarDireccionIngresada, validarTelefonoIngresado, validarFotoIngresada
 from datetime import date
-from django.forms.models import inlineformset_factory
 from django.contrib import messages
-from django import forms
-from itertools import chain
-from django.forms.widgets import CheckboxSelectMultiple, CheckboxInput, HiddenInput
-from django.utils.encoding import force_unicode
-from django.utils.html import conditional_escape
-from django.utils.safestring import mark_safe
 from iampacks.agencia.trabajo.models import Postulacion, Rol
 from django.utils.translation import ugettext as _
 from django.utils.translation import ugettext_lazy
-from iampacks.agencia.agencia.forms import DireccionAgenciadoFormRelated
-from django import forms
 
-class BPCheckboxSelectMultiple(CheckboxSelectMultiple):
+from iampacks.agencia.agenciado.forms import *
 
-  def render(self, name, value, attrs=None, choices=()):
-    if value is None: value = []
-    has_id = attrs and 'id' in attrs
-    final_attrs = self.build_attrs(attrs, name=name)
-    output = [u'<div class="row">']
-    # Normalize to strings
-    str_values = set([force_unicode(v) for v in value])
-    for i, (option_value, option_label) in enumerate(chain(self.choices, choices)):
-      # If an ID attribute was given, add a numeric index as a suffix,
-      # so that the checkboxes don't all have the same ID attribute.
-      if has_id:
-        final_attrs = dict(final_attrs, id='%s_%s' % (attrs['id'], i))
-        label_for = u' for="%s"' % final_attrs['id']
-      else:
-        label_for = ''
-
-      cb = CheckboxInput(final_attrs, check_test=lambda value: value in str_values)
-      option_value = force_unicode(option_value)
-      rendered_cb = cb.render(name, option_value)
-      option_label = conditional_escape(force_unicode(option_label))
-      output.append(u'<div class="span2"><label%s>%s %s</label></div>' % (label_for, rendered_cb, option_label))
-      ultimo_fila=(((i+1) % 6) == 0)
-      if ultimo_fila:
-        output.append(u'</div>')
-        output.append(u'<div class="row">')
-    # Normalize to strings
-    output.append(u'</div>')
-    return mark_safe(u'\n'.join(output))
-
-class AgenciadoForm(ModelForm):
-  next_page = forms.CharField(widget=forms.HiddenInput,required=False)
-  
-  class Meta:
-    model = Agenciado
-    exclude = ('activo', 'fecha_ingreso')
-    widgets = {
-      'fecha_nacimiento': SelectDateWidget(years=range(date.today().year-100,date.today().year+1)),
-      'deportes': BPCheckboxSelectMultiple,
-      'danzas': BPCheckboxSelectMultiple,
-      'instrumentos': BPCheckboxSelectMultiple,
-      'idiomas': BPCheckboxSelectMultiple,
-      'fecha_nacimiento': forms.TextInput(attrs={'data-provide':'datepicker'})
-      }
-
-  class Media:
-    js = ('bootstrap/js/bootstrap-datepicker.js',)
-    css = { 'screen': ('bootstrap/css/datepicker.css',),}
-  
-BaseDireccionFormSet = inlineformset_factory(Agenciado, DireccionAgenciado, extra=1, max_num=1, can_delete=False, form = DireccionAgenciadoFormRelated)
-BaseTelefonoFormSet = inlineformset_factory(Agenciado, Telefono, extra=6, max_num=6)
-BaseFotoAgenciadoFormSet = inlineformset_factory(Agenciado, FotoAgenciado, extra=6, max_num=6)
-VideoAgenciadoFormSet = inlineformset_factory(Agenciado, VideoAgenciado, extra=6, max_num=6, exclude=['codigo_video'])
-
-class DireccionFormSet(BaseDireccionFormSet):
-  def clean(self):
-    super(DireccionFormSet,self).clean()
-    validarDireccionIngresada(self)
-
-class TelefonoFormSet(BaseTelefonoFormSet):
-
-  def clean(self):
-    super(TelefonoFormSet,self).clean()
-    validarTelefonoIngresado(self)
-
-class FotoAgenciadoFormSet(BaseFotoAgenciadoFormSet):
-  def clean(self):
-    super(FotoAgenciadoFormSet,self).clean()
-
-@login_required
-def index(request):
+def get_agenciado(request):
   try:
     agenciado=Agenciado.objects.get(user__id=request.user.id)
   except Agenciado.DoesNotExist:
@@ -105,6 +24,12 @@ def index(request):
       fecha_ingreso = date.today(),
       activo=False,
     )
+
+  return agenciado
+
+@login_required
+def index(request):
+  agenciado = get_agenciado(request)
 
   if request.method == 'POST':
     form = AgenciadoForm(request.POST,instance=agenciado)
@@ -159,3 +84,73 @@ def postular(request):
   messages.success(request,_(u'Aplicação para o perfil "%s" realizada com sucesso.')%rol.descripcion)
   messages.info(request,_(u'A aplicação vai ser analizada por nosso equipe, muito obrigado por sua postulação.'))
   return redirect('/trabajo/busquedas/?id=%s'%rol.trabajo.id)
+
+from django.http import HttpResponseRedirect
+from django.contrib.formtools.wizard.views import SessionWizardView as DjangoSessionWizardView
+from django.core.files.storage import FileSystemStorage
+import os
+from django.conf import settings
+
+class SessionWizardView(DjangoSessionWizardView):
+  def get_form(self, step=None, data=None, files=None):
+    """
+    Constructs the form for a given `step`. If no `step` is defined, the
+    current step will be determined automatically.
+    The form will be initialized using the `data` argument to prefill the
+    new form. If needed, instance or queryset (for `ModelForm` or
+    `ModelFormSet`) will be added too.
+    """
+    if step is None:
+        step = self.steps.current
+    # prepare the kwargs for the form instance.
+    kwargs = self.get_form_kwargs(step)
+    kwargs.update({
+        'data': data,
+        'files': files,
+        'prefix': self.get_form_prefix(step, self.form_list[step]),
+        'initial': self.get_form_initial(step),
+    })
+    if issubclass(self.form_list[step], forms.ModelForm):
+        # If the form is based on ModelForm, add instance if available
+        # and not previously set.
+        kwargs.setdefault('instance', self.get_form_instance(step))
+    elif issubclass(self.form_list[step], forms.models.BaseModelFormSet):
+        # If the form is based on ModelFormSet, add queryset if available
+        # and not previous set.
+        kwargs.setdefault('instance', self.get_form_instance(step))
+    return self.form_list[step](**kwargs)
+
+class AgenciadoWizard(SessionWizardView):
+
+  form_list = [
+    AgenciadoDatosPersonalesForm, 
+    AgenciadoCaracteristicasForm,
+    AgenciadoHabilidadesForm,
+    DireccionFormSet, 
+    TelefonoFormSet, 
+    FotoAgenciadoFormSet,
+    VideoAgenciadoFormSet,
+    AgenciadoOtrosDatosForm,
+    ]
+  template_name = 'agenciado/wizard.html'
+  file_storage = FileSystemStorage(location=os.path.join(settings.MEDIA_ROOT, 'tmp'))
+  instance = None
+
+  def done(self, form_list, **kwargs):
+    formsets = []
+    cleaned_data = {}
+    for form in form_list:
+      if isinstance(form, forms.models.BaseModelFormSet):
+        formsets.append(form)
+      else:
+        self.instance.__dict__ = dict(self.instance.__dict__.items()+form.cleaned_data.items())
+    self.instance.save()
+    for formset in formsets:
+      formset.save()
+    messages.success(self.request, _(u'Dados atualizados com sucesso'))
+    return HttpResponseRedirect('/agenciado/wizard/')
+
+  def get_form_instance(self, step):
+    if not self.instance:
+      self.instance = get_agenciado(self.request)
+    return self.instance

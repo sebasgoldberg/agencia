@@ -1,5 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.conf import settings
+from iampacks.agencia.agenciado.views import AgenciadoWizard
+from iampacks.agencia.agenciado.forms import *
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -16,5 +18,7 @@ urlpatterns = patterns('iampacks.agencia.agenciado.views',
     # Uncomment the next line to enable the admin:
     url(r'^$', 'index'),
     url(r'^postular/$', 'postular'),
-)
+    )+ patterns('',
+    url(r'^wizard/$', AgenciadoWizard.as_view()),
+    )
 

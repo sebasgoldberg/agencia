@@ -71,7 +71,7 @@ msgstr "%(nombre)s - %(asunto)s"
 
 #: models.py:34
 msgid "Tem que informar o endereço"
-msgstr "Tiene que informar un teléfono"
+msgstr "Tiene que informar una dirección"
 
 #: models.py:37
 msgid "Tem que informar um telefone"

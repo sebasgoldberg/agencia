@@ -12,7 +12,7 @@
 {% block content %}
 
 {%with clase_espacio_celda='span3'%}
-<form class='uniForm' enctype="multipart/form-data" method="post"  action="/agenciado/">
+<form enctype="multipart/form-data" method="post"  action="/agenciado/">
   {% csrf_token %}
 
   {% if form.errors or direccionFormSet.non_form_errors or direccionFormSet.errors or telefonoFormSet.non_form_errors or telefonoFormSet.errors or fotoAgenciadoFormSet.non_form_errors or fotoAgenciadoFormSet.errors or videoAgenciadoFormSet.non_form_errors or videoAgenciadoFormSet.errors %}
