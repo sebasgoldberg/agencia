@@ -48,7 +48,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class='brand' href=/agencia/>
+        <a class='brand' {% if ambiente.sitio.externo.url %}href="{{ ambiente.sitio.externo.url }}" {%else%} href="/agencia/" {%endif%}>
           {%comment%}
           {%if agencia.logo%}
             <img src='{{agencia.logo.url}}' alt="{{agencia.nombre}}"/>
@@ -59,15 +59,14 @@
           {{agencia.nombre}}
         </a> 
         <div class="nav-collapse collapse">
-          <ul class="nav">
-            <li class='{%block agenciado_active%}{%endblock%}'><a href="/agenciado/"><span><i class='icon-user icon-white'></i> {% trans "Meu Perfil" %}</span></a> </li>
-            <li class='{%block busquedas_active%}{%endblock%}'><a href="/trabajo/busquedas/"><span><i class='icon-search icon-white'></i> {% trans "Pesquisas" %}</span></a> </li>
-            <li class='{%block portfolio_active%}{%endblock%}'><a href="/trabajo/portfolio/"><span><i class='icon-book icon-white'></i> {% trans "Portfolio" %}</span></a> </li>
-            <li class='{%block contacto_active%}{%endblock%}'><a href="/agencia/contacto/"><span><i class='icon-envelope icon-white'></i> {% trans "Contato" %}</span></a> </li>
-
-
-
-          </ul>
+          {% if ambiente.sitio.estandar.activo %}
+            <ul class="nav">
+              <li class='{%block agenciado_active%}{%endblock%}'><a href="/agenciado/"><span><i class='icon-user icon-white'></i> {% trans "Meu Perfil" %}</span></a> </li>
+              <li class='{%block busquedas_active%}{%endblock%}'><a href="/trabajo/busquedas/"><span><i class='icon-search icon-white'></i> {% trans "Pesquisas" %}</span></a> </li>
+              <li class='{%block portfolio_active%}{%endblock%}'><a href="/trabajo/portfolio/"><span><i class='icon-book icon-white'></i> {% trans "Portfolio" %}</span></a> </li>
+              <li class='{%block contacto_active%}{%endblock%}'><a href="/agencia/contacto/"><span><i class='icon-envelope icon-white'></i> {% trans "Contato" %}</span></a> </li>
+            </ul>
+          {%endif%}
 
 
           <div class="pull-right">

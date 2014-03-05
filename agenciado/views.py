@@ -9,7 +9,6 @@ from django.contrib import messages
 from iampacks.agencia.trabajo.models import Postulacion, Rol
 from django.utils.translation import ugettext as _
 from django.utils.translation import ugettext_lazy
-
 from iampacks.agencia.agenciado.forms import *
 
 def get_agenciado(request):
@@ -27,8 +26,8 @@ def get_agenciado(request):
 
   return agenciado
 
-@login_required
-def index(request):
+def process_agenciado_form(request,template,default_next_page):
+  
   agenciado = get_agenciado(request)
 
   if request.method == 'POST':
@@ -46,7 +45,7 @@ def index(request):
       messages.success(request, _(u'Dados atualizados com sucesso'))
       next_page = form.cleaned_data['next_page']
       if not next_page:
-        next_page = '/agenciado/'
+        next_page = default_next_page
       return redirect(next_page)
   else:
     next_page = request.GET.get('next')
@@ -55,7 +54,12 @@ def index(request):
     telefonoFormSet=TelefonoFormSet(instance=agenciado)
     fotoAgenciadoFormSet=FotoAgenciadoFormSet(instance=agenciado)
     videoAgenciadoFormSet=VideoAgenciadoFormSet(instance=agenciado)
-  return render(request,'agenciado/agenciado.html',{'form':form, 'direccionFormSet':direccionFormSet, 'telefonoFormSet':telefonoFormSet, 'fotoAgenciadoFormSet':fotoAgenciadoFormSet, 'videoAgenciadoFormSet':videoAgenciadoFormSet, })
+  return render(request,template,{'form':form, 'direccionFormSet':direccionFormSet, 'telefonoFormSet':telefonoFormSet, 'fotoAgenciadoFormSet':fotoAgenciadoFormSet, 'videoAgenciadoFormSet':videoAgenciadoFormSet, })
+
+
+@login_required
+def index(request): 
+  return process_agenciado_form(request,'agenciado/agenciado.html','/agenciado/')
 
 @login_required
 def postular(request):
@@ -85,72 +89,3 @@ def postular(request):
   messages.info(request,_(u'A aplicação vai ser analizada por nosso equipe, muito obrigado por sua postulação.'))
   return redirect('/trabajo/busquedas/?id=%s'%rol.trabajo.id)
 
-from django.http import HttpResponseRedirect
-from django.contrib.formtools.wizard.views import SessionWizardView as DjangoSessionWizardView
-from django.core.files.storage import FileSystemStorage
-import os
-from django.conf import settings
-
-class SessionWizardView(DjangoSessionWizardView):
-  def get_form(self, step=None, data=None, files=None):
-    """
-    Constructs the form for a given `step`. If no `step` is defined, the
-    current step will be determined automatically.
-    The form will be initialized using the `data` argument to prefill the
-    new form. If needed, instance or queryset (for `ModelForm` or
-    `ModelFormSet`) will be added too.
-    """
-    if step is None:
-        step = self.steps.current
-    # prepare the kwargs for the form instance.
-    kwargs = self.get_form_kwargs(step)
-    kwargs.update({
-        'data': data,
-        'files': files,
-        'prefix': self.get_form_prefix(step, self.form_list[step]),
-        'initial': self.get_form_initial(step),
-    })
-    if issubclass(self.form_list[step], forms.ModelForm):
-        # If the form is based on ModelForm, add instance if available
-        # and not previously set.
-        kwargs.setdefault('instance', self.get_form_instance(step))
-    elif issubclass(self.form_list[step], forms.models.BaseModelFormSet):
-        # If the form is based on ModelFormSet, add queryset if available
-        # and not previous set.
-        kwargs.setdefault('instance', self.get_form_instance(step))
-    return self.form_list[step](**kwargs)
-
-class AgenciadoWizard(SessionWizardView):
-
-  form_list = [
-    AgenciadoDatosPersonalesForm, 
-    AgenciadoCaracteristicasForm,
-    AgenciadoHabilidadesForm,
-    DireccionFormSet, 
-    TelefonoFormSet, 
-    FotoAgenciadoFormSet,
-    VideoAgenciadoFormSet,
-    AgenciadoOtrosDatosForm,
-    ]
-  template_name = 'agenciado/wizard.html'
-  file_storage = FileSystemStorage(location=os.path.join(settings.MEDIA_ROOT, 'tmp'))
-  instance = None
-
-  def done(self, form_list, **kwargs):
-    formsets = []
-    cleaned_data = {}
-    for form in form_list:
-      if isinstance(form, forms.models.BaseModelFormSet):
-        formsets.append(form)
-      else:
-        self.instance.__dict__ = dict(self.instance.__dict__.items()+form.cleaned_data.items())
-    self.instance.save()
-    for formset in formsets:
-      formset.save()
-    messages.success(self.request, _(u'Dados atualizados com sucesso'))
-    return HttpResponseRedirect('/agenciado/wizard/')
-
-  def get_form_instance(self, step):
-    if not self.instance:
-      self.instance = get_agenciado(self.request)
-    return self.instance
