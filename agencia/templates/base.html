@@ -49,7 +49,7 @@
           <span class="icon-bar"></span>
         </button>
         <a class='brand' {% if ambiente.sitio.externo.url %}href="{{ ambiente.sitio.externo.url }}" {%else%} href="/agencia/" {%endif%}>
-          {% trans "Volver a" %} {{agencia.nombre}}
+          {%if ambiente.sitio.externo.url %}{% trans "Volver a" %} {%endif%}{{agencia.nombre}}
           {%comment%}
           {%if agencia.logo%}
             <img src='{{agencia.logo.url}}' alt="{{agencia.nombre}}"/>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-24 14:58-0800\n"
+"POT-Creation-Date: 2014-03-05 17:16-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -85,7 +85,7 @@ msgstr "Tem que subir uma foto"
 msgid "Nome"
 msgstr "Nome"
 
-#: models.py:44 models.py:116 models.py:286
+#: models.py:44 models.py:116 models.py:289
 msgid "e-mail"
 msgstr "e-mail"
 
@@ -320,7 +320,7 @@ msgstr ""
 "Edad %(edad)s, sexo %(sexo)s, olhos %(ojos)s, cabelo %(pelo)s, pele "
 "%(piel)s, atura %(altura)s, peso %(peso)s, estado dentes %(estado_dientes)s."
 
-#: models.py:256 models.py:287
+#: models.py:256 models.py:290
 msgid "Descripção"
 msgstr "Descripção"
 
@@ -329,55 +329,55 @@ msgstr "Descripção"
 msgid "%s anos"
 msgstr "%s anos"
 
-#: models.py:273
+#: models.py:276
 msgid "Mails"
 msgstr "Mails"
 
-#: models.py:281 models.py:297
+#: models.py:284 models.py:300
 msgid "Agenciado"
 msgstr "Agenciado"
 
-#: models.py:282
+#: models.py:285
 msgid "Agenciados"
 msgstr "Agenciados"
 
-#: models.py:293
+#: models.py:296
 msgid "Mail Agenciado"
 msgstr "Mail Agenciado"
 
-#: models.py:294
+#: models.py:297
 msgid "Mails Agenciado"
 msgstr "Mails Agenciado"
 
-#: models.py:299
+#: models.py:302
 msgid "Endereço agenciado"
 msgstr "Endereço agenciado"
 
-#: models.py:300
+#: models.py:303
 msgid "Endereços agenciados"
 msgstr "Endereços agenciados"
 
-#: models.py:310
+#: models.py:313
 msgid "Foto agenciado"
 msgstr "Foto agenciado"
 
-#: models.py:311
+#: models.py:314
 msgid "Fotos agenciado"
 msgstr "Fotos agenciado"
 
-#: models.py:316
+#: models.py:319
 msgid "Video agenciado"
 msgstr "Video agenciado"
 
-#: models.py:317
+#: models.py:320
 msgid "Videos agenciado"
 msgstr "Videos agenciado"
 
-#: models.py:327
+#: models.py:330
 msgid "Telefone agenciado"
 msgstr "Telefone agenciado"
 
-#: models.py:328
+#: models.py:331
 msgid "Telefones agenciado"
 msgstr "Telefones agenciado"
 
@@ -385,7 +385,7 @@ msgstr "Telefones agenciado"
 msgid "Videos"
 msgstr "Videos"
 
-#: views.py:11
+#: views.py:12
 msgid ""
 "Por favor atualize os dados do seu perfil a ser analizado por nossa agencia."
 msgstr ""
@@ -395,43 +395,47 @@ msgstr ""
 msgid "Crea un super usuario para el proyecto en cuestión"
 msgstr "Cria um super usuario para o projeto"
 
-#: templates/base.html:64 templates/base.html.py:87
+#: templates/base.html:52
+msgid "Volver a"
+msgstr "Voltar a"
+
+#: templates/base.html:65 templates/base.html.py:86
 msgid "Meu Perfil"
 msgstr "Meu Perfil"
 
-#: templates/base.html:65
+#: templates/base.html:66
 msgid "Pesquisas"
 msgstr "Pesquisas"
 
-#: templates/base.html:66
+#: templates/base.html:67
 msgid "Portfolio"
 msgstr "Portfolio"
 
-#: templates/base.html:67
+#: templates/base.html:68
 msgid "Contato"
 msgstr "Contato"
 
-#: templates/base.html:78
+#: templates/base.html:77
 msgid "Administração"
 msgstr "Administração"
 
-#: templates/base.html:82
+#: templates/base.html:81
 msgid "Conta "
 msgstr "Conta "
 
-#: templates/base.html:88
+#: templates/base.html:87
 msgid "Trocar Senha"
 msgstr "Trocar Senha"
 
-#: templates/base.html:89
+#: templates/base.html:88
 msgid "Sair"
 msgstr "Sair"
 
-#: templates/base.html:91
+#: templates/base.html:90
 msgid "Registro"
 msgstr "Registro"
 
-#: templates/base.html:92
+#: templates/base.html:91
 msgid "Entrar"
 msgstr "Entrar"
 
