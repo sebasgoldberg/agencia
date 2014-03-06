@@ -59,7 +59,7 @@
           {%endcomment%}
         </a> 
         <div class="nav-collapse collapse">
-          {% if ambiente.sitio.estandar.activo %}
+          {% if not ambiente.sitio.externo.url %}
             <ul class="nav">
               <li class='{%block agenciado_active%}{%endblock%}'><a href="/agenciado/"><span><i class='icon-user icon-white'></i> {% trans "Meu Perfil" %}</span></a> </li>
               <li class='{%block busquedas_active%}{%endblock%}'><a href="/trabajo/busquedas/"><span><i class='icon-search icon-white'></i> {% trans "Pesquisas" %}</span></a> </li>
