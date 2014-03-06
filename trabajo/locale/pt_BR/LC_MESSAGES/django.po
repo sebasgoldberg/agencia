@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-03 08:31-0800\n"
+"POT-Creation-Date: 2014-03-05 17:16-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -372,34 +372,38 @@ msgstr "Ver no site"
 msgid "Página %(pagina)s de %(cantidad_paginas)s"
 msgstr "Página %(pagina)s de %(cantidad_paginas)s"
 
-#: templates/trabajo/rol/agregar_agenciados_seleccionados.html:4
+#: templates/trabajo/rol/agregar_agenciados_seleccionados.html:6
+#: templates/trabajo/rol/agregar_agenciados_seleccionados.html:11
+#: templates/trabajo/rol/resultados_agregar_agenciados_seleccionados.html:10
 msgid "Adicionar agenciados selecionados a perfil de trabalho"
 msgstr "Adicionar agenciados selecionados a perfil de trabalho"
 
-#: templates/trabajo/rol/agregar_agenciados_seleccionados.html:10
-#: templates/trabajo/rol/resultados_agregar_agenciados_seleccionados.html:10
-msgid "Início"
-msgstr "Início"
+#: templates/trabajo/rol/agregar_agenciados_seleccionados.html:13
+#: templates/trabajo/rol/resultados_agregar_agenciados_seleccionados.html:12
+#: templates/trabajo/trabajo/enviar_mail_productora.html:29
+#: templates/trabajo/trabajo/admin/enviar_mail_agenciados.html:29
+msgid "Home"
+msgstr "Home"
 
-#: templates/trabajo/rol/agregar_agenciados_seleccionados.html:11
-#: templates/trabajo/rol/resultados_agregar_agenciados_seleccionados.html:11
+#: templates/trabajo/rol/agregar_agenciados_seleccionados.html:14
+#: templates/trabajo/rol/resultados_agregar_agenciados_seleccionados.html:13
 msgid "Agencia"
 msgstr "Agencia"
 
-#: templates/trabajo/rol/agregar_agenciados_seleccionados.html:12
-#: templates/trabajo/rol/resultados_agregar_agenciados_seleccionados.html:12
+#: templates/trabajo/rol/agregar_agenciados_seleccionados.html:15
+#: templates/trabajo/rol/resultados_agregar_agenciados_seleccionados.html:14
 msgid "Agenciados"
 msgstr "Agenciados"
 
-#: templates/trabajo/rol/agregar_agenciados_seleccionados.html:20
+#: templates/trabajo/rol/agregar_agenciados_seleccionados.html:24
 msgid "Selecione perfil em que deseja adicionar os agenciados selecionados:"
 msgstr "Selecione perfil em que deseja adicionar os agenciados selecionados:"
 
-#: templates/trabajo/rol/agregar_agenciados_seleccionados.html:23
+#: templates/trabajo/rol/agregar_agenciados_seleccionados.html:33
 msgid "Adicionar agenciados"
 msgstr "Adicionar agenciados"
 
-#: templates/trabajo/rol/agregar_agenciados_seleccionados.html:26
+#: templates/trabajo/rol/agregar_agenciados_seleccionados.html:39
 msgid "Agenciados selecionados"
 msgstr "Agenciados selecionados"
 
@@ -421,7 +425,7 @@ msgid "Este perfil não tem postulações registradas"
 msgstr "Este perfil não tem postulações registradas"
 
 #: templates/trabajo/rol/resultados_agregar_agenciados_seleccionados.html:5
-#: templates/trabajo/rol/resultados_agregar_agenciados_seleccionados.html:13
+#: templates/trabajo/rol/resultados_agregar_agenciados_seleccionados.html:15
 #, python-format
 msgid ""
 "Resultado de adicionar agenciados selecionados a perfil %(rol)s de trabalho "
@@ -430,7 +434,7 @@ msgstr ""
 "Resultado de adicionar agenciados selecionados a perfil %(rol)s de trabalho "
 "%(trabajo)s"
 
-#: templates/trabajo/rol/resultados_agregar_agenciados_seleccionados.html:21
+#: templates/trabajo/rol/resultados_agregar_agenciados_seleccionados.html:24
 #, python-format
 msgid ""
 "Agenciados adicionados com exito ao perfil \"%(rol)s\" com estado "
@@ -439,11 +443,11 @@ msgstr ""
 "Agenciados adicionados com exito ao perfil \"%(rol)s\" com estado "
 "\"%(estado)s\""
 
-#: templates/trabajo/rol/resultados_agregar_agenciados_seleccionados.html:27
+#: templates/trabajo/rol/resultados_agregar_agenciados_seleccionados.html:32
 msgid "Nao foi posibel adicionar nenhum agenciado"
 msgstr "Nao foi posibel adicionar nenhum agenciado"
 
-#: templates/trabajo/rol/resultados_agregar_agenciados_seleccionados.html:33
+#: templates/trabajo/rol/resultados_agregar_agenciados_seleccionados.html:39
 #, python-format
 msgid ""
 "Agenciados ja existentes em perfil \"%(rol)s\" (se indica o estado atual "
@@ -530,11 +534,6 @@ msgstr "Este trabalho não tem eventos registrados"
 msgid "Envio de trabalho \"%(trabajo)s\" a produtora %(productora)s"
 msgstr "Envio de trabalho \"%(trabajo)s\" a produtora %(productora)s"
 
-#: templates/trabajo/trabajo/enviar_mail_productora.html:29
-#: templates/trabajo/trabajo/admin/enviar_mail_agenciados.html:29
-msgid "Home"
-msgstr "Home"
-
 #: templates/trabajo/trabajo/enviar_mail_productora.html:41
 msgid "Indique os dados do e-mail a enviar e verifique se o conteudo e correto"
 msgstr ""
@@ -571,3 +570,6 @@ msgstr ""
 #: templates/trabajo/trabajo/admin/enviar_mail_agenciados.html:57
 msgid "Exemplo de conteudo do e-mail"
 msgstr "Exemplo de conteudo do e-mail"
+
+#~ msgid "Início"
+#~ msgstr "Início"

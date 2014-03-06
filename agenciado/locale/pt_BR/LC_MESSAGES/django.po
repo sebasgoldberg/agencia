@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-24 14:59-0800\n"
+"POT-Creation-Date: 2014-03-05 17:16-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,15 +18,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
 
-#: views.py:115
+#: forms.py:28 templates/agenciado/form.html:16
+msgid "Dados persoais"
+msgstr "Dados persoais"
+
+#: forms.py:39 templates/agenciado/form.html:29
+msgid "Dados administrativos"
+msgstr "Dados administrativos"
+
+#: forms.py:45 templates/agenciado/form.html:84
+msgid "Habilidades"
+msgstr "Habilidades"
+
+#: views.py:45
 msgid "Dados atualizados com sucesso"
 msgstr "Dados atualizados com sucesso"
 
-#: views.py:136
+#: views.py:71
 msgid "O perfil do trabalho para o qual quer aplicar nao foi encontrado"
 msgstr "O perfil do trabalho para o qual quer aplicar nao foi encontrado"
 
-#: views.py:143
+#: views.py:78
 #, python-format
 msgid ""
 "Para aplicar ao perfil %(rol)s do trabalho <a href=%(url)s>%(trabajo)s</a> "
@@ -35,12 +47,12 @@ msgstr ""
 "Para aplicar ao perfil %(rol)s do trabalho <a href=%(url)s>%(trabajo)s</a> "
 "tem que completar seus dados de Agenciado"
 
-#: views.py:153
+#: views.py:88
 #, python-format
 msgid "Aplicação para o perfil \"%s\" realizada com sucesso."
 msgstr "Aplicação para o perfil \"%s\" realizada com sucesso."
 
-#: views.py:154
+#: views.py:89
 msgid ""
 "A aplicação vai ser analizada por nosso equipe, muito obrigado por sua "
 "postulação."
@@ -48,46 +60,34 @@ msgstr ""
 "A aplicação vai ser analizada por nosso equipe, muito obrigado por sua "
 "postulação."
 
-#: templates/agenciado/agenciado.html:18
+#: templates/agenciado/form.html:10
 msgid "Tem erros por corregir"
 msgstr "Tem erros por corregir"
 
-#: templates/agenciado/agenciado.html:24
-msgid "Dados persoais"
-msgstr "Dados persoais"
-
-#: templates/agenciado/agenciado.html:34
-msgid "Dados administrativos"
-msgstr "Dados administrativos"
-
-#: templates/agenciado/agenciado.html:44
+#: templates/agenciado/form.html:39
 msgid "Dados de endereço"
 msgstr "Dados de endereço"
 
-#: templates/agenciado/agenciado.html:63
+#: templates/agenciado/form.html:58
 msgid "Telefones"
 msgstr "Telefones"
 
-#: templates/agenciado/agenciado.html:72
+#: templates/agenciado/form.html:67
 msgid "Caracteristicas fisicas"
 msgstr "Carateristicas fisicas"
 
-#: templates/agenciado/agenciado.html:89
-msgid "Habilidades"
-msgstr "Habilidades"
-
-#: templates/agenciado/agenciado.html:100
+#: templates/agenciado/form.html:95
 msgid "Fotos"
 msgstr "Fotos"
 
-#: templates/agenciado/agenciado.html:108
+#: templates/agenciado/form.html:103
 msgid "Videos"
 msgstr "Videos"
 
-#: templates/agenciado/agenciado.html:116
+#: templates/agenciado/form.html:111
 msgid "Otros dados"
 msgstr "Otros dados"
 
-#: templates/agenciado/agenciado.html:129
+#: templates/agenciado/form.html:124
 msgid "Gravar"
 msgstr "Gravar"
