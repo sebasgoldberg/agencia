@@ -25,7 +25,7 @@ class Video(models.Model):
     verbose_name_plural = ugettext_lazy(u"Videos")
 
   def get_youtube_iframe_url(self):
-    return (u'http://www.youtube.com/embed/%s' % self.codigo_video)
+    return (u'https://www.youtube.com/embed/%s' % self.codigo_video)
   get_youtube_iframe_url.allow_tags = True
 
   def html_youtube_iframe(self):
