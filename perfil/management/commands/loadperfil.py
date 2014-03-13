@@ -5,6 +5,7 @@ from django.utils.translation import activate
 from iampacks.agencia.perfil.models import Danza, Deporte, EstadoDientes, Idioma, Instrumento, Ojos, Pelo, Piel, Talle
 from optparse import make_option
 from django.utils.translation import ugettext as _
+from django.conf import settings
 
 class Command(BaseCommand):
 
@@ -14,14 +15,9 @@ class Command(BaseCommand):
     make_option('--idioma'),
     )
 
-  def handle(self,*args,**options):
+  def load_perfil_for_language(self,language):
 
-    idioma=options['idioma']
-
-    if not idioma:
-      idioma='pt-br'
-    
-    activate(idioma)
+    activate(language)
 
     Pelo(descripcion=_(u'Castanho')).save()
     Pelo(descripcion=_(u'Castanho Claro')).save()
@@ -132,6 +128,12 @@ class Command(BaseCommand):
     Piel(descripcion=_(u'Negra')).save()
     Piel(descripcion=_(u'Oriental')).save()
     Piel(descripcion=_(u'Parda')).save()
+
+
+  def handle(self,*args,**options):
+
+    for (lang_code,_) in settings.LANGUAGES:
+      self.load_perfil_for_language(lang_code)
 
     self.stdout.write('Datos de perfiles cargados con exito.\n')
 
