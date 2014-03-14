@@ -118,7 +118,7 @@ class Command(BaseCommand):
 
     self.load_entity(Talle,u'Robusta')
     self.load_entity(Talle,u'Gordo')
-    self.load_entity(Talle,u'Flaco')
+    self.load_entity(Talle,u'Magro')
     self.load_entity(Talle,u'Atletica')
     self.load_entity(Talle,u'Musculosa')
     self.load_entity(Talle,u'Normal')
