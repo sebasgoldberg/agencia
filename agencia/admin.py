@@ -39,6 +39,7 @@ class TelefonoFormSet(BaseInlineFormSet):
 class FotoAgenciadoFormSet(BaseInlineFormSet):
   def clean(self):
     super(FotoAgenciadoFormSet,self).clean()
+    validarFotoIngresada(self)
 
 class MailAgenciadoInline(admin.TabularInline):
   model=MailAgenciado
