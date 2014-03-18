@@ -14,6 +14,6 @@ class Command(BaseCommand):
     agenciadores.save()
     agenciadores.permissions=[p.id for p in permissions]
     agenciadores.save()
-    self.stdout.write('Grupo %s creado con éxito\n' % (agenciadores.name))
+    self.stdout.write('Grupo %s creado con exito\n' % (agenciadores.name))
 
 

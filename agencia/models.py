@@ -302,9 +302,15 @@ class DireccionAgenciado(Direccion):
     verbose_name = ugettext_lazy(u"Endereço agenciado")
     verbose_name_plural = ugettext_lazy(u"Endereços agenciados")
 
+def validate_image(fieldfile_obj):
+  filesize = fieldfile_obj.file.size
+  limit = 1
+  if filesize >= limit*1024*1024: 
+    raise ValidationError(_(u"Por favor subir archivos con tamaño menor a %s MB") % str(limit))
+
 class FotoAgenciado(models.Model):
     agenciado = models.ForeignKey(Agenciado)
-    foto = models.ImageField(upload_to='agenciados/fotos/', blank=True )
+    foto = models.ImageField(upload_to='agenciados/fotos/', blank=True, validators=[validate_image])
     thumbnail = ImageSpecField([Adjust(contrast=1.2, sharpness=1.1), ResizeToFill(100,100)], source='foto', format='JPEG', options={'quality': 90})
     mini_thumbnail = ImageSpecField([Adjust(contrast=1.2, sharpness=1.1), ResizeToFill(60,60)], source='foto', format='JPEG', options={'quality': 90})
     def __unicode__(self):
@@ -312,6 +318,7 @@ class FotoAgenciado(models.Model):
     class Meta:
       verbose_name = ugettext_lazy(u"Foto agenciado")
       verbose_name_plural = ugettext_lazy(u"Fotos agenciado")
+
 
 class VideoAgenciado(Video):
   agenciado = models.ForeignKey(Agenciado)

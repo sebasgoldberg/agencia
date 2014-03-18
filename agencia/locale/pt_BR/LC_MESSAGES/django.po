@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-05 17:16-0800\n"
+"POT-Creation-Date: 2014-03-18 12:54-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -357,27 +357,32 @@ msgstr "Endereço agenciado"
 msgid "Endereços agenciados"
 msgstr "Endereços agenciados"
 
-#: models.py:313
+#: models.py:309
+#, python-format
+msgid "Por favor subir archivos con tamaño menor a %s MB"
+msgstr "Por favor carregar arquivos con tamanho menor a %s MB"
+
+#: models.py:319
 msgid "Foto agenciado"
 msgstr "Foto agenciado"
 
-#: models.py:314
+#: models.py:320
 msgid "Fotos agenciado"
 msgstr "Fotos agenciado"
 
-#: models.py:319
+#: models.py:326
 msgid "Video agenciado"
 msgstr "Video agenciado"
 
-#: models.py:320
+#: models.py:327
 msgid "Videos agenciado"
 msgstr "Videos agenciado"
 
-#: models.py:330
+#: models.py:337
 msgid "Telefone agenciado"
 msgstr "Telefone agenciado"
 
-#: models.py:331
+#: models.py:338
 msgid "Telefones agenciado"
 msgstr "Telefones agenciado"
 
