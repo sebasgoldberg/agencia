@@ -3,6 +3,18 @@
 
 {%with clase_espacio_celda='span3'%}
 
+<div id="modal_mensaje_espere" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">{% trans "Aguarde mientras se envía la información..." %}</h3>
+  </div>
+  <div class="modal-body">
+    <p>{% trans "La información está siendo enviada." %}</p>
+    <p>{% trans "Este proceso puede demorar unos minutos dependiendo del peso de las fotos y de la velocidad de su conexión a internet" %}</p>
+    <p>{% trans "Una vez finalizado el envío será redirigido nuevamente a su perfil." %}</p>
+  </div>
+</div>
+
 <form enctype="multipart/form-data" method="post"  action="">
   {% csrf_token %}
 
@@ -121,6 +133,11 @@
 
   <div class="form-actions">
     <input type="submit" name="submit" value="{% trans "Gravar" %}" class="btn btn-primary" id="submit-id-submit" />
+    <script>
+      $('#submit-id-submit').click(function(event){
+        $('#modal_mensaje_espere').modal();
+        });
+    </script>
   </div>
 
 </form>

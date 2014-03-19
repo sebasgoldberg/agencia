@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-05 17:16-0800\n"
+"POT-Creation-Date: 2014-03-19 09:20-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,15 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
-#: forms.py:28 templates/agenciado/form.html:16
+#: forms.py:28 templates/agenciado/form.html:28
 msgid "Dados persoais"
 msgstr "Datos personales"
 
-#: forms.py:39 templates/agenciado/form.html:29
+#: forms.py:39 templates/agenciado/form.html:41
 msgid "Dados administrativos"
 msgstr "Datos administrativos"
 
-#: forms.py:45 templates/agenciado/form.html:84
+#: forms.py:45 templates/agenciado/form.html:96
 msgid "Habilidades"
 msgstr "Habilidades"
 
@@ -60,34 +60,54 @@ msgstr ""
 "La aplicación va a ser analizada por nuestro equipo, muchas gracias por su "
 "postulación"
 
-#: templates/agenciado/form.html:10
+#: templates/agenciado/form.html:9
+msgid "Aguarde mientras se envía la información..."
+msgstr "Aguarde mientras se envía la información..."
+
+#: templates/agenciado/form.html:12
+msgid "La información está siendo enviada."
+msgstr "La información está siendo enviada."
+
+#: templates/agenciado/form.html:13
+msgid ""
+"Este proceso puede demorar unos minutos dependiendo del peso de las fotos y "
+"de la velocidad de su conexión a internet"
+msgstr ""
+"Este proceso puede demorar unos minutos dependiendo del peso de las fotos y "
+"de la velocidad de su conexión a internet"
+
+#: templates/agenciado/form.html:14
+msgid "Una vez finalizado el envío será redirigido nuevamente a su perfil."
+msgstr "Una vez finalizado el envío será redirigido nuevamente a su perfil."
+
+#: templates/agenciado/form.html:22
 msgid "Tem erros por corregir"
 msgstr "Tiene errores por corregir"
 
-#: templates/agenciado/form.html:39
+#: templates/agenciado/form.html:51
 msgid "Dados de endereço"
 msgstr "Datos de Dirección"
 
-#: templates/agenciado/form.html:58
+#: templates/agenciado/form.html:70
 msgid "Telefones"
 msgstr "Telefonos"
 
-#: templates/agenciado/form.html:67
+#: templates/agenciado/form.html:79
 msgid "Caracteristicas fisicas"
 msgstr "Características físicas"
 
-#: templates/agenciado/form.html:95
+#: templates/agenciado/form.html:107
 msgid "Fotos"
 msgstr "Fotos"
 
-#: templates/agenciado/form.html:103
+#: templates/agenciado/form.html:115
 msgid "Videos"
 msgstr "Videos"
 
-#: templates/agenciado/form.html:111
+#: templates/agenciado/form.html:123
 msgid "Otros dados"
 msgstr "Otros Datos"
 
-#: templates/agenciado/form.html:124
+#: templates/agenciado/form.html:136
 msgid "Gravar"
 msgstr "Grabar"
