@@ -80,7 +80,7 @@ class Agencia(models.Model):
       mensaje=_(u'Não tem registrada uma agencia ativa. Tem que ser creada una agencia ativa na administracão do site.')
       if request:
         messages.warning(request,mensaje)
-      return Agencia(nombre='Agencia',email='mail@agencia.com')
+      return Agencia(nombre='Agencia',email='mail@agencia.com',activa=False)
     return agencias[0]
 
 class TelefonoAgencia(BaseTelefono):
