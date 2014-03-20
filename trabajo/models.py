@@ -147,7 +147,7 @@ class Trabajo(models.Model):
     estado = models.CharField(max_length=2,choices=ESTADO_TRABAJO,null=False)
 # @todo agregar validación entre secuencia de las distintas fechas
     fecha_ingreso = models.DateField(default=date.today(),verbose_name=ugettext_lazy(u'Data ingreso'))
-    publicado = models.BooleanField(blank=True,verbose_name=ugettext_lazy(u'Publicado'),help_text=ugettext_lazy(u'Indica se o trabalho debe ser publicado no site da agencia'))
+    publicado = models.BooleanField(blank=True,verbose_name=ugettext_lazy(u'Publicado'),help_text=ugettext_lazy(u'Indica se o trabalho debe ser publicado no site da agencia'),default=True)
 
     @staticmethod
     def filter_iniciados(queryset):
