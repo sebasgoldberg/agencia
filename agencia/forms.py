@@ -7,6 +7,7 @@ from django.utils.translation import ugettext as _
 from django.utils.translation import ugettext_lazy
 from iampacks.cross.direccion.forms import BaseDireccionForm, BaseDireccionFormRelated
 from iampacks.agencia.agencia.models import DireccionAgencia, DireccionAgenciado
+from iampacks.cross.correo.forms import MailForm
 
 class DireccionAgenciaForm(BaseDireccionForm):
   class Meta:
@@ -19,3 +20,6 @@ class DireccionAgenciadoForm(BaseDireccionForm):
 class DireccionAgenciadoFormRelated(BaseDireccionFormRelated):
   class Meta:
     model = DireccionAgenciado
+
+class EnvioMailForm(MailForm):
+  pass

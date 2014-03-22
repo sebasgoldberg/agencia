@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-18 17:18-0700\n"
+"POT-Creation-Date: 2014-03-22 07:17-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,49 +18,53 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
 
-#: admin.py:75 models.py:266
+#: actions.py:10
+msgid "Enviar mail a agenciados seleccionados"
+msgstr "Enviar mail a agenciados selecionados"
+
+#: admin.py:76 models.py:266
 #, python-format
 msgid "%s meses"
 msgstr "%s meses"
 
-#: admin.py:76 admin.py:77 admin.py:78
+#: admin.py:77 admin.py:78 admin.py:79
 #, python-format
 msgid "%s años"
 msgstr "%s anos"
 
-#: admin.py:83
+#: admin.py:84
 msgid "Edad Mayor A"
 msgstr "Idade Maior A"
 
-#: admin.py:100
+#: admin.py:101
 msgid "Edad Menor A"
 msgstr "Idade Menor A"
 
-#: admin.py:123
+#: admin.py:124
 msgid "Altura Mayor A"
 msgstr "Altura Maior A"
 
-#: admin.py:137
+#: admin.py:138
 msgid "Altura Menor A"
 msgstr "Altura Menor A"
 
-#: admin.py:166
+#: admin.py:167
 msgid "Dados Pessoales"
 msgstr "Dados Pessoales"
 
-#: admin.py:167
+#: admin.py:168
 msgid "Dados Administrativos"
 msgstr "Dados Administrativos"
 
-#: admin.py:173
+#: admin.py:174
 msgid "Carateristicas fisicas"
 msgstr "Carateristicas fisicas"
 
-#: admin.py:179
+#: admin.py:180
 msgid "Habilidades"
 msgstr "Habilidades"
 
-#: admin.py:183
+#: admin.py:184
 msgid "Otros dados"
 msgstr "Otros dados"
 
@@ -85,7 +89,7 @@ msgstr "Tem que subir uma foto"
 msgid "Nome"
 msgstr "Nome"
 
-#: models.py:45 models.py:121 models.py:294
+#: models.py:45 models.py:121 models.py:297
 msgid "e-mail"
 msgstr "e-mail"
 
@@ -136,6 +140,7 @@ msgid "Foto Agenciado Obligatoria"
 msgstr "Foto Agenciado Obrigatoria"
 
 #: models.py:55 models.py:87 models.py:93
+#: templates/admin/agencia/agenciado/enviar_mail.html:20
 msgid "Agencia"
 msgstr "Agencia"
 
@@ -324,7 +329,7 @@ msgstr ""
 "Edad %(edad)s, sexo %(sexo)s, olhos %(ojos)s, cabelo %(pelo)s, pele "
 "%(piel)s, atura %(altura)s, peso %(peso)s, estado dentes %(estado_dientes)s."
 
-#: models.py:261 models.py:295
+#: models.py:261 models.py:298
 msgid "Descripção"
 msgstr "Descripção"
 
@@ -333,65 +338,66 @@ msgstr "Descripção"
 msgid "%s anos"
 msgstr "%s anos"
 
-#: models.py:281
+#: models.py:284
 msgid "Mails"
 msgstr "Mails"
 
-#: models.py:289 models.py:305
+#: models.py:292 models.py:308
+#: templates/admin/agencia/agenciado/enviar_mail.html:21
 msgid "Agenciado"
 msgstr "Agenciado"
 
-#: models.py:290
+#: models.py:293
 msgid "Agenciados"
 msgstr "Agenciados"
 
-#: models.py:301
+#: models.py:304
 msgid "Mail Agenciado"
 msgstr "Mail Agenciado"
 
-#: models.py:302
+#: models.py:305
 msgid "Mails Agenciado"
 msgstr "Mails Agenciado"
 
-#: models.py:307
+#: models.py:310
 msgid "Endereço agenciado"
 msgstr "Endereço agenciado"
 
-#: models.py:308
+#: models.py:311
 msgid "Endereços agenciados"
 msgstr "Endereços agenciados"
 
-#: models.py:314
+#: models.py:317
 #, python-format
 msgid "Por favor subir archivos con tamaño menor a %s MB"
 msgstr "Por favor carregar arquivos con tamanho menor a %s MB"
 
-#: models.py:318
+#: models.py:321
 #, python-format
 msgid "Foto (tamaño < %s MB)"
 msgstr "Foto (tamanho < %s MB)"
 
-#: models.py:324
+#: models.py:327
 msgid "Foto agenciado"
 msgstr "Foto agenciado"
 
-#: models.py:325
+#: models.py:328
 msgid "Fotos agenciado"
 msgstr "Fotos agenciado"
 
-#: models.py:331
+#: models.py:334
 msgid "Video agenciado"
 msgstr "Video agenciado"
 
-#: models.py:332
+#: models.py:335
 msgid "Videos agenciado"
 msgstr "Videos agenciado"
 
-#: models.py:342
+#: models.py:345
 msgid "Telefone agenciado"
 msgstr "Telefone agenciado"
 
-#: models.py:343
+#: models.py:346
 msgid "Telefones agenciado"
 msgstr "Telefones agenciado"
 
@@ -399,11 +405,19 @@ msgstr "Telefones agenciado"
 msgid "Videos"
 msgstr "Videos"
 
-#: views.py:12
+#: views.py:19
 msgid ""
 "Por favor atualize os dados do seu perfil a ser analizado por nossa agencia."
 msgstr ""
 "Por favor atualize os dados do seu perfil a ser analizado por nossa agencia."
+
+#: views.py:48
+msgid "Este mensagem deve ser visualizado em formato HTML."
+msgstr "Este mensagem deve ser visualizado em formato HTML."
+
+#: views.py:53
+msgid "Mails enviados con éxito"
+msgstr "Mails enviados com sucesso"
 
 #: management/commands/crear_super_usuario.py:10
 msgid "Crea un super usuario para el proyecto en cuestión"
@@ -452,6 +466,27 @@ msgstr "Registro"
 #: templates/base.html:91
 msgid "Entrar"
 msgstr "Entrar"
+
+#: templates/admin/agencia/agenciado/change_list.html:5
+msgid "Últimos Inactivos"
+msgstr "Últimos Inativos"
+
+#: templates/admin/agencia/agenciado/enviar_mail.html:15
+#: templates/admin/agencia/agenciado/enviar_mail.html:30
+msgid "Envio de mail a agenciados"
+msgstr "Envio de mail a agenciados"
+
+#: templates/admin/agencia/agenciado/enviar_mail.html:19
+msgid "Home"
+msgstr "Inicio"
+
+#: templates/admin/agencia/agenciado/enviar_mail.html:22
+msgid "Envío de mail a agenciados"
+msgstr "Envio de mail a agenciados"
+
+#: templates/admin/agencia/agenciado/enviar_mail.html:39
+msgid "Enviar"
+msgstr "Enviar"
 
 #: templates/agencia/index.html:24
 msgid "Cadastre-se"

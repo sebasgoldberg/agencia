@@ -11,6 +11,7 @@ from iampacks.agencia.agencia.forms import DireccionAgenciaForm, DireccionAgenci
 from django.contrib.sites.models import Site
 from cities_light.models import Country, Region, City
 from datetime import datetime, date, timedelta
+from iampacks.agencia.agencia.actions import enviar_mail
 
 class DireccionAgenciaInline(BaseDireccionInline):
   form = DireccionAgenciaForm
@@ -39,7 +40,7 @@ class TelefonoFormSet(BaseInlineFormSet):
 class FotoAgenciadoFormSet(BaseInlineFormSet):
   def clean(self):
     super(FotoAgenciadoFormSet,self).clean()
-    validarFotoIngresada(self)
+    #validarFotoIngresada(self)
 
 class MailAgenciadoInline(admin.TabularInline):
   model=MailAgenciado
@@ -193,6 +194,7 @@ class AgenciadoAdmin(admin.ModelAdmin):
   date_hierarchy='fecha_nacimiento'
   filter_horizontal=['deportes','danzas','instrumentos','idiomas']
   list_per_page = 40
+  actions = [enviar_mail]
   actions_on_bottom = True
 
 from django.contrib.admin.sites import AlreadyRegistered, NotRegistered

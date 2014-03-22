@@ -16,5 +16,6 @@ urlpatterns = patterns('iampacks.agencia.agencia.views',
     # Uncomment the next line to enable the admin:
     url(r'^$', 'index'),
     url(r'^contacto/$', 'contacto'),
+    url(r'^admin/agenciado/enviar/mail/$', 'enviar_mail'),
 )
 

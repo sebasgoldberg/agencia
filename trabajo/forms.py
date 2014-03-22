@@ -7,7 +7,9 @@ from django.forms.widgets import CheckboxSelectMultiple
 from django.utils.translation import ugettext_lazy as _
 
 class MailProductoraForm(MailForm):
-  pass
+  def __init__(self, *args, **kwargs):
+    super (MailProductoraForm, self).__init__(*args,**kwargs)
+    self.fields.pop('cuerpo')
 
 class MailAgenciadosForm(forms.Form):
   asunto=forms.CharField(widget=forms.TextInput(attrs={'class':'asunto_mail'}), help_text=_(u'Indique el asunto de los emails a ser enviados.'))
