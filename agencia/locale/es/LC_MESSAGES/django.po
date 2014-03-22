@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-22 13:47-0700\n"
+"POT-Creation-Date: 2014-03-22 14:14-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,9 +18,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
-#: actions.py:10
+#: actions.py:11
 msgid "Enviar mail a agenciados seleccionados"
 msgstr "Enviar mail a agenciados seleccionados"
+
+#: actions.py:17
+msgid "Activar agenciados seleccionados"
+msgstr "Activar agenciados seleccionados"
 
 #: admin.py:76 models.py:264
 #, python-format
