@@ -107,6 +107,7 @@
     {% autoescape off %}
     {{form.instance.thumbnails}}
     {% endautoescape %}
+    <hr/>
     {% include 'agenciado/formset.html' with formset=fotoAgenciadoFormSet forms_by_line='3' columns_by_form='4' %}
   </fieldset>
 
@@ -115,6 +116,7 @@
     {% autoescape off %}
     {{form.instance.html_small_youtube_iframes}}
     {% endautoescape %}
+    <hr/>
     {% include 'agenciado/formset.html' with formset=videoAgenciadoFormSet forms_by_line='3' columns_by_form='4' %}
   </fieldset>
 

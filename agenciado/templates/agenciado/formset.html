@@ -7,11 +7,12 @@
 <div class='row'>
 {% for form in formset %}
   <div class='span{{columns_by_form}}'> 
-  {{form|crispy}}
+  <div class='well'> 
+    {{form|crispy}}
+  </div>
   </div>
   {% if forloop.counter|divisibleby:forms_by_line  %}
     </div>
-    <hr/>
     <div class='row'>
   {% endif %}
 {% endfor %}
