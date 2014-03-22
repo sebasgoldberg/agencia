@@ -2,6 +2,6 @@
 {% load i18n %}
 
 {% block object-tools-items %}
-  <li><a href="http://dev.iamcast/admin/agencia/agenciado/?activo__exact=0&o=-2" class="addlink">{% trans "Últimos Inactivos" %}</a></li>
+  <li><a href="/admin/agencia/agenciado/?activo__exact=0&o=-2" class="addlink">{% trans "Últimos Inactivos" %}</a></li>
   {{ block.super }}
 {% endblock %}
