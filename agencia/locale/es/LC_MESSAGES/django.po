@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-22 07:17-0700\n"
+"POT-Creation-Date: 2014-03-22 13:47-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Enviar mail a agenciados seleccionados"
 msgstr "Enviar mail a agenciados seleccionados"
 
-#: admin.py:76 models.py:266
+#: admin.py:76 models.py:264
 #, python-format
 msgid "%s meses"
 msgstr "%s meses"
@@ -32,39 +32,51 @@ msgstr "%s meses"
 msgid "%s años"
 msgstr "%s años"
 
-#: admin.py:84
+#: admin.py:85
+msgid "Foto"
+msgstr "Foto"
+
+#: admin.py:91
+msgid "Con Foto"
+msgstr "Con Foto"
+
+#: admin.py:92
+msgid "Sin Foto"
+msgstr "Sin Foto"
+
+#: admin.py:111
 msgid "Edad Mayor A"
 msgstr "Edad Mayor A"
 
-#: admin.py:101
+#: admin.py:128
 msgid "Edad Menor A"
 msgstr "Edad Menor A"
 
-#: admin.py:124
+#: admin.py:151
 msgid "Altura Mayor A"
 msgstr "Altura Mayor A"
 
-#: admin.py:138
+#: admin.py:165
 msgid "Altura Menor A"
 msgstr "Altura Menor A"
 
-#: admin.py:167
+#: admin.py:194
 msgid "Dados Pessoales"
 msgstr "Datos Personales"
 
-#: admin.py:168
+#: admin.py:195
 msgid "Dados Administrativos"
 msgstr "Datos Administrativos"
 
-#: admin.py:174
+#: admin.py:201
 msgid "Carateristicas fisicas"
 msgstr "Características Físicas"
 
-#: admin.py:180
+#: admin.py:207
 msgid "Habilidades"
 msgstr "Habilidades"
 
-#: admin.py:184
+#: admin.py:211
 msgid "Otros dados"
 msgstr "Otros Datos"
 
@@ -81,75 +93,71 @@ msgstr "Tiene que informar una dirección"
 msgid "Tem que informar um telefone"
 msgstr "Tiene que informar un teléfono"
 
-#: models.py:41
+#: models.py:40
 msgid "Tem que subir uma foto"
 msgstr "Tiene que subir una foto"
 
-#: models.py:44 models.py:124
+#: models.py:43 models.py:122
 msgid "Nome"
 msgstr "Nombre"
 
-#: models.py:45 models.py:121 models.py:297
+#: models.py:44 models.py:119 models.py:295
 msgid "e-mail"
 msgstr "e-mail"
 
-#: models.py:46
+#: models.py:45
 msgid "Ativa"
 msgstr "Activo"
 
-#: models.py:46
+#: models.py:45
 msgid "Só debería ter uma unica agencia ativa"
 msgstr "Solo debería tener una única agencia activa"
 
-#: models.py:47
+#: models.py:46
 msgid "Logo"
 msgstr "Logo"
 
-#: models.py:47
+#: models.py:46
 msgid "Logo a ser visualizado no site da agencia"
 msgstr "Logo a ser visualizado en el sitio de la agencia"
 
-#: models.py:48
+#: models.py:47
 msgid "Favicon"
 msgstr "Favicon"
 
-#: models.py:48
+#: models.py:47
 msgid "Imagem com extenção ico de 48x48 pixels"
 msgstr "Imagen con extensión ico de 48x48 pixels"
 
-#: models.py:49
+#: models.py:48
 msgid "Titulo pagina inicial"
 msgstr "Título pagina inicial"
 
-#: models.py:50
+#: models.py:49
 msgid "Presentação pagina inicial"
 msgstr "Presentación página inicial"
 
-#: models.py:51
+#: models.py:50
 msgid "Mapa pagina contato"
 msgstr "Mapa pagina de contacto"
 
-#: models.py:51
+#: models.py:50
 msgid ""
 "Aqui tem que colar o HTML gerado no google maps a partir de seu endereço"
 msgstr ""
 "Aqui tiene que pegar el código HTML generado en google maps a partir de su "
 "dirección"
 
-#: models.py:52
-msgid "Foto Agenciado Obligatoria"
-msgstr "Foto Agenciado Obligatoria"
-
-#: models.py:55 models.py:87 models.py:93
+#: models.py:53 models.py:85 models.py:91
 #: templates/admin/agencia/agenciado/enviar_mail.html:20
 msgid "Agencia"
 msgstr "Agencia"
 
-#: models.py:56
+#: models.py:54
 msgid "Agencias"
 msgstr "Agencia"
 
-#: models.py:80
+#: models.py:78
 msgid ""
 "Não tem registrada uma agencia ativa. Tem que ser creada una agencia ativa "
 "na administracão do site."
@@ -157,171 +165,171 @@ msgstr ""
 "No tiene registrada una agencia activa. Tiene que ser creada una agencia "
 "activa en la administración del sitio."
 
-#: models.py:89
+#: models.py:87
 msgid "Telefone da Agencia"
 msgstr "Telefono de la agencia"
 
-#: models.py:90
+#: models.py:88
 msgid "Telefones da Agencia"
 msgstr "Telefonos"
 
-#: models.py:95
+#: models.py:93
 msgid "Endereço da Agencia"
 msgstr "Dirección"
 
-#: models.py:96
+#: models.py:94
 msgid "Endereços da Agencia"
 msgstr "Direcciones"
 
-#: models.py:100
+#: models.py:98
 msgid "A data de nascimento nao pode ser maior que a data do dia"
 msgstr "La fecha de nacimiento no puede ser mayor que la fecha del día"
 
-#: models.py:104
+#: models.py:102
 msgid "A atura debe ser informada em centimetros"
 msgstr "La altura debe ser informada en centimetros"
 
-#: models.py:125
+#: models.py:123
 msgid "Sobrenome"
 msgstr "Apellido"
 
-#: models.py:126
+#: models.py:124
 msgid "Data nascimento"
 msgstr "Fecha de Nacimiento"
 
-#: models.py:130
+#: models.py:128
 msgid "RG"
 msgstr "DNI"
 
-#: models.py:132
+#: models.py:130
 msgid "CPF"
 msgstr "CUIT/CUIL"
 
-#: models.py:133
+#: models.py:131
 msgid "Responsabel"
 msgstr "Responsable"
 
-#: models.py:134
+#: models.py:132
 msgid "Conta bancaria"
 msgstr "Cuenta Bancaria"
 
-#: models.py:147
+#: models.py:145
 msgid "Masculino"
 msgstr "Masculino"
 
-#: models.py:148
+#: models.py:146
 msgid "Feminino"
 msgstr "Femenino"
 
-#: models.py:151
+#: models.py:149
 msgid "Sexo"
 msgstr "Sexo"
 
-#: models.py:152
+#: models.py:150
 msgid "Olhos"
 msgstr "Ojos"
 
-#: models.py:153
+#: models.py:151
 msgid "Cabelo"
 msgstr "Pelo"
 
-#: models.py:154
+#: models.py:152
 msgid "Pele"
 msgstr "Piel"
 
-#: models.py:155
+#: models.py:153
 msgid "Atura (cm)"
 msgstr "Altura (cm)"
 
-#: models.py:156
+#: models.py:154
 msgid "Peso (kg)"
 msgstr "Peso (kg)"
 
-#: models.py:157
+#: models.py:155
 msgid "Manequim"
 msgstr "Contextura"
 
-#: models.py:158
+#: models.py:156
 msgid "Camisa"
 msgstr "Camisa"
 
-#: models.py:159
+#: models.py:157
 msgid "Calça"
 msgstr "Pantalón"
 
-#: models.py:160
+#: models.py:158
 msgid "Calçado"
 msgstr "Calzado"
 
-#: models.py:161
+#: models.py:159
 msgid "Estado Dentes"
 msgstr "Estado Dientes"
 
-#: models.py:164
+#: models.py:162
 msgid "Esportes"
 msgstr "Deportes"
 
-#: models.py:165
+#: models.py:163
 msgid "Danças"
 msgstr "Danzas"
 
-#: models.py:166
+#: models.py:164
 msgid "Instrumentos"
 msgstr "Instrumentos"
 
-#: models.py:167
+#: models.py:165
 msgid "Idiomas"
 msgstr "Idiomas"
 
-#: models.py:168
+#: models.py:166
 msgid "Dirige"
 msgstr "Maneja"
 
-#: models.py:169
+#: models.py:167
 msgid "Habilitação"
 msgstr "Registro de conducir"
 
-#: models.py:172
+#: models.py:170
 msgid "Faz figuração"
 msgstr "Trabaja como extra"
 
-#: models.py:173
+#: models.py:171
 msgid "Como nos conheceu"
 msgstr "Cómo nos conoció"
 
-#: models.py:174
+#: models.py:172
 msgid "Observaçoes"
 msgstr "Observaciones"
 
-#: models.py:177
+#: models.py:175
 msgid "Ativo"
 msgstr "Activo"
 
-#: models.py:178
+#: models.py:176
 msgid "Data de agenciamento"
 msgstr "Fecha de agenciamiento"
 
-#: models.py:198
+#: models.py:196
 msgid "Imagem"
 msgstr "Imagen"
 
-#: models.py:215 models.py:226
+#: models.py:213 models.py:224
 msgid "Imagems"
 msgstr "Imagenes"
 
-#: models.py:231 models.py:257
+#: models.py:229 models.py:255
 msgid "Link ao agenciado"
 msgstr "Link al agenciado"
 
-#: models.py:239 video.py:24
+#: models.py:237 video.py:24
 msgid "Video"
 msgstr "Video"
 
-#: models.py:250
+#: models.py:248
 msgid "Telefones"
 msgstr "Telefonos"
 
-#: models.py:260
+#: models.py:258
 #, python-format
 msgid ""
 "Edad %(edad)s, sexo %(sexo)s, olhos %(ojos)s, cabelo %(pelo)s, pele "
@@ -330,75 +338,75 @@ msgstr ""
 "Edad %(edad)s, sexo %(sexo)s, ojos %(ojos)s, pelo %(pelo)s, piel %(piel)s, "
 "altura %(altura)s, peso %(peso)s, estado dientes %(estado_dientes)s."
 
-#: models.py:261 models.py:298
+#: models.py:259 models.py:296
 msgid "Descripção"
 msgstr "Descripción"
 
-#: models.py:267
+#: models.py:265
 #, python-format
 msgid "%s anos"
 msgstr "%s años"
 
-#: models.py:284
+#: models.py:282
 msgid "Mails"
 msgstr "Mails"
 
-#: models.py:292 models.py:308
+#: models.py:290 models.py:306
 #: templates/admin/agencia/agenciado/enviar_mail.html:21
 msgid "Agenciado"
 msgstr "Agenciados"
 
-#: models.py:293
+#: models.py:291
 msgid "Agenciados"
 msgstr "Agenciados"
 
-#: models.py:304
+#: models.py:302
 msgid "Mail Agenciado"
 msgstr "Mail Agenciado"
 
-#: models.py:305
+#: models.py:303
 msgid "Mails Agenciado"
 msgstr "Mails Agenciado"
 
-#: models.py:310
+#: models.py:308
 msgid "Endereço agenciado"
 msgstr "Dirección agenciado"
 
-#: models.py:311
+#: models.py:309
 msgid "Endereços agenciados"
 msgstr "Direcciones agenciado"
 
-#: models.py:317
+#: models.py:315
 #, python-format
 msgid "Por favor subir archivos con tamaño menor a %s MB"
 msgstr "Por favor subir archivos con tamaño menor a %s MB"
 
-#: models.py:321
+#: models.py:319
 #, python-format
 msgid "Foto (tamaño < %s MB)"
 msgstr "Foto (tamaño < %s MB)"
 
-#: models.py:327
+#: models.py:325
 msgid "Foto agenciado"
 msgstr "Foto agenciado"
 
-#: models.py:328
+#: models.py:326
 msgid "Fotos agenciado"
 msgstr "Fotos agenciado"
 
-#: models.py:334
+#: models.py:332
 msgid "Video agenciado"
 msgstr "Video agenciado"
 
-#: models.py:335
+#: models.py:333
 msgid "Videos agenciado"
 msgstr "Videos agenciado"
 
-#: models.py:345
+#: models.py:343
 msgid "Telefone agenciado"
 msgstr "Telefono agenciado"
 
-#: models.py:346
+#: models.py:344
 msgid "Telefones agenciado"
 msgstr "Telefonos agenciados"
 
@@ -413,11 +421,11 @@ msgstr ""
 "Por favor actualice los datos de su perfil a ser analizados por nuestra "
 "agencia."
 
-#: views.py:48
+#: views.py:49
 msgid "Este mensagem deve ser visualizado em formato HTML."
 msgstr "Este mensaje debe ser visualizado en formato HTML."
 
-#: views.py:53
+#: views.py:54
 msgid "Mails enviados con éxito"
 msgstr "Mails enviados con éxito"
 
@@ -470,6 +478,10 @@ msgid "Entrar"
 msgstr "Ingresar"
 
 #: templates/admin/agencia/agenciado/change_list.html:5
+msgid "Últimos Inactivos Sin Foto"
+msgstr "Últimos Inactivos Sin Foto"
+
+#: templates/admin/agencia/agenciado/change_list.html:6
 msgid "Últimos Inactivos"
 msgstr "Últimos Inactivos"
 
@@ -509,6 +521,9 @@ msgstr "Trabajos Activos Recientes"
 #: templates/agencia/index.html:48
 msgid "Itens do Portifolio Recentes"
 msgstr "Items del Portfolio Recientes"
+
+#~ msgid "Foto Agenciado Obligatoria"
+#~ msgstr "Foto Agenciado Obligatoria"
 
 #~ msgid "Figuração"
 #~ msgstr "Extra"

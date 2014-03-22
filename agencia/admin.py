@@ -79,6 +79,33 @@ EDADES_POSIBLES_FILTRO=list(
     [(int(x*365.25),_(u'%s años')%x) for x in range(60,101,10)]
     )
 
+
+class FotoListFilter(admin.SimpleListFilter):
+
+  title = _('Foto')
+
+  parameter_name = 'con_foto'
+
+  def lookups(self, request, model_admin):
+    return (
+      ('1',_(u'Con Foto')),
+      ('0',_(u'Sin Foto')),
+      )
+
+  def queryset(self, request, queryset):
+
+    if self.value():
+      agenciados_con_foto = []
+      for a in queryset.all():
+        if len(a.fotoagenciado_set.all()) > 0:
+          agenciados_con_foto.append(a.id)
+      con_foto = self.value()
+      if con_foto == '1':
+        return queryset.filter(id__in=agenciados_con_foto)
+      else:
+        return queryset.exclude(id__in=agenciados_con_foto)
+    return queryset
+
 class EdadMayorAListFilter(admin.SimpleListFilter):
 
   title = _('Edad Mayor A')
@@ -189,7 +216,7 @@ class AgenciadoAdmin(admin.ModelAdmin):
   inlines=[ DireccionAgenciadoInline, TelefonoInline, FotoAgenciadoInline, VideoAgenciadoInline, MailAgenciadoInline ]
   list_display=['thumbnail','id','apellido','nombre','fecha_nacimiento','descripcion','telefonos','mails', 'responsable']
   list_display_links = ('thumbnail', 'id')
-  list_filter=['activo','sexo',EdadMayorAListFilter,EdadMenorAListFilter,'ojos','pelo','piel','talle',AlturaMayorAListFilter,AlturaMenorAListFilter,'deportes','danzas','instrumentos','idiomas','fecha_ingreso',PaisDireccionAgenciadoListFilter, EstadoDireccionAgenciadoListFilter, CiudadDireccionAgenciadoListFilter]
+  list_filter=['activo',FotoListFilter,'sexo',EdadMayorAListFilter,EdadMenorAListFilter,'ojos','pelo','piel','talle',AlturaMayorAListFilter,AlturaMenorAListFilter,'deportes','danzas','instrumentos','idiomas','fecha_ingreso',PaisDireccionAgenciadoListFilter, EstadoDireccionAgenciadoListFilter, CiudadDireccionAgenciadoListFilter]
   search_fields=['nombre','apellido','responsable','mail','id']
   date_hierarchy='fecha_nacimiento'
   filter_horizontal=['deportes','danzas','instrumentos','idiomas']
