@@ -42,12 +42,13 @@ def enviar_mail(request):
       template = loader.get_template('correo/base.html')
       context = RequestContext(request, {'cuerpo':form.cleaned_data['cuerpo'], })
       asunto = form.cleaned_data['asunto']
-      destinatarios = form.get_destinatarios()
       agencia=Agencia.get_activa(request)
-      ccs = [request.user.email,agencia.email]
+      destinatarios = [agencia.email,]
+      ccs = [request.user.email,]
+      bccs = form.get_destinatarios()
       text_content = _(u'Este mensagem deve ser visualizado em formato HTML.')
       html_content = template.render(context)
-      msg = MailAgencia(asunto, text_content, destinatarios,ccs=ccs)
+      msg = MailAgencia(asunto, text_content, destinatarios,ccs=ccs,bccs=bccs)
       msg.set_html_body(html_content)
       msg.send()
       messages.success(request, _(u'Mails enviados con éxito'))
