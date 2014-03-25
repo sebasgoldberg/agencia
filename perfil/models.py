@@ -80,3 +80,11 @@ class Talle(models.Model):
       verbose_name = ugettext_lazy(u"Manequim")
       verbose_name_plural = ugettext_lazy(u"Manequims")
 
+class TalleRopa(models.Model):
+    descripcion = models.CharField(max_length=60, unique=True, verbose_name=ugettext_lazy(u'Descripción'))
+    def __unicode__(self):
+      return self.descripcion
+    class Meta:
+      ordering = ['descripcion']
+      verbose_name = ugettext_lazy(u"Talle Ropa")
+      verbose_name_plural = ugettext_lazy(u"Talle Ropa")

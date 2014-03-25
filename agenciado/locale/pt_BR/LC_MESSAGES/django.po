@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-19 09:20-0700\n"
+"POT-Creation-Date: 2014-03-25 09:05-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -73,8 +73,8 @@ msgid ""
 "Este proceso puede demorar unos minutos dependiendo del peso de las fotos y "
 "de la velocidad de su conexión a internet"
 msgstr ""
-"Esse processo pode levar algum tempo, dependendo do peso das fotos e " 
-"da velocidade de sua conexão de internet"
+"Esse processo pode levar algum tempo, dependendo do peso das fotos e da "
+"velocidade de sua conexão de internet"
 
 #: templates/agenciado/form.html:14
 msgid "Una vez finalizado el envío será redirigido nuevamente a su perfil."
@@ -100,14 +100,14 @@ msgstr "Carateristicas fisicas"
 msgid "Fotos"
 msgstr "Fotos"
 
-#: templates/agenciado/form.html:115
+#: templates/agenciado/form.html:116
 msgid "Videos"
 msgstr "Videos"
 
-#: templates/agenciado/form.html:123
+#: templates/agenciado/form.html:125
 msgid "Otros dados"
 msgstr "Otros dados"
 
-#: templates/agenciado/form.html:136
+#: templates/agenciado/form.html:138
 msgid "Gravar"
 msgstr "Gravar"

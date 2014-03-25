@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-05 17:16-0800\n"
+"POT-Creation-Date: 2014-03-25 09:08-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,11 +35,11 @@ msgstr "Dados do trabalho"
 msgid "Adicionar agenciados selecionados a perfil procurado em trabalho"
 msgstr "Adicionar agenciados selecionados a perfil procurado em trabalho"
 
-#: forms.py:13
+#: forms.py:15
 msgid "Indique el asunto de los emails a ser enviados."
 msgstr "Indique o asunto dos emails a ser enviados."
 
-#: forms.py:24
+#: forms.py:26
 #, python-format
 msgid "Indique los destinatarios del mail para el perfil \"%s\""
 msgstr "Indique os destinatarios do email para o perfil \"%s\""

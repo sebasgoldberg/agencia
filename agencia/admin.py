@@ -202,7 +202,7 @@ class AgenciadoAdmin(admin.ModelAdmin):
       'sexo', 
       ('ojos', 'pelo', 'piel', ), 
       ('altura', 'peso', 'talle',), 
-      ( 'talle_camisa', 'talle_pantalon', 'calzado'),
+      ( 'talle_ropa_camisa', 'talle_ropa_pantalon', 'calzado'),
       'estado_dientes',]}),
     (ugettext_lazy(u'Habilidades'),{
       'classes': ('grp-collapse grp-closed',),

@@ -2,7 +2,7 @@
 from django.core.management.base import BaseCommand, CommandError
 from django.contrib.auth.models import Permission, Group
 from django.utils.translation import activate, get_language
-from iampacks.agencia.perfil.models import Danza, Deporte, EstadoDientes, Idioma, Instrumento, Ojos, Pelo, Piel, Talle
+from iampacks.agencia.perfil.models import *
 from optparse import make_option
 from django.utils.translation import ugettext
 from django.conf import settings
@@ -19,6 +19,7 @@ class Command(BaseCommand):
     
     instance,created=Class.objects.get_or_create(descripcion=descripcion)
     current_language=get_language()
+    self.stdout.write('%s.\n' % current_language)
     for (lang_code,_) in settings.LANGUAGES:
       activate(lang_code)
       instance.descripcion = ugettext(descripcion)
@@ -135,6 +136,12 @@ class Command(BaseCommand):
     self.load_entity(Piel,ugettext(u'Negra'))
     self.load_entity(Piel,ugettext(u'Oriental'))
     self.load_entity(Piel,ugettext(u'Parda'))
+
+    self.load_entity(TalleRopa,ugettext(u'PP'))
+    self.load_entity(TalleRopa,ugettext(u'P'))
+    self.load_entity(TalleRopa,ugettext(u'M'))
+    self.load_entity(TalleRopa,ugettext(u'G'))
+    self.load_entity(TalleRopa,ugettext(u'GG'))
 
   def handle(self,*args,**options):
 

@@ -46,3 +46,8 @@ class TalleTranslationOptions(TranslationOptions):
 
 translator.register(Talle, TalleTranslationOptions)
 
+class TalleRopaTranslationOptions(TranslationOptions):
+  fields = ('descripcion',)
+
+translator.register(TalleRopa, TalleRopaTranslationOptions)
+

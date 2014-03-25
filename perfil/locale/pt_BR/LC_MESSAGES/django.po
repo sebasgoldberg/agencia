@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-13 17:52-0700\n"
+"POT-Creation-Date: 2014-03-25 09:06-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -75,6 +75,14 @@ msgstr "Manequim"
 #: models.py:81
 msgid "Manequims"
 msgstr "Manequims"
+
+#: models.py:84
+msgid "Descripción"
+msgstr "Descripção"
+
+#: models.py:89 models.py:90
+msgid "Talle Ropa"
+msgstr "Tamanho Roupa"
 
 #: management/commands/loadperfil.py:30 management/commands/loadperfil.py:128
 msgid "Castanho"
@@ -455,6 +463,26 @@ msgstr "Oriental"
 #: management/commands/loadperfil.py:137
 msgid "Parda"
 msgstr "Parda"
+
+#: management/commands/loadperfil.py:139
+msgid "PP"
+msgstr "PP"
+
+#: management/commands/loadperfil.py:140
+msgid "P"
+msgstr "P"
+
+#: management/commands/loadperfil.py:141
+msgid "M"
+msgstr "M"
+
+#: management/commands/loadperfil.py:142
+msgid "G"
+msgstr "G"
+
+#: management/commands/loadperfil.py:143
+msgid "GG"
+msgstr "GG"
 
 #~ msgid "Guitara"
 #~ msgstr "Guitara"

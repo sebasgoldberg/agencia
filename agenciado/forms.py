@@ -96,8 +96,8 @@ class AgenciadoCaracteristicasForm(ModelForm):
       'altura',
       'peso',
       'talle',
-      'talle_camisa',
-      'talle_pantalon',
+      'talle_ropa_camisa',
+      'talle_ropa_pantalon',
       'calzado',
       'estado_dientes',
       )

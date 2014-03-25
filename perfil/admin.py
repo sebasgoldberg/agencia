@@ -1,5 +1,5 @@
 # coding=utf-8
-from iampacks.agencia.perfil.models import Danza, Deporte, EstadoDientes, Idioma, Instrumento, Ojos, Pelo, Piel, Talle
+from iampacks.agencia.perfil.models import *
 from django.contrib import admin
 
 admin.site.register(Danza)
@@ -11,3 +11,4 @@ admin.site.register(Ojos)
 admin.site.register(Pelo)
 admin.site.register(Piel)
 admin.site.register(Talle)
+admin.site.register(TalleRopa)

@@ -13,7 +13,7 @@ from django.utils.translation import ugettext as _
 from django.utils.translation import ugettext_lazy
 from iampacks.cross.direccion.models import Direccion
 from iampacks.cross.telefono.models import Telefono as BaseTelefono
-from iampacks.agencia.perfil.models import Danza, Deporte, EstadoDientes, Idioma, Instrumento, Ojos, Pelo, Piel, Talle
+from iampacks.agencia.perfil.models import *
 from django.contrib import messages
 
 # @pre Esta rutina se llama desde el metodo clean de una clase que lo redefine y hereda de formset
@@ -153,8 +153,13 @@ class Agenciado(models.Model):
     altura = models.FloatField(verbose_name=ugettext_lazy(u'Atura (cm)'),validators=[validate_altura])
     peso = models.FloatField(verbose_name=ugettext_lazy(u'Peso (kg)'))
     talle = models.ForeignKey(Talle,on_delete=models.PROTECT, verbose_name=ugettext_lazy(u'Manequim'),null=True, blank=False)
+
     talle_camisa = models.IntegerField(verbose_name=ugettext_lazy(u'Camisa'))
     talle_pantalon = models.IntegerField(verbose_name=ugettext_lazy(u'Calça'))
+
+    talle_ropa_camisa = models.ForeignKey(TalleRopa,on_delete=models.PROTECT, verbose_name=ugettext_lazy(u'Camisa'),null=True, blank=False, related_name='camisa')
+    talle_ropa_pantalon = models.ForeignKey(TalleRopa,on_delete=models.PROTECT, verbose_name=ugettext_lazy(u'Calça'),null=True, blank=False,related_name='pantalon')
+
     calzado = models.IntegerField(verbose_name=ugettext_lazy(u'Calçado'))
     estado_dientes = models.ForeignKey(EstadoDientes,on_delete=models.PROTECT, verbose_name=ugettext_lazy(u'Estado Dentes'),null=True, blank=False)
 
