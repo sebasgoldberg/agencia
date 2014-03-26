@@ -157,8 +157,8 @@ class Agenciado(models.Model):
     talle_camisa = models.IntegerField(verbose_name=ugettext_lazy(u'Camisa'))
     talle_pantalon = models.IntegerField(verbose_name=ugettext_lazy(u'Calça'))
 
-    talle_ropa_camisa = models.ForeignKey(TalleRopa,on_delete=models.PROTECT, verbose_name=ugettext_lazy(u'Camisa'),null=True, blank=False, related_name='camisa')
-    talle_ropa_pantalon = models.ForeignKey(TalleRopa,on_delete=models.PROTECT, verbose_name=ugettext_lazy(u'Calça'),null=True, blank=False,related_name='pantalon')
+    talle_ropa_camisa = models.ForeignKey(TalleRopa,on_delete=models.PROTECT, verbose_name=ugettext_lazy(u'Camisa'),null=True, blank=True, related_name='camisa')
+    talle_ropa_pantalon = models.ForeignKey(TalleRopa,on_delete=models.PROTECT, verbose_name=ugettext_lazy(u'Calça'),null=True, blank=True,related_name='pantalon')
 
     calzado = models.IntegerField(verbose_name=ugettext_lazy(u'Calçado'))
     estado_dientes = models.ForeignKey(EstadoDientes,on_delete=models.PROTECT, verbose_name=ugettext_lazy(u'Estado Dentes'),null=True, blank=False)
