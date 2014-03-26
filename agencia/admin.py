@@ -203,10 +203,10 @@ class CiudadDireccionAgenciadoListFilter(CiudadDireccionModelListFilter):
   fk_field_model = 'agenciado'
 
 class AgenciadoAdmin(admin.ModelAdmin):
-  readonly_fields=['id','thumbnails']
+  readonly_fields=['id','thumbnails', 'edad']
   fieldsets=[
     (None, {'fields':['thumbnails','id','mail']}),
-    (ugettext_lazy(u'Dados Pessoales'), {'fields':[('nombre', 'apellido', 'fecha_nacimiento')]}),
+    (ugettext_lazy(u'Dados Pessoales'), {'fields':[('nombre', 'apellido',), ('fecha_nacimiento', 'edad',)]}),
     (ugettext_lazy(u'Dados Administrativos'), { 'fields':[ ('documento_rg', 'documento_cpf'), 'responsable', 'cuenta_bancaria']}),
     (None, {"classes": ("placeholder telefono_set-group",), "fields" : ()}),
     (None, {"classes": ("placeholder mailagenciado_set-group",), "fields" : ()}),

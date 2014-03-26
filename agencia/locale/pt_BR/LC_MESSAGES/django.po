@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-26 10:10-0700\n"
+"POT-Creation-Date: 2014-03-26 11:05-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -105,7 +105,7 @@ msgstr "Tem que subir uma foto"
 msgid "Nome"
 msgstr "Nome"
 
-#: models.py:45 models.py:120 models.py:306
+#: models.py:45 models.py:120 models.py:307
 msgid "e-mail"
 msgstr "e-mail"
 
@@ -349,7 +349,7 @@ msgstr ""
 "Edad %(edad)s, sexo %(sexo)s, olhos %(ojos)s, cabelo %(pelo)s, pele "
 "%(piel)s, atura %(altura)s, peso %(peso)s, estado dentes %(estado_dientes)s."
 
-#: models.py:270 models.py:307
+#: models.py:270 models.py:308
 msgid "Descripção"
 msgstr "Descripção"
 
@@ -358,114 +358,118 @@ msgstr "Descripção"
 msgid "%s anos"
 msgstr "%s anos"
 
-#: models.py:293
+#: models.py:277
+msgid "Edad"
+msgstr "Idade"
+
+#: models.py:294
 msgid "Mails"
 msgstr "Mails"
 
-#: models.py:301 models.py:317
+#: models.py:302 models.py:318
 #: templates/admin/agencia/agenciado/enviar_mail.html:21
 msgid "Agenciado"
 msgstr "Agenciado"
 
-#: models.py:302
+#: models.py:303
 msgid "Agenciados"
 msgstr "Agenciados"
 
-#: models.py:313
+#: models.py:314
 msgid "Mail Agenciado"
 msgstr "Mail Agenciado"
 
-#: models.py:314
+#: models.py:315
 msgid "Mails Agenciado"
 msgstr "Mails Agenciado"
 
-#: models.py:319
+#: models.py:320
 msgid "Endereço agenciado"
 msgstr "Endereço agenciado"
 
-#: models.py:320
+#: models.py:321
 msgid "Endereços agenciados"
 msgstr "Endereços agenciados"
 
-#: models.py:326
+#: models.py:327
 #, python-format
 msgid "Por favor subir archivos con tamaño menor a %s MB"
 msgstr "Por favor carregar arquivos con tamanho menor a %s MB"
 
-#: models.py:330
+#: models.py:331
 #, python-format
 msgid "Foto (tamaño < %s MB)"
 msgstr "Foto (tamanho < %s MB)"
 
-#: models.py:336
+#: models.py:337
 msgid "Foto agenciado"
 msgstr "Foto agenciado"
 
-#: models.py:337
+#: models.py:338
 msgid "Fotos agenciado"
 msgstr "Fotos agenciado"
 
-#: models.py:343
+#: models.py:344
 msgid "Video agenciado"
 msgstr "Video agenciado"
 
-#: models.py:344
+#: models.py:345
 msgid "Videos agenciado"
 msgstr "Videos agenciado"
 
-#: models.py:354
+#: models.py:355
 msgid "Telefone agenciado"
 msgstr "Telefone agenciado"
 
-#: models.py:355
+#: models.py:356
 msgid "Telefones agenciado"
 msgstr "Telefones agenciado"
 
-#: models.py:360
+#: models.py:361
 msgid "Disponibilidad Trabajo"
 msgstr "Disponibilidade Trabalho"
 
-#: models.py:361
+#: models.py:362
 msgid "Disponibilidades Trabajo"
 msgstr "Disponibilidades Trabalho"
 
-#: models.py:364 models.py:384
+#: models.py:365 models.py:385
 msgid "Descripción"
 msgstr "Descripção"
 
-#: models.py:365
+#: models.py:366
 msgid "Fecha vigencia"
 msgstr "Data vigência"
 
-#: models.py:370
+#: models.py:371
 msgid "La fecha de vigencia debe ser posterior a la fecha actual."
 msgstr "A data de vigência debe ser posterior a data atual."
 
-#: models.py:374 models.py:380
+#: models.py:375 models.py:381
 msgid "Trabajo vigente"
 msgstr "Trabalho vigente"
 
-#: models.py:375 models.py:381
+#: models.py:376 models.py:382
 msgid "Trabajos vigentes"
 msgstr "Trabalhos vigentes"
 
-#: models.py:385
+#: models.py:386
 msgid "Fecha desde"
 msgstr "Data de"
 
-#: models.py:386
+#: models.py:387
 msgid "Fecha hasta"
 msgstr "Data até"
 
-#: models.py:391
+#: models.py:392
 msgid "La fecha desde debe ser menor a la fecha hasta."
 msgstr "A data de debe ser menor que a data até."
 
-#: models.py:395 models.py:401
+#: models.py:396 models.py:402
 msgid "Trabajo realizado"
 msgstr "Trabalho realizado"
 
-#: models.py:396 models.py:402
+#: models.py:397 models.py:403
 msgid "Trabajos realizados"
 msgstr "Trabalhos realizados"
 

@@ -274,6 +274,7 @@ class Agenciado(models.Model):
       if dias_desde_nacimiento<365:
         return _(u'%s meses')%int(dias_desde_nacimiento/30.4375)
       return _(u'%s anos')%int(dias_desde_nacimiento/365.25)
+    edad.short_description = ugettext_lazy(u'Edad')
 
     def ids_roles_postulaciones(self):
       return [ postulacion.rol.id for postulacion in self.postulacion_set.all() ]
