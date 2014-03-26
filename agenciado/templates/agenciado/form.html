@@ -145,3 +145,61 @@
 </form>
 {%endwith%}
 
+<script>
+  var MAX_COLUMNS=12;
+  $(function(){
+    $('.add-form-to-formset').click(function(event){
+
+      // Se obtiene el contenedor del formset
+      var formset_container=$(this).parent().parent().parent().find('.formset-container');
+
+      // Se obtienen los atributos del formset
+      var formset_name = $(this).attr('data-formset-name');
+
+      // Se obtienen todos los datos administrativos del formset
+      var TOTAL_FORMS = formset_container.find('#id_'+formset_name+'-TOTAL_FORMS');
+      var INITIAL_FORMS = formset_container.find('#id_'+formset_name+'-INITIAL_FORMS');
+      var MAX_NUM_FORMS = formset_container.find('#id_'+formset_name+'-MAX_NUM_FORMS');
+
+      // Se obtienen los valores de los datos administrativos.
+      var TOTAL_FORMS_value = TOTAL_FORMS.attr('value');
+      var MAX_NUM_FORMS_value = MAX_NUM_FORMS.attr('value');
+
+      // En caso de haber llegado al límite máximo de formularios no se hace nada.
+      if (TOTAL_FORMS_value == MAX_NUM_FORMS_value) 
+        return;
+
+      var empty_form = $(this).attr('data-empty-form').replace('__prefix__',TOTAL_FORMS_value);
+      var columns_by_form = $(this).attr('data-columns-by-form');
+
+      var max_items_per_row = MAX_COLUMNS / columns_by_form;
+      
+      // Se obtiene la última fila de forms en el contenedor del formset.
+      var last_row = formset_container.find('.fila-forms-formset').last();
+
+      // Se obtiene la cantidad de forms en la última fila.
+      var forms_quantity_in_row = last_row.find('.form-formset').length;
+
+      // En caso de haber llegado al limite de forms en la fila, se agrega una nueva fila
+      if (forms_quantity_in_row == max_items_per_row){
+        last_row = formset_container.append(
+          '<div class="row fila-forms-formset">'+
+          '</div>');
+        var last_row = formset_container.find('.fila-forms-formset').last();
+        }
+
+      // Se agrega el nuevo formulario
+      last_row.append(
+        '<div class="span'+columns_by_form+'">'+
+          '<div class="well form-formset">'+
+            empty_form+
+          '</div>'+
+        '</div>');
+
+      // Se incrementa la cantidad total de formularios en una unidad.
+      TOTAL_FORMS.attr('value',parseInt(TOTAL_FORMS_value)+1);
+
+      });
+
+    });
+</script>
