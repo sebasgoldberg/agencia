@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-25 09:05-0700\n"
+"POT-Creation-Date: 2014-03-26 10:20-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,8 +23,8 @@ msgstr ""
 msgid "Descripção"
 msgstr "Descripción"
 
-#: models.py:12 management/commands/loadperfil.py:39
-#: management/commands/loadperfil.py:59
+#: models.py:12 management/commands/loadperfil.py:40
+#: management/commands/loadperfil.py:60
 msgid "Dança"
 msgstr "Danza"
 
@@ -84,403 +84,403 @@ msgstr "Descripción"
 msgid "Talle Ropa"
 msgstr "Talle Ropa"
 
-#: management/commands/loadperfil.py:30 management/commands/loadperfil.py:128
+#: management/commands/loadperfil.py:31 management/commands/loadperfil.py:129
 msgid "Castanho"
 msgstr "Castaño"
 
-#: management/commands/loadperfil.py:31 management/commands/loadperfil.py:129
+#: management/commands/loadperfil.py:32 management/commands/loadperfil.py:130
 msgid "Castanho Claro"
 msgstr "Castaño Claro"
 
-#: management/commands/loadperfil.py:32
+#: management/commands/loadperfil.py:33
 msgid "Grisalho"
 msgstr "Canoso"
 
-#: management/commands/loadperfil.py:33
+#: management/commands/loadperfil.py:34
 msgid "Loiro"
 msgstr "Ruvio"
 
-#: management/commands/loadperfil.py:34 management/commands/loadperfil.py:130
+#: management/commands/loadperfil.py:35 management/commands/loadperfil.py:131
 msgid "Preto"
 msgstr "Morocho"
 
-#: management/commands/loadperfil.py:35
+#: management/commands/loadperfil.py:36
 msgid "Preto Claro"
 msgstr "Castaño oscuro"
 
-#: management/commands/loadperfil.py:36
+#: management/commands/loadperfil.py:37
 msgid "Ruiva"
 msgstr "Pelirrojo"
 
-#: management/commands/loadperfil.py:38
+#: management/commands/loadperfil.py:39
 msgid "Ballet"
 msgstr "Ballet"
 
-#: management/commands/loadperfil.py:40
+#: management/commands/loadperfil.py:41
 msgid "Dança de Rua"
 msgstr "Danza de calle"
 
-#: management/commands/loadperfil.py:41
+#: management/commands/loadperfil.py:42
 msgid "Hip Hop"
 msgstr "Hip Hop"
 
-#: management/commands/loadperfil.py:42
+#: management/commands/loadperfil.py:43
 msgid "Jazz"
 msgstr "Jazz"
 
-#: management/commands/loadperfil.py:43
+#: management/commands/loadperfil.py:44
 msgid "Sapateado"
 msgstr "Zapateo"
 
-#: management/commands/loadperfil.py:44
+#: management/commands/loadperfil.py:45
 msgid "Street Dance"
 msgstr "Street Dance"
 
-#: management/commands/loadperfil.py:45
+#: management/commands/loadperfil.py:46
 msgid "Ventre"
 msgstr "Vientre"
 
-#: management/commands/loadperfil.py:46
+#: management/commands/loadperfil.py:47
 msgid "Gafieira"
 msgstr "Gafieira"
 
-#: management/commands/loadperfil.py:48
+#: management/commands/loadperfil.py:49
 msgid "Aeróbica"
 msgstr "Aeróbica"
 
-#: management/commands/loadperfil.py:49
+#: management/commands/loadperfil.py:50
 msgid "Anda a Cavalo"
 msgstr "Monta a caballo"
 
-#: management/commands/loadperfil.py:50
+#: management/commands/loadperfil.py:51
 msgid "Atletismo"
 msgstr "Atletismo"
 
-#: management/commands/loadperfil.py:51
+#: management/commands/loadperfil.py:52
 msgid "Ator"
 msgstr "Actor"
 
-#: management/commands/loadperfil.py:52
+#: management/commands/loadperfil.py:53
 msgid "Basquete"
 msgstr "Basquet"
 
-#: management/commands/loadperfil.py:53
+#: management/commands/loadperfil.py:54
 msgid "Bicicleta"
 msgstr "Bicicleta"
 
-#: management/commands/loadperfil.py:54
+#: management/commands/loadperfil.py:55
 msgid "Boliche"
 msgstr "Bolos"
 
-#: management/commands/loadperfil.py:55
+#: management/commands/loadperfil.py:56
 msgid "Capoeira"
 msgstr "Capoeira"
 
-#: management/commands/loadperfil.py:56
+#: management/commands/loadperfil.py:57
 msgid "Cavalgar"
 msgstr "Cabalgar"
 
-#: management/commands/loadperfil.py:57
+#: management/commands/loadperfil.py:58
 msgid "Ciclismo"
 msgstr "Ciclismo"
 
-#: management/commands/loadperfil.py:58
+#: management/commands/loadperfil.py:59
 msgid "Corrida c/ obstáculo"
 msgstr "Carrera c/ obstáculos"
 
-#: management/commands/loadperfil.py:60
+#: management/commands/loadperfil.py:61
 msgid "Futebol"
 msgstr "Futbol"
 
-#: management/commands/loadperfil.py:61
+#: management/commands/loadperfil.py:62
 msgid "Futsal"
 msgstr "Futbol de salón"
 
-#: management/commands/loadperfil.py:62
+#: management/commands/loadperfil.py:63
 msgid "Ginastica Artistica"
 msgstr "Gimnasia Artística"
 
-#: management/commands/loadperfil.py:63
+#: management/commands/loadperfil.py:64
 msgid "Ginastica Acrobática"
 msgstr "Gimnasia Acrobática"
 
-#: management/commands/loadperfil.py:64
+#: management/commands/loadperfil.py:65
 msgid "Ginastica Olimpica"
 msgstr "Gimnasia Olímpica"
 
-#: management/commands/loadperfil.py:65
+#: management/commands/loadperfil.py:66
 msgid "Ginastica Ritmica"
 msgstr "Gimnasia Rítmica"
 
-#: management/commands/loadperfil.py:66
+#: management/commands/loadperfil.py:67
 msgid "Handeboll"
 msgstr "Handball"
 
-#: management/commands/loadperfil.py:67
+#: management/commands/loadperfil.py:68
 msgid "Judo"
 msgstr "Judo"
 
-#: management/commands/loadperfil.py:68
+#: management/commands/loadperfil.py:69
 msgid "Karate"
 msgstr "Karate"
 
-#: management/commands/loadperfil.py:69
+#: management/commands/loadperfil.py:70
 msgid "Kung-fu"
 msgstr "Kung-fu"
 
-#: management/commands/loadperfil.py:70
+#: management/commands/loadperfil.py:71
 msgid "Locução"
 msgstr "Locución"
 
-#: management/commands/loadperfil.py:71
+#: management/commands/loadperfil.py:72
 msgid "Maaythay"
 msgstr "Maaythay"
 
-#: management/commands/loadperfil.py:72
+#: management/commands/loadperfil.py:73
 msgid "Natação"
 msgstr "Natación"
 
-#: management/commands/loadperfil.py:73
+#: management/commands/loadperfil.py:74
 msgid "Patinação Artística"
 msgstr "Patinaje Artístico"
 
-#: management/commands/loadperfil.py:74
+#: management/commands/loadperfil.py:75
 msgid "Patins"
 msgstr "Patines"
 
-#: management/commands/loadperfil.py:75
+#: management/commands/loadperfil.py:76
 msgid "Power Jump"
 msgstr "Power Jump"
 
-#: management/commands/loadperfil.py:76
+#: management/commands/loadperfil.py:77
 msgid "Rooler"
 msgstr "Roolers"
 
-#: management/commands/loadperfil.py:77
+#: management/commands/loadperfil.py:78
 msgid "samba"
 msgstr "Samba"
 
-#: management/commands/loadperfil.py:78
+#: management/commands/loadperfil.py:79
 msgid "Skate"
 msgstr "Skate"
 
-#: management/commands/loadperfil.py:79
+#: management/commands/loadperfil.py:80
 msgid "streetdance"
 msgstr "Street Dance"
 
-#: management/commands/loadperfil.py:80
+#: management/commands/loadperfil.py:81
 msgid "Surf"
 msgstr "Surf"
 
-#: management/commands/loadperfil.py:81
+#: management/commands/loadperfil.py:82
 msgid "Taekondo"
 msgstr "Taekwondo"
 
-#: management/commands/loadperfil.py:82
+#: management/commands/loadperfil.py:83
 msgid "Teatro"
 msgstr "Teatro"
 
-#: management/commands/loadperfil.py:83
+#: management/commands/loadperfil.py:84
 msgid "Tenis"
 msgstr "Tenis"
 
-#: management/commands/loadperfil.py:84
+#: management/commands/loadperfil.py:85
 msgid "Vôlei"
 msgstr "Volei"
 
-#: management/commands/loadperfil.py:86
+#: management/commands/loadperfil.py:87
 msgid "Bom"
 msgstr "Bien"
 
-#: management/commands/loadperfil.py:87
+#: management/commands/loadperfil.py:88
 msgid "Sem informação"
 msgstr "Sin Información"
 
-#: management/commands/loadperfil.py:89
+#: management/commands/loadperfil.py:90
 msgid "Alemao"
 msgstr "Alemán"
 
-#: management/commands/loadperfil.py:90
+#: management/commands/loadperfil.py:91
 msgid "Chino"
 msgstr "Chino"
 
-#: management/commands/loadperfil.py:91
+#: management/commands/loadperfil.py:92
 msgid "Espanhol"
 msgstr "Español"
 
-#: management/commands/loadperfil.py:92
+#: management/commands/loadperfil.py:93
 msgid "Francês"
 msgstr "Frances"
 
-#: management/commands/loadperfil.py:93
+#: management/commands/loadperfil.py:94
 msgid "Inglês"
 msgstr "Ingles"
 
-#: management/commands/loadperfil.py:94
+#: management/commands/loadperfil.py:95
 msgid "Inglês intermediario"
 msgstr "Ingles intermedio"
 
-#: management/commands/loadperfil.py:95
+#: management/commands/loadperfil.py:96
 msgid "Italiano"
 msgstr "Italiano"
 
-#: management/commands/loadperfil.py:96
+#: management/commands/loadperfil.py:97
 msgid "Japones"
 msgstr "Japonés"
 
-#: management/commands/loadperfil.py:98
+#: management/commands/loadperfil.py:99
 msgid "Acordeon"
 msgstr "Acordeón"
 
-#: management/commands/loadperfil.py:99
+#: management/commands/loadperfil.py:100
 msgid "Agogo"
 msgstr "Agogo"
 
-#: management/commands/loadperfil.py:100
+#: management/commands/loadperfil.py:101
 msgid "Birimbal"
 msgstr "Birimbal"
 
-#: management/commands/loadperfil.py:101
+#: management/commands/loadperfil.py:102
 msgid "Canto"
 msgstr "Canto"
 
-#: management/commands/loadperfil.py:102
+#: management/commands/loadperfil.py:103
 msgid "Chocalho"
 msgstr "Maracas"
 
-#: management/commands/loadperfil.py:103
+#: management/commands/loadperfil.py:104
 msgid "Escaleta"
 msgstr "Melódica"
 
-#: management/commands/loadperfil.py:104
+#: management/commands/loadperfil.py:105
 msgid "Flauta"
 msgstr "Flauta"
 
-#: management/commands/loadperfil.py:105
+#: management/commands/loadperfil.py:106
 msgid "Lira"
 msgstr "Lira"
 
-#: management/commands/loadperfil.py:106
+#: management/commands/loadperfil.py:107
 msgid "Orgão"
 msgstr "Organo"
 
-#: management/commands/loadperfil.py:107
+#: management/commands/loadperfil.py:108
 msgid "Pandeiro"
 msgstr "Pandereta"
 
-#: management/commands/loadperfil.py:108
+#: management/commands/loadperfil.py:109
 msgid "Percussão"
 msgstr "Percución"
 
-#: management/commands/loadperfil.py:109
+#: management/commands/loadperfil.py:110
 msgid "Piano"
 msgstr "Piano"
 
-#: management/commands/loadperfil.py:110
+#: management/commands/loadperfil.py:111
 msgid "Sino"
 msgstr "Campana"
 
-#: management/commands/loadperfil.py:111
+#: management/commands/loadperfil.py:112
 msgid "Tambor"
 msgstr "Tambor"
 
-#: management/commands/loadperfil.py:112
+#: management/commands/loadperfil.py:113
 msgid "Teclado"
 msgstr "Teclado"
 
-#: management/commands/loadperfil.py:113
+#: management/commands/loadperfil.py:114
 msgid "Timba"
 msgstr "Timba"
 
-#: management/commands/loadperfil.py:114
+#: management/commands/loadperfil.py:115
 msgid "Triângulo"
 msgstr "Triangulo"
 
-#: management/commands/loadperfil.py:115
+#: management/commands/loadperfil.py:116
 msgid "Trompete"
 msgstr "Trompeta"
 
-#: management/commands/loadperfil.py:116
+#: management/commands/loadperfil.py:117
 msgid "Violão"
 msgstr "Guitarra"
 
-#: management/commands/loadperfil.py:117
+#: management/commands/loadperfil.py:118
 msgid "Violino"
 msgstr "Violín"
 
-#: management/commands/loadperfil.py:119
+#: management/commands/loadperfil.py:120
 msgid "Robusta"
 msgstr "Robusta"
 
-#: management/commands/loadperfil.py:120
+#: management/commands/loadperfil.py:121
 msgid "Gordo"
 msgstr "Gordo"
 
-#: management/commands/loadperfil.py:121
+#: management/commands/loadperfil.py:122
 msgid "Magro"
 msgstr "Flaco"
 
-#: management/commands/loadperfil.py:122
+#: management/commands/loadperfil.py:123
 msgid "Atletica"
 msgstr "Atletica"
 
-#: management/commands/loadperfil.py:123
+#: management/commands/loadperfil.py:124
 msgid "Musculosa"
 msgstr "Musculosa"
 
-#: management/commands/loadperfil.py:124
+#: management/commands/loadperfil.py:125
 msgid "Normal"
 msgstr "Normal"
 
-#: management/commands/loadperfil.py:126
+#: management/commands/loadperfil.py:127
 msgid "Azul"
 msgstr "Azul"
 
-#: management/commands/loadperfil.py:127
+#: management/commands/loadperfil.py:128
 msgid "Bermelhos"
 msgstr "Rojos"
 
-#: management/commands/loadperfil.py:131
+#: management/commands/loadperfil.py:132
 msgid "Verdes"
 msgstr "Verdes"
 
-#: management/commands/loadperfil.py:133
+#: management/commands/loadperfil.py:134
 msgid "Branca"
 msgstr "Blanca"
 
-#: management/commands/loadperfil.py:134
+#: management/commands/loadperfil.py:135
 msgid "Morena"
 msgstr "Morena"
 
-#: management/commands/loadperfil.py:135
+#: management/commands/loadperfil.py:136
 msgid "Negra"
 msgstr "Negra"
 
-#: management/commands/loadperfil.py:136
+#: management/commands/loadperfil.py:137
 msgid "Oriental"
 msgstr "Oriental"
 
-#: management/commands/loadperfil.py:137
+#: management/commands/loadperfil.py:138
 msgid "Parda"
 msgstr "Trigueña"
 
-#: management/commands/loadperfil.py:139
+#: management/commands/loadperfil.py:140
 msgid "PP"
 msgstr "XS"
 
-#: management/commands/loadperfil.py:140
+#: management/commands/loadperfil.py:141
 msgid "P"
 msgstr "S"
 
-#: management/commands/loadperfil.py:141
+#: management/commands/loadperfil.py:142
 msgid "M"
 msgstr "M"
 
-#: management/commands/loadperfil.py:142
+#: management/commands/loadperfil.py:143
 msgid "G"
 msgstr "L"
 
-#: management/commands/loadperfil.py:143
+#: management/commands/loadperfil.py:144
 msgid "GG"
 msgstr "XL"
 

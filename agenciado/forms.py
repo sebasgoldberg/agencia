@@ -5,7 +5,7 @@ from django.forms.extras.widgets import SelectDateWidget
 from django.forms.models import inlineformset_factory
 from iampacks.agencia.agencia.forms import DireccionAgenciadoFormRelated
 from django import forms
-from iampacks.agencia.agencia.models import Agenciado, DireccionAgenciado, Telefono, FotoAgenciado, VideoAgenciado
+from iampacks.agencia.agencia.models import Agenciado, DireccionAgenciado, Telefono, FotoAgenciado, VideoAgenciado, DisponibilidadTrabajoAgenciado, TrabajoVigenteAgenciado, TrabajoRealizadoAgenciado
 from iampacks.agencia.agencia.models import validarDireccionIngresada, validarTelefonoIngresado, validarFotoIngresada
 
 from django.utils.translation import ugettext as _
@@ -133,6 +133,10 @@ BaseDireccionFormSet = inlineformset_factory(Agenciado, DireccionAgenciado, extr
 BaseTelefonoFormSet = inlineformset_factory(Agenciado, Telefono, extra=1, max_num=6)
 BaseFotoAgenciadoFormSet = inlineformset_factory(Agenciado, FotoAgenciado, extra=1, max_num=6)
 VideoAgenciadoFormSet = inlineformset_factory(Agenciado, VideoAgenciado, extra=1, max_num=6, exclude=['codigo_video'])
+
+DisponibilidadTrabajoAgenciadoFormSet = inlineformset_factory(Agenciado, DisponibilidadTrabajoAgenciado, extra=1, max_num=10)
+TrabajoVigenteAgenciadoFormSet = inlineformset_factory(Agenciado, TrabajoVigenteAgenciado, extra=1, max_num=10)
+TrabajoRealizadoAgenciadoFormSet = inlineformset_factory(Agenciado, TrabajoRealizadoAgenciado, extra=1, max_num=10)
 
 class DireccionFormSet(BaseDireccionFormSet):
   def clean(self):

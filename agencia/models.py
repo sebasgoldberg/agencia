@@ -15,6 +15,7 @@ from iampacks.cross.direccion.models import Direccion
 from iampacks.cross.telefono.models import Telefono as BaseTelefono
 from iampacks.agencia.perfil.models import *
 from django.contrib import messages
+from iampacks.cross.disponibilidad.models import Disponibilidad
 
 # @pre Esta rutina se llama desde el metodo clean de una clase que lo redefine y hereda de formset
 def validarUnoIngresado(formset,campo,mensaje):
@@ -123,11 +124,16 @@ class Agenciado(models.Model):
     apellido = models.CharField(max_length=60, verbose_name=ugettext_lazy(u'Sobrenome'))
     fecha_nacimiento = models.DateField(verbose_name=ugettext_lazy(u'Data nascimento'),validators=[validate_fecha_nacimiento])
 
+    nombre_artistico = models.CharField(max_length=60, verbose_name=ugettext_lazy(u'Nombre artístico'), null=True, blank=True)
+
     # Datos Administrativos
     # @todo Ver si se puede quitar null luego de migrar, agregar validacion de que si ya existe que tenga asignado responsable
     documento_rg = models.CharField(max_length=60, verbose_name=ugettext_lazy(u'RG'))
     # @todo Ver si se puede quitar null luego de migrar, agregar validacion de que si ya existe que tenga asignado responsable
     documento_cpf = models.CharField(max_length=60, verbose_name=ugettext_lazy(u'CPF'),null=True,blank=True)
+
+    documento_drt = models.CharField(max_length=60, verbose_name=ugettext_lazy(u'DRT'),null=True,blank=True)
+
     responsable = models.CharField(max_length=60, blank=True, verbose_name=ugettext_lazy(u'Responsabel'))
     cuenta_bancaria = models.CharField(max_length=100, blank=True, verbose_name=ugettext_lazy(u'Conta bancaria'))
 
@@ -347,3 +353,50 @@ class Telefono(BaseTelefono):
   class Meta(BaseTelefono.Meta):
     verbose_name = ugettext_lazy(u"Telefone agenciado")
     verbose_name_plural = ugettext_lazy(u"Telefones agenciado")
+
+class DisponibilidadTrabajoAgenciado(Disponibilidad):
+  agenciado = models.ForeignKey(Agenciado)
+  class Meta(Disponibilidad.Meta):
+    verbose_name = ugettext_lazy(u"Disponibilidad Trabajo")
+    verbose_name_plural = ugettext_lazy(u"Disponibilidades Trabajo")
+
+class TrabajoVigente(models.Model):
+  descripcion = models.CharField(max_length=100, verbose_name=ugettext_lazy(u'Descripción'))
+  fecha_vigencia = models.DateField(verbose_name=ugettext_lazy(u'Fecha vigencia'))
+
+  def clean(self):
+    if not self.id:
+      if self.fecha_vigencia <= date.today():
+        raise ValidationError(_(u'La fecha de vigencia debe ser posterior a la fecha actual.'))
+
+  class Meta:
+    abstract = True
+    verbose_name = ugettext_lazy(u"Trabajo vigente")
+    verbose_name_plural = ugettext_lazy(u"Trabajos vigentes")
+
+class TrabajoVigenteAgenciado(TrabajoVigente):
+  agenciado = models.ForeignKey(Agenciado)
+  class Meta(TrabajoVigente.Meta):
+    verbose_name = ugettext_lazy(u"Trabajo vigente")
+    verbose_name_plural = ugettext_lazy(u"Trabajos vigentes")
+
+class TrabajoRealizado(models.Model):
+  descripcion = models.CharField(max_length=100, verbose_name=ugettext_lazy(u'Descripción'))
+  fecha_desde = models.DateField(verbose_name=ugettext_lazy(u'Fecha desde'))
+  fecha_hasta = models.DateField(verbose_name=ugettext_lazy(u'Fecha hasta'), null=False, blank=False)
+
+  def clean(self):
+    if self.fecha_hasta:
+      if self.fecha_desde >= self.fecha_hasta:
+        raise ValidationError(_(u'La fecha desde debe ser menor a la fecha hasta.'))
+
+  class Meta:
+    abstract = True
+    verbose_name = ugettext_lazy(u"Trabajo realizado")
+    verbose_name_plural = ugettext_lazy(u"Trabajos realizados")
+
+class TrabajoRealizadoAgenciado(TrabajoRealizado):
+  agenciado = models.ForeignKey(Agenciado)
+  class Meta(TrabajoRealizado.Meta):
+    verbose_name = ugettext_lazy(u"Trabajo realizado")
+    verbose_name_plural = ugettext_lazy(u"Trabajos realizados")

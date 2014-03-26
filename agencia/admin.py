@@ -1,5 +1,5 @@
 # coding=utf-8
-from iampacks.agencia.agencia.models import Agenciado, MailAgenciado, FotoAgenciado, VideoAgenciado, Telefono, validarTelefonoIngresado, validarFotoIngresada, DireccionAgenciado, Agencia, TelefonoAgencia, DireccionAgencia
+from iampacks.agencia.agencia.models import *
 from django.contrib import admin
 from django.forms import CheckboxSelectMultiple
 from django.db import models
@@ -71,6 +71,21 @@ class VideoAgenciadoInline(admin.TabularInline):
   exclude = ['codigo_video']
   extra=1
   max_num=6
+
+class DisponibilidadTrabajoAgenciadoInline(admin.TabularInline):
+  model=DisponibilidadTrabajoAgenciado
+  extra=1
+  max_num=10
+
+class TrabajoVigenteAgenciadoInline(admin.TabularInline):
+  model=TrabajoVigenteAgenciado
+  extra=1
+  max_num=10
+
+class TrabajoRealizadoAgenciadoInline(admin.TabularInline):
+  model=TrabajoRealizadoAgenciado
+  extra=1
+  max_num=10
 
 EDADES_POSIBLES_FILTRO=list(
     [(int(x*30.4375),_(u'%s meses')%x) for x in range(0,12,1)]+
@@ -212,8 +227,11 @@ class AgenciadoAdmin(admin.ModelAdmin):
       'classes': ('grp-collapse grp-closed',),
       'fields':[ 'trabaja_como_extra', 'como_nos_conocio', 'observaciones', 'activo', 'fecha_ingreso']
       }),
+    (None, {"classes": ("placeholder disponibilidadtrabajoagenciado_set-group",), "fields" : ()}),
+    (None, {"classes": ("placeholder trabajovigenteagenciado_set-group",), "fields" : ()}),
+    (None, {"classes": ("placeholder trabajorealizadoagenciado_set-group",), "fields" : ()}),
   ]
-  inlines=[ DireccionAgenciadoInline, TelefonoInline, FotoAgenciadoInline, VideoAgenciadoInline, MailAgenciadoInline ]
+  inlines=[ DireccionAgenciadoInline, TelefonoInline, FotoAgenciadoInline, VideoAgenciadoInline, MailAgenciadoInline, DisponibilidadTrabajoAgenciadoInline, TrabajoVigenteAgenciadoInline, TrabajoRealizadoAgenciadoInline ]
   list_display=['thumbnail','id','apellido','nombre','fecha_nacimiento','descripcion','telefonos','mails', 'responsable']
   list_display_links = ('thumbnail', 'id')
   list_filter=['activo',FotoListFilter,'sexo',EdadMayorAListFilter,EdadMenorAListFilter,'ojos','pelo','piel','talle',AlturaMayorAListFilter,AlturaMenorAListFilter,'deportes','danzas','instrumentos','idiomas','fecha_ingreso',PaisDireccionAgenciadoListFilter, EstadoDireccionAgenciadoListFilter, CiudadDireccionAgenciadoListFilter]

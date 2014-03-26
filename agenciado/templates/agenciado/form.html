@@ -18,7 +18,7 @@
 <form enctype="multipart/form-data" method="post"  action="">
   {% csrf_token %}
 
-  {% if form.errors or direccionFormSet.non_form_errors or direccionFormSet.errors or telefonoFormSet.non_form_errors or telefonoFormSet.errors or fotoAgenciadoFormSet.non_form_errors or fotoAgenciadoFormSet.errors or videoAgenciadoFormSet.non_form_errors or videoAgenciadoFormSet.errors %}
+  {% if form.errors or direccionFormSet.non_form_errors or direccionFormSet.errors or telefonoFormSet.non_form_errors or telefonoFormSet.errors or fotoAgenciadoFormSet.non_form_errors or fotoAgenciadoFormSet.errors or videoAgenciadoFormSet.non_form_errors or videoAgenciadoFormSet.errors or disponibilidadTrabajoAgenciadoFormSet.non_form_errors or disponibilidadTrabajoAgenciadoFormSet.errors or trabajoVigenteAgenciadoFormSet.non_form_errors or trabajoVigenteAgenciadoFormSet.errors or trabajoRealizadoAgenciadoFormSet.non_form_errors or trabajoRealizadoAgenciadoFormSet.errors%}
     <div class='alert alert-error'>{% trans "Tem erros por corregir" %}</div>
   {% endif %}
 
@@ -31,9 +31,6 @@
       <div class='{{clase_espacio_celda}}'>{{form.nombre|as_crispy_field}}</div>
       <div class='{{clase_espacio_celda}}'>{{form.apellido|as_crispy_field}}</div>
       <div class='{{clase_espacio_celda}}'>{{form.fecha_nacimiento|as_crispy_field}}</div>
-      <script>
-        $('#id_fecha_nacimiento').datepicker({format: 'yyyy-mm-dd'})
-      </script>
     </div>
   </fieldset>
 
@@ -121,6 +118,21 @@
   </fieldset>
 
   <fieldset>
+    <legend>{% trans "Disponibilidad horaria para trabajos" %}</legend>
+    {% include 'agenciado/formset.html' with formset=disponibilidadTrabajoAgenciadoFormSet forms_by_line='3' columns_by_form='4' %}
+  </fieldset>
+
+  <fieldset>
+    <legend>{% trans "Trabajos vigentes" %}</legend>
+    {% include 'agenciado/formset.html' with formset=trabajoVigenteAgenciadoFormSet forms_by_line='3' columns_by_form='4' %}
+  </fieldset>
+
+  <fieldset>
+    <legend>{% trans "Trabajos realizados" %}</legend>
+    {% include 'agenciado/formset.html' with formset=trabajoRealizadoAgenciadoFormSet forms_by_line='3' columns_by_form='4' %}
+  </fieldset>
+
+  <fieldset>
     <legend>{% trans "Otros dados" %}</legend>
     <div class='row'>
       <div class='span2'>{{form.indicador_maneja|as_crispy_field}}</div>
@@ -146,8 +158,18 @@
 {%endwith%}
 
 <script>
+
+  function init_controls_on_fields(){
+    $('.dateinput').datepicker({format: 'yyyy-mm-dd'});
+    //$('.timeinput').timepicker({format: 'hh:mm'});
+    }
+
   var MAX_COLUMNS=12;
   $(function(){
+
+    init_controls_on_fields();
+
+    // Se agrega a los formset la posibilidad de adicionar nuevos forms.
     $('.add-form-to-formset').click(function(event){
 
       // Se obtiene el contenedor del formset
@@ -198,6 +220,8 @@
 
       // Se incrementa la cantidad total de formularios en una unidad.
       TOTAL_FORMS.attr('value',parseInt(TOTAL_FORMS_value)+1);
+
+      init_controls_on_fields();
 
       });
 

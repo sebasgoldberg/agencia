@@ -3,7 +3,7 @@
 
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from iampacks.agencia.agencia.models import Agenciado, DireccionAgenciado, Telefono, FotoAgenciado, VideoAgenciado
+from iampacks.agencia.agencia.models import Agenciado, DireccionAgenciado, Telefono, FotoAgenciado, VideoAgenciado, DisponibilidadTrabajoAgenciado, TrabajoVigenteAgenciado, TrabajoRealizadoAgenciado
 from datetime import date
 from django.contrib import messages
 from iampacks.agencia.trabajo.models import Postulacion, Rol
@@ -36,12 +36,18 @@ def process_agenciado_form(request,template,default_next_page):
     telefonoFormSet=TelefonoFormSet(request.POST,request.FILES,instance=agenciado)
     fotoAgenciadoFormSet=FotoAgenciadoFormSet(request.POST,request.FILES,instance=agenciado)
     videoAgenciadoFormSet=VideoAgenciadoFormSet(request.POST,request.FILES,instance=agenciado)
-    if form.is_valid() and direccionFormSet.is_valid() and telefonoFormSet.is_valid() and fotoAgenciadoFormSet.is_valid() and videoAgenciadoFormSet.is_valid():
+    disponibilidadTrabajoAgenciadoFormSet=DisponibilidadTrabajoAgenciadoFormSet(request.POST,request.FILES,instance=agenciado)
+    trabajoVigenteAgenciadoFormSet=TrabajoVigenteAgenciadoFormSet(request.POST,request.FILES,instance=agenciado)
+    trabajoRealizadoAgenciadoFormSet=TrabajoRealizadoAgenciadoFormSet(request.POST,request.FILES,instance=agenciado)
+    if form.is_valid() and direccionFormSet.is_valid() and telefonoFormSet.is_valid() and fotoAgenciadoFormSet.is_valid() and videoAgenciadoFormSet.is_valid() and disponibilidadTrabajoAgenciadoFormSet.is_valid() and trabajoVigenteAgenciadoFormSet.is_valid() and trabajoRealizadoAgenciadoFormSet.is_valid():
       form.save()
       direccionFormSet.save()
       telefonoFormSet.save()
       fotoAgenciadoFormSet.save()
       videoAgenciadoFormSet.save()
+      disponibilidadTrabajoAgenciadoFormSet.save()
+      trabajoVigenteAgenciadoFormSet.save()
+      trabajoRealizadoAgenciadoFormSet.save()
       messages.success(request, _(u'Dados atualizados com sucesso'))
       next_page = form.cleaned_data['next_page']
       if not next_page:
@@ -54,7 +60,19 @@ def process_agenciado_form(request,template,default_next_page):
     telefonoFormSet=TelefonoFormSet(instance=agenciado)
     fotoAgenciadoFormSet=FotoAgenciadoFormSet(instance=agenciado)
     videoAgenciadoFormSet=VideoAgenciadoFormSet(instance=agenciado)
-  return render(request,template,{'form':form, 'direccionFormSet':direccionFormSet, 'telefonoFormSet':telefonoFormSet, 'fotoAgenciadoFormSet':fotoAgenciadoFormSet, 'videoAgenciadoFormSet':videoAgenciadoFormSet, })
+    disponibilidadTrabajoAgenciadoFormSet=DisponibilidadTrabajoAgenciadoFormSet(instance=agenciado)
+    trabajoVigenteAgenciadoFormSet=TrabajoVigenteAgenciadoFormSet(instance=agenciado)
+    trabajoRealizadoAgenciadoFormSet=TrabajoRealizadoAgenciadoFormSet(instance=agenciado)
+  return render(request,template,{
+    'form':form, 
+    'direccionFormSet':direccionFormSet,
+    'telefonoFormSet':telefonoFormSet,
+    'fotoAgenciadoFormSet':fotoAgenciadoFormSet,
+    'videoAgenciadoFormSet':videoAgenciadoFormSet,
+    'disponibilidadTrabajoAgenciadoFormSet': disponibilidadTrabajoAgenciadoFormSet,
+    'trabajoVigenteAgenciadoFormSet': trabajoVigenteAgenciadoFormSet,
+    'trabajoRealizadoAgenciadoFormSet': trabajoRealizadoAgenciadoFormSet,
+    })
 
 
 @login_required
