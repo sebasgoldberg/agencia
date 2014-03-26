@@ -32,15 +32,21 @@
       <div class='{{clase_espacio_celda}}'>{{form.apellido|as_crispy_field}}</div>
       <div class='{{clase_espacio_celda}}'>{{form.fecha_nacimiento|as_crispy_field}}</div>
     </div>
+    <div class='row'>
+      <div class='{{clase_espacio_celda}}'>{{form.nombre_artistico|as_crispy_field}}</div>
+    </div>
   </fieldset>
 
   <fieldset>
     <legend>{% trans "Dados administrativos" %}</legend>
     <div class='row'>
-    <div class='{{clase_espacio_celda}}'>{{form.documento_rg|as_crispy_field}}</div>
-    <div class='{{clase_espacio_celda}}'>{{form.documento_cpf|as_crispy_field}}</div>
-    <div class='{{clase_espacio_celda}}'>{{form.responsable|as_crispy_field}}</div>
-    <div class='{{clase_espacio_celda}}'>{{form.cuenta_bancaria|as_crispy_field}}</div>
+      <div class='{{clase_espacio_celda}}'>{{form.documento_rg|as_crispy_field}}</div>
+      <div class='{{clase_espacio_celda}}'>{{form.documento_cpf|as_crispy_field}}</div>
+      <div class='{{clase_espacio_celda}}'>{{form.documento_drt|as_crispy_field}}</div>
+    </div>
+    <div class='row'>
+      <div class='{{clase_espacio_celda}}'>{{form.responsable|as_crispy_field}}</div>
+      <div class='{{clase_espacio_celda}}'>{{form.cuenta_bancaria|as_crispy_field}}</div>
     </div>
   </fieldset>
 
