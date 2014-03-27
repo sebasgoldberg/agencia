@@ -197,7 +197,7 @@
       if (TOTAL_FORMS_value == MAX_NUM_FORMS_value) 
         return;
 
-      var empty_form = $(this).attr('data-empty-form').replace('__prefix__',TOTAL_FORMS_value);
+      var empty_form = $(this).attr('data-empty-form').replace(/__prefix__/g,TOTAL_FORMS_value);
       var columns_by_form = $(this).attr('data-columns-by-form');
 
       var max_items_per_row = MAX_COLUMNS / columns_by_form;
