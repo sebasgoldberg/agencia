@@ -367,8 +367,9 @@ class TrabajoVigente(models.Model):
 
   def clean(self):
     if not self.id:
-      if self.fecha_vigencia <= date.today():
-        raise ValidationError(_(u'La fecha de vigencia debe ser posterior a la fecha actual.'))
+      if self.fecha_vigencia:
+        if self.fecha_vigencia <= date.today():
+          raise ValidationError(_(u'La fecha de vigencia debe ser posterior a la fecha actual.'))
 
   class Meta:
     abstract = True
@@ -388,8 +389,9 @@ class TrabajoRealizado(models.Model):
 
   def clean(self):
     if self.fecha_hasta:
-      if self.fecha_desde >= self.fecha_hasta:
-        raise ValidationError(_(u'La fecha desde debe ser menor a la fecha hasta.'))
+      if self.fecha_desde:
+        if self.fecha_desde >= self.fecha_hasta:
+          raise ValidationError(_(u'La fecha desde debe ser menor a la fecha hasta.'))
 
   class Meta:
     abstract = True
