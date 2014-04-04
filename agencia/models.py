@@ -38,7 +38,8 @@ def validarTelefonoIngresado(formset):
   validarUnoIngresado(formset,'telefono',_(u'Tem que informar um telefone'))
 
 def validarFotoIngresada(formset):
-  validarUnoIngresado(formset,'foto',_(u'Tem que subir uma foto'))
+  if Agencia.get_activa().foto_agenciado_obligatoria:
+    validarUnoIngresado(formset,'foto',_(u'Tem que subir uma foto'))
 
 class Agencia(models.Model):
   nombre = models.CharField(max_length=60, unique=True, verbose_name=ugettext_lazy(u'Nome'), null=False, blank=False)
@@ -49,10 +50,12 @@ class Agencia(models.Model):
   titulo_home = models.CharField(max_length=100, verbose_name=ugettext_lazy(u'Titulo pagina inicial'), null=True, blank=True)
   presentacion_home = models.TextField(null=True, blank=True, verbose_name=ugettext_lazy(u'Presentação pagina inicial'))
   mapa_contacto = models.TextField(null=True, blank=True, verbose_name=ugettext_lazy(u'Mapa pagina contato'), help_text=ugettext_lazy(u'Aqui tem que colar o HTML gerado no google maps a partir de seu endereço'))
+  foto_agenciado_obligatoria = models.BooleanField(default=True, verbose_name=ugettext_lazy(u'Foto Agenciado Obligatoria'))
   class Meta:
     ordering = ['nombre']
     verbose_name = ugettext_lazy(u"Agencia")
     verbose_name_plural = ugettext_lazy(u"Agencias")
+
 
   def __unicode__(self):
     return self.nombre
