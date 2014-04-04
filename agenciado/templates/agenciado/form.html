@@ -15,7 +15,7 @@
   </div>
 </div>
 
-<form enctype="multipart/form-data" method="post"  action="">
+<form id='agenciado-form' enctype="multipart/form-data" method="post"  action="">
   {% csrf_token %}
 
   {% if form.errors or direccionFormSet.non_form_errors or direccionFormSet.errors or telefonoFormSet.non_form_errors or telefonoFormSet.errors or fotoAgenciadoFormSet.non_form_errors or fotoAgenciadoFormSet.errors or videoAgenciadoFormSet.non_form_errors or videoAgenciadoFormSet.errors or disponibilidadTrabajoAgenciadoFormSet.non_form_errors or disponibilidadTrabajoAgenciadoFormSet.errors or trabajoVigenteAgenciadoFormSet.non_form_errors or trabajoVigenteAgenciadoFormSet.errors or trabajoRealizadoAgenciadoFormSet.non_form_errors or trabajoRealizadoAgenciadoFormSet.errors%}
@@ -153,11 +153,6 @@
 
   <div class="form-actions">
     <input type="submit" name="submit" value="{% trans "Gravar" %}" class="btn btn-primary" id="submit-id-submit" />
-    <script>
-      $('#submit-id-submit').click(function(event){
-        $('#modal_mensaje_espere').modal();
-        });
-    </script>
   </div>
 
 </form>
@@ -172,6 +167,10 @@
 
   var MAX_COLUMNS=12;
   $(function(){
+
+    $('#agenciado-form').submit(function(event){
+      $('#modal_mensaje_espere').modal();
+      });
 
     init_controls_on_fields();
 
