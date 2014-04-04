@@ -56,7 +56,6 @@ class Agencia(models.Model):
     verbose_name = ugettext_lazy(u"Agencia")
     verbose_name_plural = ugettext_lazy(u"Agencias")
 
-
   def __unicode__(self):
     return self.nombre
 
@@ -73,15 +72,14 @@ class Agencia(models.Model):
     return ''
 
   def get_url_admin(self):
-    return '/admin/agencia/agencia/%s/'%self.id
+    if self.id:
+      return '/admin/agencia/agencia/%s/'%self.id
+    return '/admin/agencia/agencia/add/'
 
   @staticmethod
   def get_activa(request=None):
     agencias = Agencia.objects.filter(activa=True).order_by('-id')
     if not agencias:
-      mensaje=_(u'Não tem registrada uma agencia ativa. Tem que ser creada una agencia ativa na administracão do site.')
-      if request:
-        messages.warning(request,mensaje)
       return Agencia(nombre='Agencia',email='mail@agencia.com',activa=False)
     return agencias[0]
 
