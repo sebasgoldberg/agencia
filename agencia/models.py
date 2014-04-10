@@ -101,7 +101,7 @@ def validate_fecha_nacimiento(value):
 
 def validate_altura(value):
   if value < 15:
-    raise ValidationError(_(u'A atura debe ser informada em centimetros'))
+    raise ValidationError(_(u'A altura debe ser informada em centimetros'))
 
 class Agenciador(models.Model):
 
@@ -157,7 +157,7 @@ class Agenciado(models.Model):
     ojos = models.ForeignKey(Ojos,on_delete=models.PROTECT, verbose_name=ugettext_lazy(u'Olhos'),null=True, blank=False)
     pelo = models.ForeignKey(Pelo,on_delete=models.PROTECT, verbose_name=ugettext_lazy(u'Cabelo'),null=True, blank=False)
     piel = models.ForeignKey(Piel,on_delete=models.PROTECT, verbose_name=ugettext_lazy(u'Pele'),null=True, blank=False)
-    altura = models.FloatField(verbose_name=ugettext_lazy(u'Atura (cm)'),validators=[validate_altura])
+    altura = models.FloatField(verbose_name=ugettext_lazy(u'Altura (cm)'),validators=[validate_altura])
     peso = models.FloatField(verbose_name=ugettext_lazy(u'Peso (kg)'))
     talle = models.ForeignKey(Talle,on_delete=models.PROTECT, verbose_name=ugettext_lazy(u'Manequim'),null=True, blank=False)
 
@@ -267,7 +267,7 @@ class Agenciado(models.Model):
     admin_link.short_description = ugettext_lazy(u'Link ao agenciado')
 
     def descripcion(self):
-      return _(u'Edad %(edad)s, sexo %(sexo)s, olhos %(ojos)s, cabelo %(pelo)s, pele %(piel)s, atura %(altura)s, peso %(peso)s, estado dentes %(estado_dientes)s.')%{'edad':self.edad(), 'sexo':Agenciado.DICT_SEXO[self.sexo], 'ojos':self.ojos, 'pelo':self.pelo, 'piel':self.piel, 'altura':self.altura, 'peso':self.peso, 'estado_dientes':self.estado_dientes}
+      return _(u'Edad %(edad)s, sexo %(sexo)s, olhos %(ojos)s, cabelo %(pelo)s, pele %(piel)s, altura %(altura)s, peso %(peso)s, estado dentes %(estado_dientes)s.')%{'edad':self.edad(), 'sexo':Agenciado.DICT_SEXO[self.sexo], 'ojos':self.ojos, 'pelo':self.pelo, 'piel':self.piel, 'altura':self.altura, 'peso':self.peso, 'estado_dientes':self.estado_dientes}
     descripcion.short_description = ugettext_lazy(u'Descripção')
 
     def edad(self):

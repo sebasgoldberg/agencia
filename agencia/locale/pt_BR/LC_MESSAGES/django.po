@@ -115,7 +115,7 @@ msgstr "Ativa"
 
 #: models.py:46
 msgid "Só debería ter uma unica agencia ativa"
-msgstr "Só debería ter uma unica agencia ativa"
+msgstr "Só devería ter uma unica agencia ativa"
 
 #: models.py:47
 msgid "Logo"
@@ -189,8 +189,8 @@ msgid "A data de nascimento nao pode ser maior que a data do dia"
 msgstr "A data de nascimento nao pode ser maior que a data do dia"
 
 #: models.py:103
-msgid "A atura debe ser informada em centimetros"
-msgstr "A atura debe ser informada em centimetros"
+msgid "A altura debe ser informada em centimetros"
+msgstr "A altura deve ser informada em centimetros"
 
 #: models.py:124
 msgid "Sobrenome"
@@ -249,8 +249,8 @@ msgid "Pele"
 msgstr "Pele"
 
 #: models.py:159
-msgid "Atura (cm)"
-msgstr "Atura (cm)"
+msgid "Altura (cm)"
+msgstr "Altura (cm)"
 
 #: models.py:160
 msgid "Peso (kg)"
@@ -344,10 +344,10 @@ msgstr "Telefones"
 #, python-format
 msgid ""
 "Edad %(edad)s, sexo %(sexo)s, olhos %(ojos)s, cabelo %(pelo)s, pele "
-"%(piel)s, atura %(altura)s, peso %(peso)s, estado dentes %(estado_dientes)s."
+"%(piel)s, altura %(altura)s, peso %(peso)s, estado dentes %(estado_dientes)s."
 msgstr ""
 "Edad %(edad)s, sexo %(sexo)s, olhos %(ojos)s, cabelo %(pelo)s, pele "
-"%(piel)s, atura %(altura)s, peso %(peso)s, estado dentes %(estado_dientes)s."
+"%(piel)s, altura %(altura)s, peso %(peso)s, estado dentes %(estado_dientes)s."
 
 #: models.py:270 models.py:308
 msgid "Descripção"
@@ -443,7 +443,7 @@ msgstr "Data vigência"
 
 #: models.py:371
 msgid "La fecha de vigencia debe ser posterior a la fecha actual."
-msgstr "A data de vigência debe ser posterior a data atual."
+msgstr "A data de vigência deve ser posterior a data atual."
 
 #: models.py:375 models.py:381
 msgid "Trabajo vigente"
@@ -463,7 +463,7 @@ msgstr "Data até"
 
 #: models.py:392
 msgid "La fecha desde debe ser menor a la fecha hasta."
-msgstr "A data de debe ser menor que a data até."
+msgstr "A data de deve ser menor que a data até."
 
 #: models.py:396 models.py:402
 msgid "Trabajo realizado"

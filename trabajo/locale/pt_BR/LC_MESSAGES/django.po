@@ -134,7 +134,7 @@ msgstr "Publicado"
 
 #: models.py:150
 msgid "Indica se o trabalho debe ser publicado no site da agencia"
-msgstr "Indica se o trabalho debe ser publicado no site da agencia"
+msgstr "Indica se o trabalho deve ser publicado no site da agencia"
 
 #: models.py:161
 #, python-format

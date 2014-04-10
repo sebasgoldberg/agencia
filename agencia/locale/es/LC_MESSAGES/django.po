@@ -190,7 +190,7 @@ msgid "A data de nascimento nao pode ser maior que a data do dia"
 msgstr "La fecha de nacimiento no puede ser mayor que la fecha del día"
 
 #: models.py:103
-msgid "A atura debe ser informada em centimetros"
+msgid "A altura debe ser informada em centimetros"
 msgstr "La altura debe ser informada en centimetros"
 
 #: models.py:124
@@ -250,7 +250,7 @@ msgid "Pele"
 msgstr "Piel"
 
 #: models.py:159
-msgid "Atura (cm)"
+msgid "Altura (cm)"
 msgstr "Altura (cm)"
 
 #: models.py:160
@@ -345,7 +345,7 @@ msgstr "Telefonos"
 #, python-format
 msgid ""
 "Edad %(edad)s, sexo %(sexo)s, olhos %(ojos)s, cabelo %(pelo)s, pele "
-"%(piel)s, atura %(altura)s, peso %(peso)s, estado dentes %(estado_dientes)s."
+"%(piel)s, altura %(altura)s, peso %(peso)s, estado dentes %(estado_dientes)s."
 msgstr ""
 "Edad %(edad)s, sexo %(sexo)s, ojos %(ojos)s, pelo %(pelo)s, piel %(piel)s, "
 "altura %(altura)s, peso %(peso)s, estado dientes %(estado_dientes)s."

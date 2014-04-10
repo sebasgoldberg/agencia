@@ -45,7 +45,7 @@ class Command(BaseCommand):
     self.load_entity(Danza,ugettext(u'Street Dance'))
     self.load_entity(Danza,ugettext(u'Ventre'))
     self.load_entity(Danza,ugettext(u'Gafieira'))
-    
+
     self.load_entity(Deporte,ugettext(u'Aeróbica'))
     self.load_entity(Deporte,ugettext(u'Anda a Cavalo'))
     self.load_entity(Deporte,ugettext(u'Atletismo'))
@@ -57,7 +57,6 @@ class Command(BaseCommand):
     self.load_entity(Deporte,ugettext(u'Cavalgar'))
     self.load_entity(Deporte,ugettext(u'Ciclismo'))
     self.load_entity(Deporte,ugettext(u'Corrida c/ obstáculo'))
-    self.load_entity(Deporte,ugettext(u'Dança'))
     self.load_entity(Deporte,ugettext(u'Futebol'))
     self.load_entity(Deporte,ugettext(u'Futsal'))
     self.load_entity(Deporte,ugettext(u'Ginastica Artistica'))
@@ -125,7 +124,6 @@ class Command(BaseCommand):
     self.load_entity(Talle,ugettext(u'Normal'))
 
     self.load_entity(Ojos,ugettext(u'Azul'))
-    self.load_entity(Ojos,ugettext(u'Bermelhos'))
     self.load_entity(Ojos,ugettext(u'Castanho'))
     self.load_entity(Ojos,ugettext(u'Castanho Claro'))
     self.load_entity(Ojos,ugettext(u'Preto'))
