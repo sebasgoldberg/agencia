@@ -1,0 +1,107 @@
+# coding=utf-8
+from django.db import models
+from django.template import loader, Context
+from iampacks.agencia.agencia.models import Agencia, Agenciado
+from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy
+from iampacks.agencia.agencia.mail import MailAgencia
+from django.conf import settings
+from django.contrib.auth.models import User
+import datetime
+import time
+
+class BaseNotificacionMail(models.Model):
+
+  email_destinatario = models.EmailField(verbose_name=ugettext_lazy(u'e-mail destinatario'), null=True, blank=False)
+  fecha_envio = models.DateTimeField(verbose_name=ugettext_lazy(u'Fecha de envío'), default=datetime.datetime.now())
+
+  class Meta:
+    abstract = True
+
+  def get_template_name(self):
+    raise Exception(u'Método no implementado')
+
+  def get_context_dict(self):
+    raise Exception(u'Método no implementado')
+
+  def get_notification_title(self):
+    raise Exception(u'Método no implementado')
+
+  def get_ccs(self):
+    return [agencia.email]
+
+  def enviar(self):
+
+    template = loader.get_template(self.get_template_name())
+    context = Context(self.get_context_dict())
+    asunto = self.get_notification_title()
+    destinatarios = [self.email_destinatario]
+    agencia=Agencia.get_activa()
+    ccs = self.get_ccs()
+
+    text_content = _(u'Este mensagem deve ser visualizado em formato HTML.')
+    html_content = template.render(context)
+    msg = MailAgencia(asunto, text_content, destinatarios,ccs=ccs)
+    msg.set_html_body(html_content)
+    msg.send()
+
+    self.fecha_envio = datetime.datetime.now()
+    self.clean()
+    self.save()
+
+class NotificacionCuentaAgenciadoExistente(BaseNotificacionMail):
+
+  agenciado = models.ForeignKey(Agenciado)
+  password = None
+
+  def get_template_name(self):
+    return 'notificacion/cuenta_agenciado_existe.html'
+
+  def get_context_dict(self):
+    return {'agenciado': self.agenciado,
+      'ambiente': settings.AMBIENTE, 
+      'password': self.password}
+
+  def get_notification_title(self):
+    return _(u'Você Está Cadastrado')
+
+  def get_ccs(self):
+    return []
+
+  @staticmethod
+  def crear_usuario_agenciado(agenciado, password):
+    agenciado.user = User.objects.create_user(agenciado.mail[:30], agenciado.mail, password)
+    agenciado.user.first_name = agenciado.nombre[:30]
+    agenciado.user.last_name = agenciado.apellido[:30]
+    agenciado.user.is_active = True
+    agenciado.user.save()
+    agenciado.save()
+
+  @staticmethod
+  def notificar_no_notificados(delay=None):
+
+    agenciados = Agenciado.objects.filter(mail__isnull=False,user__isnull=True)
+
+    for agenciado in agenciados:
+
+      if not agenciado.mail:
+        continue
+      if agenciado.user:
+        continue
+      
+      try:
+
+        password = User.objects.make_random_password()
+        NotificacionCuentaAgenciadoExistente.crear_usuario_agenciado(agenciado,password)
+
+        for mail in agenciado.get_mails():
+          notificacion = NotificacionCuentaAgenciadoExistente(
+            email_destinatario=mail, agenciado=agenciado)
+          notificacion.password = password
+          notificacion.enviar()
+          if delay:
+            time.sleep(delay)
+      
+      except:
+        pass
+
