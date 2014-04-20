@@ -60,7 +60,8 @@ class NotificacionCuentaAgenciadoExistente(BaseNotificacionMail):
   def get_context_dict(self):
     return {'agenciado': self.agenciado,
       'ambiente': settings.AMBIENTE, 
-      'password': self.password}
+      'password': self.password,
+      'agencia': Agencia.get_activa()}
 
   def get_notification_title(self):
     return _(u'Você Está Cadastrado')
