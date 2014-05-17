@@ -4,6 +4,7 @@ from iampacks.agencia.notificacion.models import NotificacionCuentaAgenciadoExis
 from django.core import mail
 from iampacks.agencia.agencia.models import Agenciado
 from django.contrib.auth.models import User
+import StringIO
 
 class NotificacionCuentaAgenciadoExistenteTestCase(TestCase):
 
@@ -49,3 +50,26 @@ class NotificacionCuentaAgenciadoExistenteTestCase(TestCase):
     self.assertEquals(len(mail.outbox), cantidad_mails_a_enviar)
     self.assertEquals(len(Agenciado.objects.filter(user__isnull=True)), 0)
 
+
+class NotificacionAgenciadoConUsuario(TestCase):
+
+  fixtures = [u'fixture/test/agencia.json']
+
+  def test_notificacion_enviada(self):
+
+    # Se verifica que se creen correctamente los usuarios.
+    agenciados_con_usuario_y_mail = Agenciado.objects.filter(mail__isnull=False,user__isnull=False)
+    self.assertGreater(agenciados_con_usuario_y_mail.count(),0)
+
+    cantidad_mails_a_enviar = 0
+    mails = []
+    for a in agenciados_con_usuario_y_mail:
+      mails += a.get_mails()
+      cantidad_mails_a_enviar += len(a.get_mails())
+
+    NotificacionCuentaAgenciadoExistente.notificar_emails_listado(mails)
+    self.assertEquals(len(mail.outbox), cantidad_mails_a_enviar)
+
+    # Se verifica que si repetimos la operación entonces el resultado es el mismo.
+    NotificacionCuentaAgenciadoExistente.notificar_emails_listado(mails)
+    self.assertEquals(len(mail.outbox), 2*cantidad_mails_a_enviar)

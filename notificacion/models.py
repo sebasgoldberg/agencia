@@ -1,7 +1,7 @@
 # coding=utf-8
 from django.db import models
 from django.template import loader, Context
-from iampacks.agencia.agencia.models import Agencia, Agenciado
+from iampacks.agencia.agencia.models import Agencia, Agenciado, MailAgenciado
 from django.utils.translation import ugettext as _
 from django.utils.translation import ugettext_lazy
 from iampacks.agencia.agencia.mail import MailAgencia
@@ -79,6 +79,22 @@ class NotificacionCuentaAgenciadoExistente(BaseNotificacionMail):
     agenciado.save()
 
   @staticmethod
+  def notificar_agenciado(agenciado, password, delay):
+
+    for mail in agenciado.get_mails():
+      try:
+
+        notificacion = NotificacionCuentaAgenciadoExistente(
+          email_destinatario=mail, agenciado=agenciado)
+        notificacion.password = password
+        notificacion.enviar()
+        if delay:
+          time.sleep(delay)
+
+      except:
+        pass
+
+  @staticmethod
   def notificar_no_notificados(delay=None):
 
     agenciados = Agenciado.objects.filter(mail__isnull=False,user__isnull=True)
@@ -89,20 +105,41 @@ class NotificacionCuentaAgenciadoExistente(BaseNotificacionMail):
         continue
       if agenciado.user:
         continue
-      
+    
+      password = User.objects.make_random_password()
+
       try:
 
-        password = User.objects.make_random_password()
-        NotificacionCuentaAgenciadoExistente.crear_usuario_agenciado(agenciado,password)
+        NotificacionCuentaAgenciadoExistente.crear_usuario_agenciado(
+          agenciado,password)
 
-        for mail in agenciado.get_mails():
-          notificacion = NotificacionCuentaAgenciadoExistente(
-            email_destinatario=mail, agenciado=agenciado)
-          notificacion.password = password
-          notificacion.enviar()
-          if delay:
-            time.sleep(delay)
-      
+        NotificacionCuentaAgenciadoExistente.notificar_agenciado(
+          agenciado,password, delay)
+
       except:
         pass
+
+   
+  @staticmethod
+  def notificar_emails_listado(emails, delay=None):
+    """
+    Se notifica a agenciados que tienen usuario asignado y que alguno
+    de sus mails se encuentra dentro del listado.
+    """
+
+    ids_agenciados = set([a.id for a in Agenciado.objects.filter(
+      mail__in=emails,user__isnull=False) ])
+    ids_agenciados = ids_agenciados | set(
+      ma.agenciado.id for ma in MailAgenciado.objects.filter(
+        email__in=emails,agenciado__user__isnull=False))
+
+    for agenciado in Agenciado.objects.filter(id__in=ids_agenciados):
+
+      password = User.objects.make_random_password()
+      user = agenciado.user
+      user.set_password(password)
+      user.save()
+
+      NotificacionCuentaAgenciadoExistente.notificar_agenciado(
+        agenciado, password, delay)
 
