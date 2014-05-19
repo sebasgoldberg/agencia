@@ -114,7 +114,7 @@ class Agenciador(models.Model):
 
 class Agenciado(models.Model):
 
-    user= models.OneToOneField(User, null=True, blank=True, editable=False)
+    user= models.OneToOneField(User, null=True, blank=True, editable=False, on_delete=models.PROTECT)
 
     # @todo Ver si se puede quitar null luego de migrar, agregar validacion de que si ya existe que tenga asignado responsable
     # @todo Agregar validación de obligatoriedad cuando no es editado por un agenciador
