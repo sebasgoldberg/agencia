@@ -68,12 +68,18 @@ class Command(BaseCommand):
     uids = data[0].split(' ')
 
     for uid in uids:
+      self.stdout.write('Se procesa el mensaje %s.\t'%uid)
       result, data = imap.uid('fetch', uid, '(RFC822)')
 
       try:
         email = self.get_mail_invalido(data[0][1])
         if email is not None:
           mail_invalido = MailInvalido.objects.get_or_create(email=email)
+          imap.uid('STORE', uid, '+FLAGS', '(\\Deleted)')
       except MailNoInvalido:
         pass
+
+    imap.expunge()
+    imap.close()
+    imap.logout()
 
