@@ -9,16 +9,16 @@ import imaplib
 import re
 
 RE_MAIL_INVALIDO = [
-  re.compile('action not taken: mailbox unavailable'),
-  re.compile('Host or domain name not found'),
-  re.compile('The email account that you tried to reach does not exist'),
-  re.compile('Message.*received.'),
-  re.compile('User unknown'),
-  re.compile('Recipient address rejected'),
-  re.compile("delivery error: dd This user doesn't have"),
+  'action not taken: mailbox unavailable',
+  'Host or domain name not found',
+  'The email account that you tried to reach does not exist',
+  'Message.*received.',
+  'User unknown',
+  'Recipient address rejected',
+  "delivery error: dd This user doesn't have",
   ]
 
-RE_INVALID_MAIL = re.compile('%s\r\nTo: ([^ ]+@[^ \r\n]+)'%settings.AMBIENTE.email.user)
+RE_DIRECCION_MAIL_INVALIDO = re.compile('%s\r\nTo: ([^ ]+@[^ \r\n]+)'%settings.AMBIENTE.email.user)
 
 class MailNoInvalido(Exception):
   pass
@@ -30,27 +30,33 @@ class Command(BaseCommand):
 
   help=_(u'Detecta mails invalidos a partir de respuestas automáticas de servidores de mail.')
 
+  option_list = BaseCommand.option_list + (
+    make_option('--silencioso',default=False),
+    )
+
   def get_mail_invalido(self, data):
 
     es_invalido = False
 
     for regexp in RE_MAIL_INVALIDO:
-      if regexp.match(data):
+      if re.search(regexp,data):
         es_invalido = True
         break
 
     if not es_invalido:
       raise MailNoInvalido()
 
-    match = RE_INVALID_MAIL.find(data)
+    match = re.search(RE_DIRECCION_MAIL_INVALIDO,data)
 
     if match:
       return match.group(1)
 
-    raise DireccionEmailNoEncontrada()
-
+    if not self.silencioso:
+      raise DireccionEmailNoEncontrada()
 
   def handle(self,*args,**options):
+
+    self.silencioso = options['silencioso']
 
     imap = imaplib.IMAP4('localhost')
     imap.login(settings.AMBIENTE.email.user,settings.AMBIENTE.email.password)
@@ -61,12 +67,12 @@ class Command(BaseCommand):
     uids = data[0].split(' ')
 
     for uid in uids:
-      self.stdout.write('Se procesa mensaje %s\n'%uid)
       result, data = imap.uid('fetch', uid, '(RFC822)')
 
       try:
         email = self.get_mail_invalido(data[0][1])
-        self.stdout.write('%s\n'%email)
+        if email:
+          self.stdout.write('%s\n'%email)
       except MailNoInvalido:
         pass
 
