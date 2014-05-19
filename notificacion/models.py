@@ -9,6 +9,7 @@ from django.conf import settings
 from django.contrib.auth.models import User
 import datetime
 import time
+import re
 
 class BaseNotificacionMail(models.Model):
 
@@ -143,3 +144,6 @@ class NotificacionCuentaAgenciadoExistente(BaseNotificacionMail):
       NotificacionCuentaAgenciadoExistente.notificar_agenciado(
         agenciado, password, delay)
 
+def MailInvalido():
+
+  email = models.EmailField(verbose_name=ugettext_lazy(u'e-mail'), null=False, blank=False)
