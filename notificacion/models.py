@@ -148,3 +148,16 @@ class MailInvalido(models.Model):
 
   email = models.EmailField(verbose_name=ugettext_lazy(u'e-mail'), null=False, blank=False, unique=True)
   fecha_deteccion = models.DateTimeField(verbose_name=ugettext_lazy(u'Fecha de detección'), default=datetime.datetime.now())
+
+  def links_agenciados(self):
+    agenciados = set(Agenciado.objects.filter(mail=self.email))
+    agenciados = agenciados | set(
+      [ma.agenciado for ma in MailAgenciado.objects.filter(
+        email=self.email)])
+    result=''
+    for a in agenciados:
+      result=result + '<li>%s</li>' % a.admin_link()
+    return '<ul>%s</ul>' % result
+  links_agenciados.allow_tags=True
+  links_agenciados.short_description = ugettext_lazy(u'Link aos agenciados')
+

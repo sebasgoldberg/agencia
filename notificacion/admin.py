@@ -8,7 +8,7 @@ class NotificacionCuentaAgenciadoExistenteAdmin(admin.ModelAdmin):
   search_fields=['email_destinatario']
 
 class MailInvalidoAdmin(admin.ModelAdmin):
-  list_display=['id', 'email', 'fecha_deteccion']
+  list_display=['id', 'email', 'fecha_deteccion', 'links_agenciados']
   list_display_links = ('id', )
   date_hierarchy='fecha_deteccion'
   search_fields=['email']

@@ -20,7 +20,6 @@ RE_MAIL_INVALIDO = [
   '[ \n\r]*'.join('This account has been disabled or discontinued'.split(' ')),
   '[ \n\r]*'.join('said: 550 (in reply to RCPT TO command)'.split(' ')),
   '[ \n\r]*'.join('The email account that you tried to reach is over quota'.split(' ')),
-  '[ \n\r]*'.join('Recipient address rejected'.split(' ')),
   '[ \n\r]*'.join('Mailbox disabled for this recipient'.split(' ')),
   '[ \n\r]*'.join('Relay access denied'.split(' ')),
   '[ \n\r]*'.join('550 #5.1.0 Address rejected'.split(' ')),
