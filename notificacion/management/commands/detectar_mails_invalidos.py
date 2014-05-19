@@ -9,13 +9,16 @@ import imaplib
 import re
 
 RE_MAIL_INVALIDO = [
-  'action not taken: mailbox unavailable',
-  'Host or domain name not found',
-  'The email account that you tried to reach does not exist',
-  'Message.*received.',
-  'User unknown',
-  'Recipient address rejected',
-  "delivery error: dd This user doesn't have",
+  '[ \n\r]*'.join('action not taken: mailbox unavailable'.split(' ')),
+  '[ \n\r]*'.join('Host or domain name not found'.split(' ')),
+  '[ \n\r]*'.join('The email account that you tried to reach does not exist'.split(' ')),
+  '[ \n\r]*'.join('Message.*received.'.split(' ')),
+  '[ \n\r]*'.join('User unknown'.split(' ')),
+  '[ \n\r]*'.join('Recipient address rejected'.split(' ')),
+  '[ \n\r]*'.join("delivery error: dd This user doesn't have".split(' ')),
+  '[ \n\r]*'.join('501 Invalid Address'.split(' ')),
+  '[ \n\r]*'.join('Name service error for name'.split(' ')),
+  '[ \n\r]*'.join('This account has been disabled or discontinued'.split(' ')),
   ]
 
 RE_DIRECCION_MAIL_INVALIDO = re.compile('%s\r\nTo: ([^ ]+@[^ \r\n]+)'%settings.AMBIENTE.email.user)
