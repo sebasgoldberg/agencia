@@ -4,7 +4,7 @@ from optparse import make_option
 from django.utils.translation import ugettext as _
 from django.conf import settings
 from django.contrib.auth.models import User
-from iampacks.agencia.notificacion.models import NotificacionCuentaAgenciadoExistente
+from iampacks.agencia.notificacion.models import NotificacionCuentaAgenciadoExistente, MailInvalido
 import imaplib
 import re
 
@@ -52,6 +52,7 @@ class Command(BaseCommand):
       return match.group(1)
 
     if not self.silencioso:
+      print data
       raise DireccionEmailNoEncontrada()
 
   def handle(self,*args,**options):
@@ -71,8 +72,8 @@ class Command(BaseCommand):
 
       try:
         email = self.get_mail_invalido(data[0][1])
-        if email:
-          self.stdout.write('%s\n'%email)
+        if email is not None:
+          mail_invalido = MailInvalido.objects.get_or_create(email=email)
       except MailNoInvalido:
         pass
 

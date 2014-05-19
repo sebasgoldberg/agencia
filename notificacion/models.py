@@ -144,6 +144,7 @@ class NotificacionCuentaAgenciadoExistente(BaseNotificacionMail):
       NotificacionCuentaAgenciadoExistente.notificar_agenciado(
         agenciado, password, delay)
 
-def MailInvalido():
+class MailInvalido(models.Model):
 
-  email = models.EmailField(verbose_name=ugettext_lazy(u'e-mail'), null=False, blank=False)
+  email = models.EmailField(verbose_name=ugettext_lazy(u'e-mail'), null=False, blank=False, unique=True)
+  fecha_deteccion = models.DateTimeField(verbose_name=ugettext_lazy(u'Fecha de detección'), default=datetime.datetime.now())
