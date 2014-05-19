@@ -10,6 +10,7 @@ from django.contrib.auth.models import User
 import datetime
 import time
 import re
+from django.core.exceptions import ValidationError
 
 class BaseNotificacionMail(models.Model):
 
@@ -165,3 +166,5 @@ class MailInvalido(models.Model):
   links_agenciados.allow_tags=True
   links_agenciados.short_description = ugettext_lazy(u'Link aos agenciados')
 
+  def clean(self):
+    raise ValidationError(ugettext_lazy(u'Sin permisos para modificar'))
