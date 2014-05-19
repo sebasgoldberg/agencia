@@ -61,6 +61,7 @@ class Command(BaseCommand):
     uids = data[0].split(' ')
 
     for uid in uids:
+      self.stdout.write('Se procesa mensaje %s\n'%uid)
       result, data = imap.uid('fetch', uid, '(RFC822)')
 
       try:
